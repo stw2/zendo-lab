@@ -1,0 +1,26 @@
+[project]
+name = "zendo-lab"
+version = "0.1.0"
+description = "Experiments on teaching models to test hypotheses, with ZendoBench."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["zendo-engine==1.0.0", "zendo-bench==1.0.0"]
+
+[project.optional-dependencies]
+mlx = ["zendo-bench[mlx]==1.0.0"]
+grammar = ["zendo-bench[grammar]==1.0.0"]
+
+[dependency-groups]
+dev = ["pytest>=9"]
+
+[tool.uv]
+package = false
+
+# ZendoBench 1.0.0 from its public repository's tag (docs/requirements.md).
+[tool.uv.sources]
+zendo-engine = { git = "https://github.com/stw2/zendo-bench", tag = "v1.0.0", subdirectory = "packages/zendo-engine" }
+zendo-bench = { git = "https://github.com/stw2/zendo-bench", tag = "v1.0.0", subdirectory = "packages/zendo-bench" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-rs"
