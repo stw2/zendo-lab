@@ -1,13 +1,13 @@
 # Evaluations
 
-An evaluation is part of the experiment that pre-registers it: its run files go in `experiments/E<nn>-<slug>/results/runs/`, and its numbers in that experiment's `results/metrics.json`. No evaluation lives outside an experiment.
+An evaluation is part of the experiment that pre-registers it: its run files go in `experiments/E<nn>-<slug>/results/runs/`, which git ignores, and its statistics in that experiment's `results/` (`runs.md`, `scores/`, `metrics.json`). No evaluation lives outside an experiment.
 
 ## Running one
 
 ```bash
 uv run python -m zendo_bench run --manifest dev --arm ARM --out results/runs/ARM.jsonl --backend http \
-    --base-url URL --model MODEL --api-key-env KEY_ENV --sampling '{"max_tokens": 65536}' --no-stream
-uv run python -m zendo_bench score --manifest dev --verify results/runs/ARM.jsonl
+    --base-url URL --model MODEL --api-key-env KEY_ENV --sampling '{"max_tokens": 65536}' --no-stream --keep-reasoning
+uv run python -m zendo_bench score --manifest dev --verify --json results/scores/ARM.json results/runs/ARM.jsonl
 uv run python -m zendo_bench compare --manifest dev --a results/runs/A.jsonl --b results/runs/B.jsonl
 uv run python -m zendo_bench diagnose --manifest dev results/runs/ARM.jsonl
 ```
@@ -23,4 +23,4 @@ uv run python -m zendo_bench diagnose --manifest dev results/runs/ARM.jsonl
 
 ## What every reported number carries
 
-Arm, model and served model, sampling (with `max_tokens`), backend, manifest and subset, games played and scored, verified (yes), ZendoBench version, seed, hardware class.
+Arm, model and served model, sampling (with `max_tokens`), backend, manifest and subset, games played and scored, verified (yes), ZendoBench version, seed, hardware class, and the run file's sha256.

@@ -28,6 +28,6 @@ uv sync                                            # setup (extras: --extra mlx,
 uv run pytest                                      # checks the ZendoBench pin and plays one game
 uv run python -m zendo_bench train-sample --n 60 --seed 1 --out train.json
 uv run python -m zendo_bench run --manifest dev --arm ARM --out run.jsonl --backend http \
-    --base-url URL --model MODEL --api-key-env KEY_ENV --sampling '{"max_tokens": 65536}'
+    --base-url URL --model MODEL --api-key-env KEY_ENV --sampling '{"max_tokens": 65536}' --keep-reasoning
 uv run python -m zendo_bench score --manifest dev --verify run.jsonl
 ```

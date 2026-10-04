@@ -10,3 +10,6 @@ __pycache__/
 experiments/*/checkpoints/
 experiments/*/models/
 experiments/*/data/cache/
+
+# Run files (every game, with reasoning) stay on this machine; git keeps their statistics and hashes
+experiments/*/results/runs/
