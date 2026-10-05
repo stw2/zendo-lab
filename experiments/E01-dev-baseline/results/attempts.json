@@ -1,0 +1,32 @@
+{
+ "qwen3.5-2b-mlx": {
+  "attemptId": "d49cf0bd-3efa-4d82-97d9-2c21b3583c68",
+  "label": "A1",
+  "status": "started"
+ },
+ "gpt-6-luna-openrouter-high": {
+  "attemptId": "71861d8f-8fc6-490b-9767-59566cfc6830",
+  "label": "A2",
+  "status": "started"
+ },
+ "gpt-oss-120b-openrouter-high": {
+  "attemptId": "5f12499a-1894-4031-b45f-b0904f05857c",
+  "label": "A3",
+  "status": "started"
+ },
+ "deepseek-v4-flash-together": {
+  "attemptId": "870cfa1d-0748-44b6-8cfb-742e69dba5b7",
+  "label": "A4",
+  "status": "started"
+ },
+ "qwen3.8-27b-fp8-vllm-h100": {
+  "attemptId": "dbb17657-f2b2-49c3-a6f6-ebf5b6017aab",
+  "label": "A5",
+  "status": "started"
+ },
+ "qwen3.5-27b-fp8-vllm-h100": {
+  "attemptId": "2c1fd389-65d7-4457-9225-ba9acbacab7f",
+  "label": "A6",
+  "status": "started"
+ }
+}
