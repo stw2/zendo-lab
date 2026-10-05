@@ -98,7 +98,7 @@ class Box:
         ledger["sandboxes"].append(entry)
         self.save(ledger)  # charged from the request on
         c = client()
-        sandbox_name = f"e01-{self.name}-h100"
+        sandbox_name = f"e01-{self.name}-h100-{len(ledger['sandboxes'])}"  # unique: a replaced box may still be destroying
         try:
             box = c.create(CreateSandboxFromImageParams(
                 image=IMAGE, name=sandbox_name, public=False,
