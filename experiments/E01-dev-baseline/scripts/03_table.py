@@ -14,6 +14,7 @@ import time
 
 ARMS = {  # arm: (model, where, hardware, Daytona box, $/M input, $/M output)
     "qwen3.5-2b-mlx": ("Qwen/Qwen3.5-2B (bf16)", "MLX, 36 games in flight, sampler seed 0", "Apple M4 Max 128 GB", None, 0, 0),
+    "qwen3.5-4b-mlx": ("Qwen/Qwen3.5-4B (bf16)", "MLX, 36 games in flight, sampler seed 0", "Apple M4 Max 128 GB", None, 0, 0),
     "qwen3.5-27b-fp8-vllm-h100": ("Qwen/Qwen3.5-27B-FP8", "vLLM 0.30.0, Daytona, --batch auto", "1x H100 80 GB", "qwen35", None, None),
     "qwen3.8-27b-fp8-vllm-h100": ("Qwen/Qwen3.8-27B-FP8", "vLLM 0.30.0, Daytona, --batch auto", "1x H100 80 GB", "qwen38", None, None),
     "deepseek-v4-flash-together": ("deepseek-ai/DeepSeek-V4-Flash-0731", "Together, 64 calls in flight", "provider", None, 0.14, 0.28),

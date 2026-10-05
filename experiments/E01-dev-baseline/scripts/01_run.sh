@@ -21,6 +21,8 @@ DAYTONA_HEADERS=(--header x-daytona-preview-token=DAYTONA_PREVIEW_TOKEN
 case "$arm" in
   qwen3.5-2b-mlx)
     args=(--backend mlx --checkpoint-json "$E/scripts/checkpoints/qwen3.5-2b.json" --batch 36 --seed 0) ;;
+  qwen3.5-4b-mlx)  # added 2026-10-05 (DESIGN.md amendment): ZendoBench's built-in pinned 4B checkpoint
+    args=(--backend mlx --checkpoint 4B --batch 36 --seed 0) ;;
   qwen3.5-27b-fp8-vllm-h100)
     daytona qwen35
     args=(--backend http --base-url "$BASE_URL" --model qwen3.5-27b-fp8 "${DAYTONA_HEADERS[@]}" --batch auto --keep-reasoning
