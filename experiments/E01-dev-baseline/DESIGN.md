@@ -74,6 +74,11 @@ From the run files: tokens in, out and reasoning; calls cut at `max_tokens`; wal
   - **Recovery:** the box was deleted at 06:03Z; Daytona still showed it destroying at 07:20Z. A new box with the same image, model revision, vLLM version and server flags was set up at 07:27Z, and the run resumed into `qwen3.8-27b-fp8-vllm-h100.part2.jsonl` with `--exclude-finished`, as the same attempt.
   - **Script change:** `scripts/daytona/ctl.py` now gives each sandbox a numbered name, because the replaced box may still hold the old one. Nothing that affects a measurement changed.
   - **Cap:** the $200 cap covers both boxes together.
+- **2026-10-05, A5 (`qwen3.8-27b-fp8-vllm-h100`): second box lost; resumed on a third.**
+  - **What happened:** the guard's Daytona credential (the CLI's 24-hour login) expired at 09:36Z, so the box's server-side TTL was no longer renewed, and Daytona destroyed the box at about 12:30Z. The run's breaker then stopped part 2. 223 games had finished across parts 1 and 2; the rest are replayed.
+  - **Recovery:** a third box with the same image, model revision, vLLM version and server flags was set up at 14:40Z, and the run resumed into `.part3` with `--exclude-finished` over parts 1 and 2, as the same attempt.
+  - **Script changes:** `scripts/daytona/ctl.py` takes a non-expiring `DAYTONA_API_KEY` from `.env` before the CLI login, and `guard.py` rebuilds its client after an authentication error. Nothing that affects a measurement changed.
+  - **Lost process:** part 2's wrapper and its guard ended without writing exit records; the cause is not known.
 - **2026-10-05, a seventh arm: `qwen3.5-4b-mlx`.**
   - **Model:** `Qwen/Qwen3.5-4B` bf16, revision `851bf6e8`, ZendoBench's built-in checkpoint (`--checkpoint 4B`, shard hashes pinned in ZendoBench).
   - **Settings:** as `qwen3.5-2b-mlx`: ZendoBench MLX batch driver, Apple M4 Max 128 GB, 36 games in flight, sampler seed 0, the same Qwen3.5 thinking sampling and default thinking budget (63,487 + 2,048; a call's cap is 65,536), all 460 dev games.

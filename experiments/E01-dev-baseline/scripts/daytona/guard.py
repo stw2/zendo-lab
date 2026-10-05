@@ -79,6 +79,11 @@ def main():
                 pull_logs(sandbox)
         except Exception as exc:
             say(f"guard error: {type(exc).__name__}: {str(exc)[:200]}")
+            if "Authentication" in type(exc).__name__:  # the CLI login expired: re-read it after `daytona login`
+                try:
+                    c = ctl.client()
+                except Exception as exc2:
+                    say(f"client rebuild failed: {type(exc2).__name__}: {str(exc2)[:120]}")
         alive = harness_alive()
         say(f"{name} state={state} minutes={minutes:.0f} spent=${cost:.2f} harness={'up' if alive else 'down'}")
         if state and any(s in state.lower() for s in ("destroyed", "error", "stopped", "archived")):

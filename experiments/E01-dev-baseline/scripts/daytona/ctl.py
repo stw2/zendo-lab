@@ -6,7 +6,8 @@
 
 BOX is qwen35 or qwen38. State (ledger, preview URL, the 0600 preview token, box logs) lives in
 ~/.cache/zendo-lab/e01-daytona/BOX/, outside the repository; the preview token is never printed. The
-organization comes from DAYTONA_ORG in the repository's .env, the credential from the Daytona CLI's login.
+organization comes from DAYTONA_ORG in the repository's .env, the credential from DAYTONA_API_KEY there
+or, without it, from the Daytona CLI's login.
 
 Spend is the list rate times wall-clock since the create request. The box's server-side TTL
 (TTL_MINUTES) is renewed by guard.py while it runs, so a box outlives a dead Mac by at most that long.
@@ -52,7 +53,15 @@ def env(name):
 
 
 def client():
+    """DAYTONA_API_KEY (environment or .env) if set: it does not expire with the CLI's 24-hour login. Else the
+    Daytona CLI's login."""
     from daytona import Daytona, DaytonaConfig
+    try:
+        key = env("DAYTONA_API_KEY")
+    except SystemExit:
+        key = None
+    if key:
+        return Daytona(DaytonaConfig(api_key=key, organization_id=env("DAYTONA_ORG")))
     config = Path.home() / "Library/Application Support/daytona/config.json"
     state = json.loads(config.read_text())
     profile = next(p for p in state["profiles"] if p["id"] == state["activeProfile"])
