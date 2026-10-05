@@ -31,7 +31,7 @@ CPU, MEMORY, DISK = 16, 64, 150
 # daytona.io/pricing as the pilot read it (2026-10-02): H100 on-demand $3.95/h, vCPU $0.0504/h, GiB RAM $0.0162/h,
 # GiB disk $0.000108/h (first 5 GiB free): $5.809/h.
 RATE = 3.95 + CPU * 0.0504 + MEMORY * 0.0162 + max(DISK - 5, 0) * 0.000108
-CAP_DOLLARS = 200.0
+CAP_DOLLARS = 240.0  # raised from $200 on 2026-10-05 for A5's tiers T5-T6 (DESIGN.md amendment)
 CAP_HOURS = 34.0
 TTL_MINUTES = 180
 REMOTE = "/workspace/e01"
