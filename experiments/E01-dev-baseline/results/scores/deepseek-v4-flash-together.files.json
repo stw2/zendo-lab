@@ -1,0 +1,12 @@
+[
+ {
+  "file": "deepseek-v4-flash-together.jsonl",
+  "sha256": "4d6c524785609bf1f16a02d837a26fe6ccad4fd55dc8cf9c21775ea09c0eb982",
+  "bytes": 176489
+ },
+ {
+  "file": "deepseek-v4-flash-together.part2.jsonl",
+  "sha256": "543ae0db6cf311b4d907d59338d8cc860b102ef56eb49aaa68030fd8f8bc985c",
+  "bytes": 260630568
+ }
+]
