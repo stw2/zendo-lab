@@ -1,0 +1,12 @@
+[
+ {
+  "file": "qwen3.5-4b-mlx-show.jsonl",
+  "sha256": "7b1ff1e727a0d7462d33709d80cb09456d62731483a5298de286483133d95c1b",
+  "bytes": 29288
+ },
+ {
+  "file": "qwen3.5-4b-mlx-show.part2.jsonl",
+  "sha256": "1a58a578fe3bf4f1ebf5b9413a234ad6e12133c2eb4e0ffa4739dbcfc18a32fd",
+  "bytes": 33433095
+ }
+]
