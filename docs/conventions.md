@@ -12,6 +12,7 @@
 4. **A surprising result is an artifact until ruled out.** Check the list below.
 5. **No credentials, host names, home paths or private data** in commits or Room records. Keys and `SUBSTRATE_TOKEN` come from the environment, and the ZendoBench secret folder never enters a repository.
 6. **Trajectories stay on this machine.** Run files hold every game and its reasoning (`--keep-reasoning` on HTTP; MLX keeps it already). They go in `results/runs/`, which git ignores. Git and the Room get their statistics and their sha256. A run file is never edited after it is hashed.
+7. **No costs or token counts in public records.** Commits, results tables, `metrics.json` and Room records (attempt events, findings, checkpoints) carry results, not spend or token usage. Budgets and spend stay with the owner.
 
 ## Artifacts to rule out
 

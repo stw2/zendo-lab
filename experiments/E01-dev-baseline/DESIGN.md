@@ -69,6 +69,12 @@ From the run files: tokens in, out and reasoning; calls cut at `max_tokens`; wal
 
 ## Amendments
 
+- **2026-10-06, corrections found in review, before any finding was published.**
+  - **Providers:** the run files do not record which provider OpenRouter routed each call to. "The provider a router picked" under *Recorded, not held fixed* was wrong. The gpt-oss and Luna arms are "OpenRouter default routing, provider not recorded"; the harness logged only system fingerprint changes.
+  - **Malformed rates across backends:** ZendoBench's MLX driver constrains the 2B and 4B arms' answers to valid actions and force-stops thinking at the budget. Their malformed rate (0) and cap hits (0) are therefore not comparable with the HTTP arms'.
+  - **Scope of the behaviour measures:** `diagnose` covers all 460 games, including T1, while the headline covers T2-T6 (430). `alive_first` is a median and `p_first` a mean, over games with at least one submission.
+  - **DeepSeek:** its headline is limited by the output cap. 708 of 6,146 calls were cut, and they account for 702 of its 721 malformed headline turns.
+
 - **2026-10-05, A5 (`qwen3.8-27b-fp8-vllm-h100`): box replaced.**
   - **What happened:** at 05:58Z the first H100 box stopped answering. Its Daytona preview returned HTTP 502 (5 games exhausted their retries), then timed out, and its command channel returned 502. The harness's breaker stopped the run with exit 4. 129 games had finished; the 31 unfinished games are replayed.
   - **Recovery:** the box was deleted at 06:03Z; Daytona still showed it destroying at 07:20Z. A new box with the same image, model revision, vLLM version and server flags was set up at 07:27Z, and the run resumed into `qwen3.8-27b-fp8-vllm-h100.part2.jsonl` with `--exclude-finished`, as the same attempt.

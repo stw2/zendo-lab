@@ -22,7 +22,7 @@
  "qwen3.8-27b-fp8-vllm-h100": {
   "attemptId": "dbb17657-f2b2-49c3-a6f6-ebf5b6017aab",
   "label": "A5",
-  "status": "started"
+  "status": "succeeded"
  },
  "qwen3.5-27b-fp8-vllm-h100": {
   "attemptId": "2c1fd389-65d7-4457-9225-ba9acbacab7f",

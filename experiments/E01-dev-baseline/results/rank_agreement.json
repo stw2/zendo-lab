@@ -1,0 +1,71 @@
+{
+ "systems": [
+  "qwen3.5-2b-mlx",
+  "qwen3.5-4b-mlx",
+  "qwen3.5-27b-fp8-vllm-h100",
+  "qwen3.8-27b-fp8-vllm-h100",
+  "deepseek-v4-flash-together",
+  "gpt-oss-120b-openrouter-high",
+  "gpt-6-luna-openrouter-high"
+ ],
+ "n_systems": 7,
+ "y": "headline (T2-T6 equal-weight win rate)",
+ "values": {
+  "qwen3.5-2b-mlx": {
+   "headline": 0.0,
+   "exp_per_game": 0.2108695652173913,
+   "alive_first": 188.0,
+   "p_first": 0.05983957754027385,
+   "eig": 0.3454086496264092
+  },
+  "qwen3.5-4b-mlx": {
+   "headline": 0.030000000000000002,
+   "exp_per_game": 1.9130434782608696,
+   "alive_first": 98.0,
+   "p_first": 0.09005029995214046,
+   "eig": 0.7751740211167844
+  },
+  "qwen3.5-27b-fp8-vllm-h100": {
+   "headline": 0.10400000000000001,
+   "exp_per_game": 5.358695652173913,
+   "alive_first": 27.0,
+   "p_first": 0.19278176538350605,
+   "eig": 0.6970935985259261
+  },
+  "qwen3.8-27b-fp8-vllm-h100": {
+   "headline": 0.44533333333333336,
+   "exp_per_game": 13.795652173913043,
+   "alive_first": 2.0,
+   "p_first": 0.5815195220033581,
+   "eig": 0.44566157924183153
+  },
+  "deepseek-v4-flash-together": {
+   "headline": 0.262,
+   "exp_per_game": 10.004347826086956,
+   "alive_first": 7.0,
+   "p_first": 0.37693384801901997,
+   "eig": 0.5305778620404709
+  },
+  "gpt-oss-120b-openrouter-high": {
+   "headline": 0.14066666666666666,
+   "exp_per_game": 6.671739130434783,
+   "alive_first": 12.0,
+   "p_first": 0.25907351741434115,
+   "eig": 0.6480110533174602
+  },
+  "gpt-6-luna-openrouter-high": {
+   "headline": 0.44933333333333336,
+   "exp_per_game": 16.702173913043477,
+   "alive_first": 2,
+   "p_first": 0.6219667476436069,
+   "eig": 0.39097251524658555
+  }
+ },
+ "spearman_rho": {
+  "exp_per_game": 1.0,
+  "alive_first": -0.991,
+  "p_first": 1.0,
+  "eig": -0.25
+ },
+ "note": "Descriptive rank agreement among these seven systems; not a causal or population claim; no p-value."
+}
