@@ -9,5 +9,5 @@ Five OpenAI models through the Codex CLI with every tool off, on ZendoBench 1.0.
 - **Run:**
   1. **Setup, once:** `uv run python experiments/E03-codex-frontier/scripts/00_setup.py` installs the CLI and freezes the catalog and features; the first call prints the login command for Codex's own home.
   2. **Checks:** `uv run python experiments/E03-codex-frontier/scripts/00_check.py --call > experiments/E03-codex-frontier/results/isolation-check.txt`.
-  3. **Each arm, one at a time, in DESIGN.md's order:** `SMOKE=1` first for a one-game-per-tier connection check, then `bash experiments/E03-codex-frontier/scripts/01_run.sh ARM`. The script resumes by itself after the ChatGPT usage limit, and stops on an isolation flag (exit 5).
+  3. **Each arm, one at a time, in DESIGN.md's order:** `SMOKE=1` first for a one-game-per-tier connection check, then `bash experiments/E03-codex-frontier/scripts/01_run.sh ARM`. The script resumes by itself after the ChatGPT usage limit, and stops on an isolation flag (exit 5). `scripts/01_all.sh` chains every arm not yet complete in that order, smoke first. It waits for a running arm, and stops at the first flag or failure.
   4. **Scoring:** `bash experiments/E03-codex-frontier/scripts/02_score.sh ARM`.
