@@ -1,0 +1,253 @@
+{
+ "experiment": {
+  "label": "E1",
+  "id": "68717b8a-db66-4b17-a98d-672fddbaa9a9",
+  "url": "https://thesubstrate.science/experiments/68717b8a-db66-4b17-a98d-672fddbaa9a9"
+ },
+ "room": "https://thesubstrate.science/rooms/learning-to-test-hypotheses-da73e44a",
+ "vocabulary": {
+  "defined_in": {
+   "label": "P1",
+   "versionId": "7f391bde-3e66-43b6-9a50-d299f7b7e5b2",
+   "url": "https://thesubstrate.science/records/7f391bde-3e66-43b6-9a50-d299f7b7e5b2"
+  },
+  "concepts": [
+   "evaluation_estimate",
+   "behaviour_profile",
+   "zendobench_1_0_0_dev",
+   "win_rate_t2_t6_equal_weight",
+   "korn_graubard_mover_95",
+   "seed_only_map_policy",
+   "experiments_per_game",
+   "expected_information_gain",
+   "classes_alive_at_first_submission",
+   "win_probability_at_first_submission"
+  ],
+  "read": "GET /api/research/records/<versionId>/concepts/<key>"
+ },
+ "seed_only_baseline": {
+  "label": "P1",
+  "versionId": "7f391bde-3e66-43b6-9a50-d299f7b7e5b2",
+  "url": "https://thesubstrate.science/records/7f391bde-3e66-43b6-9a50-d299f7b7e5b2"
+ },
+ "rank_agreement": {
+  "label": "P16",
+  "versionId": "da8d956f-13f3-4dbc-b0e0-bb886394b401",
+  "url": "https://thesubstrate.science/records/da8d956f-13f3-4dbc-b0e0-bb886394b401",
+  "evidence": "results/rank_agreement.json",
+  "material": "M35"
+ },
+ "materials": {
+  "M1": "dev manifest, sha256:e99344a3c3c9e624bf1c0f5782b266b54e97187cf412d9ff2dbe09d0c1e0a5c2",
+  "M35": "results/rank_agreement.json, sha256:89fddc5a5d5dc1c67103a91ec473216b6af6f0f5df28ebdd71bbc90bb03c1db3"
+ },
+ "superseded_attempts": [
+  {
+   "label": "A7",
+   "id": "9c81c0e0-ec80-49a1-8227-4e1a997006e3",
+   "note": "A7: preflight failed (corrupt local checkpoint cache); rerun as A8"
+  }
+ ],
+ "arms": {
+  "qwen3.5-2b-mlx": {
+   "attempt": {
+    "label": "A1",
+    "id": "d49cf0bd-3efa-4d82-97d9-2c21b3583c68",
+    "url": "https://thesubstrate.science/attempts/d49cf0bd-3efa-4d82-97d9-2c21b3583c68"
+   },
+   "headline": {
+    "label": "P8",
+    "versionId": "e3552371-0135-40d4-ac20-412b614ce6f2",
+    "url": "https://thesubstrate.science/records/e3552371-0135-40d4-ac20-412b614ce6f2"
+   },
+   "behaviour": {
+    "label": "P15",
+    "versionId": "cd29dc79-e65d-4baa-a036-42920fbc748b",
+    "url": "https://thesubstrate.science/records/cd29dc79-e65d-4baa-a036-42920fbc748b"
+   },
+   "score": "results/scores/qwen3.5-2b-mlx.score.json",
+   "run_files": [
+    {
+     "file": "qwen3.5-2b-mlx.jsonl",
+     "sha256": "9806a89120367522dcb9e884e8c7ddd4e2a2c777eb00f6ce65eaeaa8424b5527",
+     "bytes": 97671151
+    }
+   ]
+  },
+  "gpt-6-luna-openrouter-high": {
+   "attempt": {
+    "label": "A2",
+    "id": "71861d8f-8fc6-490b-9767-59566cfc6830",
+    "url": "https://thesubstrate.science/attempts/71861d8f-8fc6-490b-9767-59566cfc6830"
+   },
+   "headline": {
+    "label": "P2",
+    "versionId": "4afb1318-33ab-4d14-9f47-5bbeb4c6e769",
+    "url": "https://thesubstrate.science/records/4afb1318-33ab-4d14-9f47-5bbeb4c6e769"
+   },
+   "behaviour": {
+    "label": "P9",
+    "versionId": "14fbeacc-5178-44b1-aa46-0593126c8f6a",
+    "url": "https://thesubstrate.science/records/14fbeacc-5178-44b1-aa46-0593126c8f6a"
+   },
+   "score": "results/scores/gpt-6-luna-openrouter-high.score.json",
+   "run_files": [
+    {
+     "file": "gpt-6-luna-openrouter-high.jsonl",
+     "sha256": "eead7cfcfbbfd51fed1679f0dff7b651c276c8d8e6415ef01727b4f06ae70fab",
+     "bytes": 2277884
+    },
+    {
+     "file": "gpt-6-luna-openrouter-high.part2.jsonl",
+     "sha256": "7b06d2b3214eaa4049f3ae272d3988e16b63bf609a604a1f5f9f2642ef7df63a",
+     "bytes": 33891677
+    }
+   ]
+  },
+  "gpt-oss-120b-openrouter-high": {
+   "attempt": {
+    "label": "A3",
+    "id": "5f12499a-1894-4031-b45f-b0904f05857c",
+    "url": "https://thesubstrate.science/attempts/5f12499a-1894-4031-b45f-b0904f05857c"
+   },
+   "headline": {
+    "label": "P5",
+    "versionId": "4abd87e2-3745-4e85-8857-70705d976a05",
+    "url": "https://thesubstrate.science/records/4abd87e2-3745-4e85-8857-70705d976a05"
+   },
+   "behaviour": {
+    "label": "P12",
+    "versionId": "a68c0e7e-0f62-4632-9cf5-8c098b7f4e1d",
+    "url": "https://thesubstrate.science/records/a68c0e7e-0f62-4632-9cf5-8c098b7f4e1d"
+   },
+   "score": "results/scores/gpt-oss-120b-openrouter-high.score.json",
+   "run_files": [
+    {
+     "file": "gpt-oss-120b-openrouter-high.jsonl",
+     "sha256": "f682ea74b17a3a527cc77cce007fc1cb71ccd7f40eec3b7d1ab045f822aa2624",
+     "bytes": 74689
+    },
+    {
+     "file": "gpt-oss-120b-openrouter-high.part2.jsonl",
+     "sha256": "b0654289a87196efccf0eadc32269170308a20dfc52d59002ad3ee72f32969e3",
+     "bytes": 114621779
+    }
+   ]
+  },
+  "deepseek-v4-flash-together": {
+   "attempt": {
+    "label": "A4",
+    "id": "870cfa1d-0748-44b6-8cfb-742e69dba5b7",
+    "url": "https://thesubstrate.science/attempts/870cfa1d-0748-44b6-8cfb-742e69dba5b7"
+   },
+   "headline": {
+    "label": "P4",
+    "versionId": "f4d4ccd3-23dc-4b95-b06f-788b853ee24f",
+    "url": "https://thesubstrate.science/records/f4d4ccd3-23dc-4b95-b06f-788b853ee24f"
+   },
+   "behaviour": {
+    "label": "P11",
+    "versionId": "40b19c65-c17d-44ab-97f8-b73331ad4443",
+    "url": "https://thesubstrate.science/records/40b19c65-c17d-44ab-97f8-b73331ad4443"
+   },
+   "score": "results/scores/deepseek-v4-flash-together.score.json",
+   "run_files": [
+    {
+     "file": "deepseek-v4-flash-together.jsonl",
+     "sha256": "4d6c524785609bf1f16a02d837a26fe6ccad4fd55dc8cf9c21775ea09c0eb982",
+     "bytes": 176489
+    },
+    {
+     "file": "deepseek-v4-flash-together.part2.jsonl",
+     "sha256": "543ae0db6cf311b4d907d59338d8cc860b102ef56eb49aaa68030fd8f8bc985c",
+     "bytes": 260630568
+    }
+   ]
+  },
+  "qwen3.8-27b-fp8-vllm-h100": {
+   "attempt": {
+    "label": "A5",
+    "id": "dbb17657-f2b2-49c3-a6f6-ebf5b6017aab",
+    "url": "https://thesubstrate.science/attempts/dbb17657-f2b2-49c3-a6f6-ebf5b6017aab"
+   },
+   "headline": {
+    "label": "P3",
+    "versionId": "9f72911f-8a38-4906-90c6-2bb0d3637236",
+    "url": "https://thesubstrate.science/records/9f72911f-8a38-4906-90c6-2bb0d3637236"
+   },
+   "behaviour": {
+    "label": "P10",
+    "versionId": "da204c2b-aed5-4f7c-ae35-56745141f111",
+    "url": "https://thesubstrate.science/records/da204c2b-aed5-4f7c-ae35-56745141f111"
+   },
+   "score": "results/scores/qwen3.8-27b-fp8-vllm-h100.score.json",
+   "run_files": [
+    {
+     "file": "qwen3.8-27b-fp8-vllm-h100.jsonl",
+     "sha256": "3a1ee9069562102729fa89a6ab824507a64d4f61c904cb857e7c4c9cedb6baec",
+     "bytes": 104181802
+    },
+    {
+     "file": "qwen3.8-27b-fp8-vllm-h100.part2.jsonl",
+     "sha256": "93642eb59f44a9aa2b28b32171193f099e506783387235df2ba3df18c0cc54d6",
+     "bytes": 78559599
+    },
+    {
+     "file": "qwen3.8-27b-fp8-vllm-h100.part3.jsonl",
+     "sha256": "97bbeb22d449eee78552beeba90441db05258a48da57f729b8ed517717ce6d0c",
+     "bytes": 242721721
+    }
+   ]
+  },
+  "qwen3.5-27b-fp8-vllm-h100": {
+   "attempt": {
+    "label": "A6",
+    "id": "2c1fd389-65d7-4457-9225-ba9acbacab7f",
+    "url": "https://thesubstrate.science/attempts/2c1fd389-65d7-4457-9225-ba9acbacab7f"
+   },
+   "headline": {
+    "label": "P6",
+    "versionId": "c7096cbf-a84e-4c7d-b719-6fea1e79ca98",
+    "url": "https://thesubstrate.science/records/c7096cbf-a84e-4c7d-b719-6fea1e79ca98"
+   },
+   "behaviour": {
+    "label": "P13",
+    "versionId": "f164a7c1-d061-4a5f-83ea-e6980601af35",
+    "url": "https://thesubstrate.science/records/f164a7c1-d061-4a5f-83ea-e6980601af35"
+   },
+   "score": "results/scores/qwen3.5-27b-fp8-vllm-h100.score.json",
+   "run_files": [
+    {
+     "file": "qwen3.5-27b-fp8-vllm-h100.jsonl",
+     "sha256": "e61343629098df028aaeccff827c1fe4fc24e38a6f832eb63c0ee85e7a21994a",
+     "bytes": 133831045
+    }
+   ]
+  },
+  "qwen3.5-4b-mlx": {
+   "attempt": {
+    "label": "A8",
+    "id": "aab668ad-5488-416d-8633-6f106e411d7a",
+    "url": "https://thesubstrate.science/attempts/aab668ad-5488-416d-8633-6f106e411d7a"
+   },
+   "headline": {
+    "label": "P7",
+    "versionId": "a1427e75-d571-45f4-9513-1276d692d84b",
+    "url": "https://thesubstrate.science/records/a1427e75-d571-45f4-9513-1276d692d84b"
+   },
+   "behaviour": {
+    "label": "P14",
+    "versionId": "53f39276-69b9-4260-aa09-af060ba7c2ee",
+    "url": "https://thesubstrate.science/records/53f39276-69b9-4260-aa09-af060ba7c2ee"
+   },
+   "score": "results/scores/qwen3.5-4b-mlx.score.json",
+   "run_files": [
+    {
+     "file": "qwen3.5-4b-mlx.jsonl",
+     "sha256": "0413fd581db964d6226e8d7fc5567aac727588249711c51bf3d52b51f0be0917",
+     "bytes": 134960015
+    }
+   ]
+  }
+ }
+}
