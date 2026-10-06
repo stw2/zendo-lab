@@ -1,0 +1,33 @@
+;; E03: the macOS sandbox (sandbox-exec) every `codex exec` runs in. 01_play.py fills in @STATE@, the
+;; experiment's state folder outside any repository. The last matching rule wins: everything is allowed,
+;; then every user folder, temporary folder and volume is closed to reading and writing, then the state
+;; folder's parts Codex needs are opened again. A denied access fails and the kernel logs it
+;; (04_denials.sh reads the log).
+(version 1)
+(allow default)
+
+(deny file-read* file-write*
+  (subpath "/Users")
+  (subpath "/Volumes")
+  (subpath "/private/tmp")
+  (subpath "/private/var/folders")
+  (subpath "/private/var/tmp"))
+
+;; Codex's own login and state (a home of its own, not the owner's ~/.codex), its HOME and TMPDIR,
+;; and the folder of the one call (fresh and empty; it must be empty after the call)
+(allow file-read* file-write*
+  (subpath "@STATE@/codex-home")
+  (subpath "@STATE@/home")
+  (subpath "@STATE@/tmp")
+  (subpath "@STATE@/calls"))
+
+;; The pinned CLI, the edited model catalog and the system prompts given as Codex's instructions: read only
+(allow file-read*
+  (subpath "@STATE@/codex-cli")
+  (subpath "@STATE@/instructions")
+  (literal "@STATE@/catalog.json"))
+
+;; Resolving the state folder's path (Codex canonicalizes its home): the metadata of the state folder and of
+;; each folder above it, not their listings or contents
+(allow file-read-metadata
+  @PARENTS@)

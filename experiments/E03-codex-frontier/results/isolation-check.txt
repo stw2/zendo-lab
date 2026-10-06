@@ -1,0 +1,17 @@
+PASS  the model is shown the user message alone  [["user", ["E03 isolation check: the only user message."]]]
+PASS  closed: cat <repository>/README.md  cat: <repository>/README.md: Operation not permitted
+PASS  closed: ls <repository>/experiments  ls: <repository>/experiments: Operation not permitted
+PASS  closed: ls <repository's parent>  ls: <repository's parent>: Operation not permitted
+PASS  closed: ls ~/.codex  ls: ~/.codex: Operation not permitted
+PASS  closed: ls ~/.zendo-bench-v1.0.0  ls: ~/.zendo-bench-v1.0.0: Operation not permitted
+PASS  closed: ls ~/.ssh  ls: ~/.ssh: Operation not permitted
+PASS  closed: ls /private/tmp  ls: /private/tmp: Operation not permitted
+PASS  closed: ls /private/var/folders  ls: /private/var/folders: Operation not permitted
+PASS  closed: ls /Users/Shared  ls: /Users/Shared: Operation not permitted
+PASS  open: the state folder's codex-home/
+PASS  open: the state folder's calls/
+PASS  open: the state folder's tmp/
+PASS  open: the state folder's home/
+PASS  the pinned Codex starts under the sandbox  codex-cli 0.160.0
+settings: 43 features disabled; config ['include_permissions_instructions=false', 'include_apps_instructions=false', 'include_collaboration_mode_instructions=false', 'include_environment_context=false', 'skills.include_instructions=false', 'tools.update_plan.enabled=false', 'tools.experimental_request_user_input.enabled=false', 'web_search="disabled"', 'project_doc_max_bytes=0', 'sandbox_mode="read-only"']; catalog edit {'multi_agent_version': None, 'tool_mode': 'direct_only', 'experimental_supported_tools': [], 'apply_patch_tool_type': None}
+PASS  the server received no tools, effort high, summary detailed  {"model": "gpt-6-luna", "tools": [], "reasoning": {"effort": "high", "summary": "detailed", "context": "all_turns", "mode": "standard"}, "text": {"format": {"type": "text"}, "verbosity": "low"}, "temperature": 1.0, "top_p": 0.98, "service_tier": "default", "max_output_tokens": null, "truncation": "disabled", "input_tokens": 27}
