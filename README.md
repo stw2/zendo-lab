@@ -4,7 +4,7 @@ Can training teach small open-weight models active rule induction: choosing expe
 
 The game is Zendo against a hidden rule, close to exact learning from membership and equivalence queries. Zendo is a game by Kory Heath, published by Looney Labs; this project is not affiliated with them. The benchmark is [ZendoBench](https://github.com/stw2/zendo-bench) 1.0.0: the packages `zendo-engine` (the game) and `zendo-bench` (tiers, prompts, model backends, runs, scoring, training data).
 
-This repository holds each experiment's pre-registered design, code, configurations, raw results and report. Hypotheses, experiments, plans, attempts, materials and findings are in the Substrate research Room [**Learning to test hypotheses**](https://thesubstrate.science/rooms/learning-to-test-hypotheses-da73e44a), which is authoritative where the two disagree.
+This repository holds each experiment's pre-registered design, code, configurations, raw results and report. Hypotheses, experiments, plans, attempts, materials and findings are in the Substrate research Room [**Learning to test hypotheses**](https://thesubstrate.science/rooms/learning-to-test-hypotheses-da73e44a), which is authoritative where the two disagree. The project website is at [https://www.wiland.ai/projects/zendorl/](wiland.ai/projects/zendorl)
 
 ## Where things live
 
