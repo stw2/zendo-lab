@@ -109,3 +109,9 @@ From the run files: calls, calls without an answer, retries, and isolation flags
 - **Billing:** the owner's ChatGPT subscription, through Codex. Usage stays with the owner.
 
 ## Amendments
+
+- **2026-10-06, A12 (`gpt-6-luna-codex-high`): part 1 stopped by the call traces; trace reading fixed before A13.**
+  - **What happened:** at 21:55:54Z, one call's websocket trace held a server message that parsed as a bare number. The trace code read every message as an object and raised `AttributeError`. That stopped part 1 (exit 1) after 4,055 calls. The call itself had answered normally. The 11 games in flight were left unfinished and replayed in part 2, as the same attempt, under the resume rule above.
+  - **Part 2:** `scripts/01_all.sh` started it at 21:56:33Z, at 81a4ddb, with the backend of 9939c14. It finished every game, exit 0.
+  - **Fix:** the trace keeps such a message as it parsed. A failure to read the trace now leaves a note in the trace line instead of failing the call. Event lines that are not objects count as unreadable. Nothing that reaches the model or the game changed.
+  - **Which code ran:** both parts of A12 ran the backend of 9939c14. The arms from A13 on run the backend of the commit that adds this amendment.

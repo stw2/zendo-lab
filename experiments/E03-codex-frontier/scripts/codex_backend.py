@@ -84,16 +84,19 @@ FRAME_DUMP = ("<FRAME>", "final: ", "reserved: ", "opcode: ", "length: ", "paylo
 
 
 def split(stderr):
-    """Codex's own stderr lines; the server's messages from the trace, with their streamed deltas counted, not kept."""
+    """Codex's own stderr lines; the server's messages from the trace, with their streamed deltas counted, not kept.
+    A message is kept as it parsed (some are not objects: 2026-10-06, a bare number); one that does not parse is
+    kept as its text. Nothing here may fail a call."""
     plain, server, deltas = [], [], 0
     for line in stderr.splitlines():
         if " tungstenite::" in line:
             if "Received message " in line:
+                text = line.split("Received message ", 1)[1]
                 try:
-                    message = json.loads(line.split("Received message ", 1)[1])
+                    message = json.loads(text)
                 except ValueError:
-                    continue
-                if str(message.get("type", "")).endswith(".delta"):
+                    message = text
+                if isinstance(message, dict) and str(message.get("type", "")).endswith(".delta"):
                     deltas += 1
                 else:
                     server.append(message)
@@ -266,7 +269,11 @@ class CodexBackend(Backend):
             except subprocess.TimeoutExpired:
                 raise BackendFailure(f"Timeout after {self.timeout} s.", dict(record, seconds=self.timeout))
             record["seconds"] = round(time.monotonic() - began, 3)
-            plain, trace["server"], trace["server_deltas"] = split(done.stderr)
+            try:
+                plain, trace["server"], trace["server_deltas"] = split(done.stderr)
+            except Exception as error:  # the trace never fails a call: Codex's own lines, and a note
+                plain = "\n".join(x for x in done.stderr.splitlines() if " tungstenite::" not in x)
+                trace["trace_error"] = f"{type(error).__name__}: {error}"[:FIELD_CHARS]
             left = sorted(p.name for p in folder.iterdir())
             if left:
                 raise IsolationFlag(f"The call left {len(left)} file(s) in its folder.",
@@ -316,6 +323,9 @@ class CodexBackend(Backend):
         kinds = Counter()
         answers, thoughts, notices, other, failed, usage, thread = [], [], [], [], [], None, None
         for event in events:
+            if not isinstance(event, dict):  # a line of JSON that is not an event object
+                unreadable += 1
+                continue
             kind = event.get("type")
             item = event.get("item") or {}
             kinds[kind if not item else f"{kind}:{item.get('type')}"] += 1
