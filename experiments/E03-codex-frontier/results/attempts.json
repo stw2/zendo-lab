@@ -1,0 +1,7 @@
+{
+ "gpt-6-luna-codex-high": {"label": "A12", "id": "47ef4ae3-4ad8-4a2f-9327-6dcf7025b937"},
+ "gpt-6-sol-codex-high": {"label": "A13", "id": "0be4d951-2a13-4e4d-8a8c-8a11c01c1184"},
+ "gpt-6.1-sol-codex-high": {"label": "A14", "id": "ff6667ba-8829-4d6f-9dd5-804766d08cc5"},
+ "gpt-5.6-terra-codex-high": {"label": "A15", "id": "aae66506-eefd-4ccf-81bf-80023f6a40c7"},
+ "gpt-6-astra-codex-high": {"label": "A16", "id": "dff5beb4-ee79-47c8-ba8b-c9b00be0f343"}
+}

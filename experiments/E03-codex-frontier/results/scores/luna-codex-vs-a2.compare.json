@@ -1,0 +1,1436 @@
+{
+ "arms": [
+  "gpt-6-luna-openrouter-high",
+  "gpt-6-luna-codex-high"
+ ],
+ "composite_arms": [],
+ "difference": "gpt-6-luna-openrouter-high - gpt-6-luna-codex-high",
+ "families": {
+  "T1": {
+   "count=1-1-and": {
+    "ci": [
+     -1.0,
+     0.38377545495824267
+    ],
+    "ci_method": "student-t",
+    "classes": 3,
+    "df": 2.0,
+    "estimate": -0.3333333333333333,
+    "items": 6,
+    "n_eff": null,
+    "scored": 6,
+    "se": 0.16666666666666669
+   },
+   "count=2-1-and": {
+    "ci": [
+     -0.5504421216249094,
+     0.8837754549582426
+    ],
+    "ci_method": "student-t",
+    "classes": 3,
+    "df": 2.0,
+    "estimate": 0.16666666666666666,
+    "items": 6,
+    "n_eff": null,
+    "scored": 6,
+    "se": 0.16666666666666669
+   },
+   "count>=2-1-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 3,
+    "df": null,
+    "estimate": 0.0,
+    "items": 6,
+    "n_eff": null,
+    "scored": 6,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "exists-1-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 3,
+    "df": null,
+    "estimate": 0.0,
+    "items": 6,
+    "n_eff": null,
+    "scored": 6,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "forall-1-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 3,
+    "df": null,
+    "estimate": 0.0,
+    "items": 6,
+    "n_eff": null,
+    "scored": 6,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   }
+  },
+  "T2": {
+   "count=1-2-and": {
+    "ci": [
+     -0.14961413181255478,
+     1.0
+    ],
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.5,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.2041241452319315
+   },
+   "count=1-2-or": {
+    "ci": [
+     -0.5228057881604631,
+     0.2728057881604631
+    ],
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": -0.125,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.125
+   },
+   "exists-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "exists-2-or": {
+    "ci": [
+     -0.8837754549582426,
+     0.5504421216249094
+    ],
+    "ci_method": "student-t",
+    "classes": 3,
+    "df": 2.0,
+    "estimate": -0.16666666666666666,
+    "items": 6,
+    "n_eff": null,
+    "scored": 6,
+    "se": 0.16666666666666669
+   },
+   "forall-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 5,
+    "df": null,
+    "estimate": 0.0,
+    "items": 10,
+    "n_eff": null,
+    "scored": 10,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "forall-2-or": {
+    "ci": [
+     -0.6194253168417834,
+     0.4194253168417834
+    ],
+    "ci_method": "student-t",
+    "classes": 5,
+    "df": 4.0,
+    "estimate": -0.1,
+    "items": 10,
+    "n_eff": null,
+    "scored": 10,
+    "se": 0.18708286933869708
+   },
+   "outer-2-and": {
+    "ci": [
+     -0.3776445105197791,
+     0.17764451051977906
+    ],
+    "ci_method": "student-t",
+    "classes": 5,
+    "df": 4.0,
+    "estimate": -0.1,
+    "items": 10,
+    "n_eff": null,
+    "scored": 10,
+    "se": 0.1
+   }
+  },
+  "T3": {
+   "count=1-3-and": {
+    "ci": [
+     -0.2717651935745143,
+     0.2717651935745143
+    ],
+    "ci_method": "student-t",
+    "classes": 9,
+    "df": 8.0,
+    "estimate": 0.0,
+    "items": 18,
+    "n_eff": null,
+    "scored": 18,
+    "se": 0.11785113019775792
+   },
+   "count=2-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "count=2-3-and": {
+    "ci": [
+     -0.02550034460034714,
+     0.3588336779336805
+    ],
+    "ci_method": "student-t",
+    "classes": 9,
+    "df": 8.0,
+    "estimate": 0.16666666666666666,
+    "items": 18,
+    "n_eff": null,
+    "scored": 18,
+    "se": 0.08333333333333333
+   },
+   "count>=2-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "count>=2-3-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 9,
+    "df": null,
+    "estimate": 0.0,
+    "items": 18,
+    "n_eff": null,
+    "scored": 18,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "exists-3-and": {
+    "ci": [
+     -0.085289015724549,
+     0.210289015724549
+    ],
+    "ci_method": "student-t",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.0625,
+    "items": 16,
+    "n_eff": null,
+    "scored": 16,
+    "se": 0.0625
+   },
+   "exists-3-or": {
+    "ci": [
+     -0.20539034080680763,
+     0.3303903408068076
+    ],
+    "ci_method": "student-t",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.0625,
+    "items": 16,
+    "n_eff": null,
+    "scored": 16,
+    "se": 0.11329087089687072
+   },
+   "forall-3-and": {
+    "ci": [
+     -0.0685012432687899,
+     0.3185012432687899
+    ],
+    "ci_method": "student-t",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.125,
+    "items": 16,
+    "n_eff": null,
+    "scored": 16,
+    "se": 0.08183170883849714
+   },
+   "forall-3-or": {
+    "ci": [
+     -0.170578031449098,
+     0.420578031449098
+    ],
+    "ci_method": "student-t",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.125,
+    "items": 16,
+    "n_eff": null,
+    "scored": 16,
+    "se": 0.125
+   },
+   "outer-3-and": {
+    "ci": [
+     -0.308985629246442,
+     0.683985629246442
+    ],
+    "ci_method": "student-t",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.1875,
+    "items": 16,
+    "n_eff": null,
+    "scored": 16,
+    "se": 0.20996385743401513
+   }
+  },
+  "T4": {
+   "count=1-3-or": {
+    "ci": [
+     -0.3905306707378148,
+     0.24767352788067196
+    ],
+    "ci_method": "student-t",
+    "classes": 7,
+    "df": 6.0,
+    "estimate": -0.07142857142857142,
+    "items": 14,
+    "n_eff": null,
+    "scored": 14,
+    "se": 0.13041013273932528
+   },
+   "count=2-2-or": {
+    "ci": [
+     -0.2728057881604631,
+     0.5228057881604631
+    ],
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.125,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.125
+   },
+   "count=2-3-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 7,
+    "df": null,
+    "estimate": 0.0,
+    "items": 14,
+    "n_eff": null,
+    "scored": 14,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "count>=2-2-or": {
+    "ci": [
+     -0.2093465577592692,
+     0.7093465577592692
+    ],
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.25,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.14433756729740643
+   },
+   "count>=2-3-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 8,
+    "df": null,
+    "estimate": 0.0,
+    "items": 16,
+    "n_eff": null,
+    "scored": 16,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   }
+  },
+  "T5": {
+   "K01": {
+    "ci": [
+     -1.0,
+     1.0
+    ],
+    "ci_method": "student-t",
+    "classes": 2,
+    "df": 1.0,
+    "estimate": 0.25,
+    "items": 4,
+    "n_eff": null,
+    "scored": 4,
+    "se": 0.25
+   },
+   "K02": {
+    "ci": [
+     0.079421968550902,
+     0.670578031449098
+    ],
+    "ci_method": "student-t",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.375,
+    "items": 16,
+    "n_eff": null,
+    "scored": 16,
+    "se": 0.125
+   },
+   "K03": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "K04": {
+    "ci": [
+     -0.2728057881604631,
+     0.5228057881604631
+    ],
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.125,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.125
+   },
+   "K05": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "K06": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 9,
+    "df": null,
+    "estimate": 0.0,
+    "items": 18,
+    "n_eff": null,
+    "scored": 18,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "S04": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": -0.5,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S05": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S06": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S07": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S08": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S09": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 2,
+    "df": null,
+    "estimate": 0.5,
+    "items": 4,
+    "n_eff": null,
+    "scored": 4,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "S11": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 2,
+    "df": null,
+    "estimate": 0.0,
+    "items": 4,
+    "n_eff": null,
+    "scored": 4,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "S12": {
+    "ci": [
+     0.015295641105410207,
+     0.3847043588945898
+    ],
+    "ci_method": "student-t",
+    "classes": 10,
+    "df": 9.0,
+    "estimate": 0.2,
+    "items": 20,
+    "n_eff": null,
+    "scored": 20,
+    "se": 0.08164965809277261
+   },
+   "X01": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 2,
+    "df": null,
+    "estimate": 0.0,
+    "items": 4,
+    "n_eff": null,
+    "scored": 4,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "X02": {
+    "ci": [
+     -1.0,
+     1.0
+    ],
+    "ci_method": "student-t",
+    "classes": 2,
+    "df": 1.0,
+    "estimate": 0.25,
+    "items": 4,
+    "n_eff": null,
+    "scored": 4,
+    "se": 0.25
+   },
+   "X04": {
+    "ci": [
+     -1.0,
+     1.0
+    ],
+    "ci_method": "student-t",
+    "classes": 2,
+    "df": 1.0,
+    "estimate": 0.25,
+    "items": 4,
+    "n_eff": null,
+    "scored": 4,
+    "se": 0.25
+   }
+  },
+  "T6": {
+   "C08": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "C09": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 3,
+    "df": null,
+    "estimate": 0.0,
+    "items": 6,
+    "n_eff": null,
+    "scored": 6,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "C11": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 7,
+    "df": null,
+    "estimate": 0.0,
+    "items": 14,
+    "n_eff": null,
+    "scored": 14,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "C13": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "C16": {
+    "ci": [
+     -0.10509852690784763,
+     0.43843186024118097
+    ],
+    "ci_method": "student-t",
+    "classes": 9,
+    "df": 8.0,
+    "estimate": 0.16666666666666666,
+    "items": 18,
+    "n_eff": null,
+    "scored": 18,
+    "se": 0.11785113019775792
+   },
+   "C17": {
+    "ci": [
+     -0.40785738849113545,
+     1.0
+    ],
+    "ci_method": "student-t",
+    "classes": 5,
+    "df": 4.0,
+    "estimate": 0.3,
+    "items": 10,
+    "n_eff": null,
+    "scored": 10,
+    "se": 0.25495097567963926
+   },
+   "C18": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   }
+  }
+ },
+ "files": {
+  "gpt-6-luna-codex-high": [
+   {
+    "composite": false,
+    "configurations": [
+     {
+      "settings": {
+       "agent": "codex_backend:CodexBackend (codex exec)",
+       "agent_config": {
+        "auth": "ChatGPT sign-in, a Codex home of its own",
+        "call_folder": "new and empty per call",
+        "catalog_edit": {
+         "apply_patch_tool_type": null,
+         "experimental_supported_tools": [],
+         "multi_agent_version": null,
+         "tool_mode": "direct_only"
+        },
+        "catalog_sha256": "6b1f65a0f06f02eb9a0f4632af0775a97deaf7a88a734eeeba20bb1fcd8b9ad5",
+        "codex_binary_sha256": "112fae7a5a1223e673c8a1791d32338f37df8b527ff1159bb8adac6c4dbf1b4b",
+        "codex_cli": "0.160.0",
+        "config": [
+         "include_permissions_instructions=false",
+         "include_apps_instructions=false",
+         "include_collaboration_mode_instructions=false",
+         "include_environment_context=false",
+         "skills.include_instructions=false",
+         "tools.update_plan.enabled=false",
+         "tools.experimental_request_user_input.enabled=false",
+         "web_search=\"disabled\"",
+         "project_doc_max_bytes=0",
+         "sandbox_mode=\"read-only\""
+        ],
+        "features_disabled": [
+         "apps",
+         "auth_elicitation",
+         "browser_use",
+         "browser_use_external",
+         "browser_use_full_cdp_access",
+         "code_mode_host",
+         "compaction_image_budget",
+         "computer_use",
+         "content_item_kinds",
+         "daemon_auto_start",
+         "enable_request_compression",
+         "fast_mode",
+         "goals",
+         "guardian_approval",
+         "guardian_reuse_parent_compaction",
+         "hooks",
+         "image_generation",
+         "in_app_browser",
+         "in_app_chat",
+         "in_app_dictation",
+         "in_app_local_automation",
+         "in_app_updates",
+         "mentions_v2",
+         "multi_agent",
+         "plugin_sharing",
+         "plugins",
+         "realtime_conversation",
+         "remote_plugin",
+         "shell_snapshot",
+         "shell_tool",
+         "skill_mcp_dependency_install",
+         "skill_search",
+         "sleep_tool",
+         "system_proxy_fallback",
+         "tool_call_mcp_elicitation",
+         "tool_suggest",
+         "unbounded_connection_retries",
+         "unified_exec",
+         "unified_exec_tty",
+         "view_image",
+         "workspace_dependencies",
+         "worktrees",
+         "write_stdin_approval"
+        ],
+        "features_sha256": "8cbf4b6d2e424fdc7a6e505dd8e326121bf43792db025441a5fedc27bb3640a9",
+        "flags": [
+         "--ignore-user-config",
+         "--ignore-rules",
+         "--ephemeral",
+         "--skip-git-repo-check",
+         "--sandbox read-only",
+         "--json"
+        ],
+        "harness": "codex-exec",
+        "model": "gpt-6-luna",
+        "output_cap": "none settable in Codex (the provider's default)",
+        "reasoning_effort": "high",
+        "reasoning_summary": "detailed",
+        "retries": {
+         "backoff_seconds": [
+          30,
+          60,
+          120,
+          300,
+          900
+         ],
+         "jitter": "x0.75-1.25"
+        },
+        "sandbox_profile_sha256": "27e25a33d937c05b07d8da5cc4f8f73124671e466b4761bd796ec737740db712",
+        "service_tier": "default",
+        "timeout": 3600,
+        "traces": "every try: Codex's events and the server's messages (deltas counted), beside the run file"
+       },
+       "agent_source_sha256": "3d628ac3b5bb201aec44b5c4b257f4fe6b801faf2304198f2d47d9371914341f",
+       "backend": "function",
+       "per_episode": false
+      },
+      "sha256": "9fa0c15386c103bd7f46cfa68bfa869223569d3554c649962d410679d357ae8d"
+     }
+    ],
+    "end": "stopped",
+    "finished": 256,
+    "path": "experiments/E03-codex-frontier/results/runs/gpt-6-luna-codex-high.jsonl",
+    "player": "model",
+    "reply_policy": "action-object-v1",
+    "sha256": "17fbd1a9222058f7e50846dbbb4aba195d46acf50015b7200b72879260c2b0d7",
+    "truncated": false
+   },
+   {
+    "composite": false,
+    "configurations": [
+     {
+      "settings": {
+       "agent": "codex_backend:CodexBackend (codex exec)",
+       "agent_config": {
+        "auth": "ChatGPT sign-in, a Codex home of its own",
+        "call_folder": "new and empty per call",
+        "catalog_edit": {
+         "apply_patch_tool_type": null,
+         "experimental_supported_tools": [],
+         "multi_agent_version": null,
+         "tool_mode": "direct_only"
+        },
+        "catalog_sha256": "6b1f65a0f06f02eb9a0f4632af0775a97deaf7a88a734eeeba20bb1fcd8b9ad5",
+        "codex_binary_sha256": "112fae7a5a1223e673c8a1791d32338f37df8b527ff1159bb8adac6c4dbf1b4b",
+        "codex_cli": "0.160.0",
+        "config": [
+         "include_permissions_instructions=false",
+         "include_apps_instructions=false",
+         "include_collaboration_mode_instructions=false",
+         "include_environment_context=false",
+         "skills.include_instructions=false",
+         "tools.update_plan.enabled=false",
+         "tools.experimental_request_user_input.enabled=false",
+         "web_search=\"disabled\"",
+         "project_doc_max_bytes=0",
+         "sandbox_mode=\"read-only\""
+        ],
+        "features_disabled": [
+         "apps",
+         "auth_elicitation",
+         "browser_use",
+         "browser_use_external",
+         "browser_use_full_cdp_access",
+         "code_mode_host",
+         "compaction_image_budget",
+         "computer_use",
+         "content_item_kinds",
+         "daemon_auto_start",
+         "enable_request_compression",
+         "fast_mode",
+         "goals",
+         "guardian_approval",
+         "guardian_reuse_parent_compaction",
+         "hooks",
+         "image_generation",
+         "in_app_browser",
+         "in_app_chat",
+         "in_app_dictation",
+         "in_app_local_automation",
+         "in_app_updates",
+         "mentions_v2",
+         "multi_agent",
+         "plugin_sharing",
+         "plugins",
+         "realtime_conversation",
+         "remote_plugin",
+         "shell_snapshot",
+         "shell_tool",
+         "skill_mcp_dependency_install",
+         "skill_search",
+         "sleep_tool",
+         "system_proxy_fallback",
+         "tool_call_mcp_elicitation",
+         "tool_suggest",
+         "unbounded_connection_retries",
+         "unified_exec",
+         "unified_exec_tty",
+         "view_image",
+         "workspace_dependencies",
+         "worktrees",
+         "write_stdin_approval"
+        ],
+        "features_sha256": "8cbf4b6d2e424fdc7a6e505dd8e326121bf43792db025441a5fedc27bb3640a9",
+        "flags": [
+         "--ignore-user-config",
+         "--ignore-rules",
+         "--ephemeral",
+         "--skip-git-repo-check",
+         "--sandbox read-only",
+         "--json"
+        ],
+        "harness": "codex-exec",
+        "model": "gpt-6-luna",
+        "output_cap": "none settable in Codex (the provider's default)",
+        "reasoning_effort": "high",
+        "reasoning_summary": "detailed",
+        "retries": {
+         "backoff_seconds": [
+          30,
+          60,
+          120,
+          300,
+          900
+         ],
+         "jitter": "x0.75-1.25"
+        },
+        "sandbox_profile_sha256": "27e25a33d937c05b07d8da5cc4f8f73124671e466b4761bd796ec737740db712",
+        "service_tier": "default",
+        "timeout": 3600,
+        "traces": "every try: Codex's events and the server's messages (deltas counted), beside the run file"
+       },
+       "agent_source_sha256": "3d628ac3b5bb201aec44b5c4b257f4fe6b801faf2304198f2d47d9371914341f",
+       "backend": "function",
+       "per_episode": false
+      },
+      "sha256": "9fa0c15386c103bd7f46cfa68bfa869223569d3554c649962d410679d357ae8d"
+     }
+    ],
+    "end": "complete",
+    "finished": 204,
+    "path": "experiments/E03-codex-frontier/results/runs/gpt-6-luna-codex-high.part2.jsonl",
+    "player": "model",
+    "reply_policy": "action-object-v1",
+    "sha256": "088c3540fd6428eb3c69175b2d1c936c50c146ee6afa6bd00fb65171d146d77f",
+    "truncated": false
+   }
+  ],
+  "gpt-6-luna-openrouter-high": [
+   {
+    "composite": false,
+    "configurations": [
+     {
+      "settings": {
+       "backend": "openai-chat-completions",
+       "guided": null,
+       "model": "openai/gpt-6-luna",
+       "sampling": {
+        "max_tokens": 65536,
+        "reasoning": {
+         "effort": "high"
+        }
+       }
+      },
+      "sha256": "1f71454157800f79dd91b01535ac855a63bc8fcf40a920ceec89233994715130"
+     }
+    ],
+    "end": null,
+    "finished": 57,
+    "path": "experiments/E03-codex-frontier/results/runs/e01-a2/gpt-6-luna-openrouter-high.jsonl",
+    "player": "model",
+    "reply_policy": "action-object-v1",
+    "sha256": "eead7cfcfbbfd51fed1679f0dff7b651c276c8d8e6415ef01727b4f06ae70fab",
+    "truncated": false
+   },
+   {
+    "composite": false,
+    "configurations": [
+     {
+      "settings": {
+       "backend": "openai-chat-completions",
+       "guided": null,
+       "model": "openai/gpt-6-luna",
+       "sampling": {
+        "max_tokens": 65536,
+        "reasoning": {
+         "effort": "high"
+        }
+       }
+      },
+      "sha256": "1f71454157800f79dd91b01535ac855a63bc8fcf40a920ceec89233994715130"
+     }
+    ],
+    "end": "complete",
+    "finished": 403,
+    "path": "experiments/E03-codex-frontier/results/runs/e01-a2/gpt-6-luna-openrouter-high.part2.jsonl",
+    "player": "model",
+    "reply_policy": "action-object-v1",
+    "sha256": "7b06d2b3214eaa4049f3ae272d3988e16b63bf609a604a1f5f9f2642ef7df63a",
+    "truncated": false
+   }
+  ]
+ },
+ "headline": {
+  "arms_over_cap": {},
+  "ci": [
+   0.0444782503295657,
+   0.13018841633710096
+  ],
+  "ci_method": "student-t",
+  "classes": 215,
+  "complete": true,
+  "df": 66.54569894160473,
+  "estimate": 0.08733333333333333,
+  "finished": 430,
+  "items": 430,
+  "missing": [],
+  "n_eff": null,
+  "over_cap": {},
+  "se": 0.021464412866906465,
+  "unscored_cap": 0.05,
+  "withheld": null
+ },
+ "kind": "compare",
+ "manifest_sha256": "6b98d1a59d5f7d3b09b12f9840c83405e6ea2925d71911a10ab572e39facc278",
+ "player": "model",
+ "schema": "zendo-bench-v1-score",
+ "split": "dev",
+ "templates": {},
+ "tiers": {
+  "T1": {
+   "abandoned": {
+    "gpt-6-luna-codex-high": 0,
+    "gpt-6-luna-openrouter-high": 0
+   },
+   "ci": [
+    -0.16007668017774077,
+    0.09341001351107411
+   ],
+   "ci_method": "student-t",
+   "classes": 15,
+   "df": 14.0,
+   "estimate": -0.03333333333333333,
+   "finished": 30,
+   "items": 30,
+   "n_eff": null,
+   "scored": 30,
+   "scored_in_one_arm_only": 0,
+   "se": 0.05909368402852789,
+   "timing_unverifiable": {
+    "gpt-6-luna-codex-high": 0,
+    "gpt-6-luna-openrouter-high": 0
+   },
+   "unfinished": 0,
+   "unscored": 0
+  },
+  "T2": {
+   "abandoned": {
+    "gpt-6-luna-codex-high": 0,
+    "gpt-6-luna-openrouter-high": 0
+   },
+   "ci": [
+    -0.12473417726797278,
+    0.12473417726797278
+   ],
+   "ci_method": "student-t",
+   "classes": 30,
+   "df": 19.896387305670757,
+   "estimate": 0.0,
+   "finished": 60,
+   "items": 60,
+   "n_eff": null,
+   "scored": 60,
+   "scored_in_one_arm_only": 0,
+   "se": 0.0595951952894468,
+   "timing_unverifiable": {
+    "gpt-6-luna-codex-high": 0,
+    "gpt-6-luna-openrouter-high": 0
+   },
+   "unfinished": 0,
+   "unscored": 0
+  },
+  "T3": {
+   "abandoned": {
+    "gpt-6-luna-codex-high": 0,
+    "gpt-6-luna-openrouter-high": 0
+   },
+   "ci": [
+    0.007909467446466159,
+    0.15209053255353383
+   ],
+   "ci_method": "student-t",
+   "classes": 75,
+   "df": 30.524240379078503,
+   "estimate": 0.08,
+   "finished": 150,
+   "items": 150,
+   "n_eff": null,
+   "scored": 150,
+   "scored_in_one_arm_only": 0,
+   "se": 0.035299174863327135,
+   "timing_unverifiable": {
+    "gpt-6-luna-codex-high": 0,
+    "gpt-6-luna-openrouter-high": 0
+   },
+   "unfinished": 0,
+   "unscored": 0
+  },
+  "T4": {
+   "abandoned": {
+    "gpt-6-luna-codex-high": 0,
+    "gpt-6-luna-openrouter-high": 0
+   },
+   "ci": [
+    -0.05250971609505985,
+    0.11917638276172653
+   ],
+   "ci_method": "student-t",
+   "classes": 30,
+   "df": 11.958019375672764,
+   "estimate": 0.03333333333333334,
+   "finished": 60,
+   "items": 60,
+   "n_eff": null,
+   "scored": 60,
+   "scored_in_one_arm_only": 0,
+   "se": 0.03900210277874799,
+   "timing_unverifiable": {
+    "gpt-6-luna-codex-high": 0,
+    "gpt-6-luna-openrouter-high": 0
+   },
+   "unfinished": 0,
+   "unscored": 0
+  },
+  "T5": {
+   "abandoned": {
+    "gpt-6-luna-codex-high": 0,
+    "gpt-6-luna-openrouter-high": 0
+   },
+   "ci": [
+    0.10742952676805466,
+    0.27257047323194533
+   ],
+   "ci_method": "student-t",
+   "classes": 50,
+   "df": 36.444473991908815,
+   "estimate": 0.19,
+   "finished": 100,
+   "items": 100,
+   "n_eff": null,
+   "scored": 100,
+   "scored_in_one_arm_only": 0,
+   "se": 0.04071333636016285,
+   "timing_unverifiable": {
+    "gpt-6-luna-codex-high": 0,
+    "gpt-6-luna-openrouter-high": 0
+   },
+   "unfinished": 0,
+   "unscored": 0
+  },
+  "T6": {
+   "abandoned": {
+    "gpt-6-luna-codex-high": 0,
+    "gpt-6-luna-openrouter-high": 0
+   },
+   "ci": [
+    0.0036680343145048533,
+    0.2629986323521618
+   ],
+   "ci_method": "student-t",
+   "classes": 30,
+   "df": 12.062608695652175,
+   "estimate": 0.13333333333333333,
+   "finished": 60,
+   "items": 60,
+   "n_eff": null,
+   "scored": 60,
+   "scored_in_one_arm_only": 0,
+   "se": 0.05951190357119041,
+   "timing_unverifiable": {
+    "gpt-6-luna-codex-high": 0,
+    "gpt-6-luna-openrouter-high": 0
+   },
+   "unfinished": 0,
+   "unscored": 0
+  }
+ },
+ "verified": true,
+ "w0": {
+  "bands": [
+   "w0=0",
+   "0<w0<0.5",
+   "w0>=0.5"
+  ],
+  "pooled": {
+   "0<w0<0.5": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 5,
+    "df": null,
+    "estimate": 0.2222222222222222,
+    "n_eff": null,
+    "se": null
+   },
+   "w0=0": {
+    "ci": [
+     0.04480049609021859,
+     0.136708857651278
+    ],
+    "ci_method": "student-t",
+    "classes": 201,
+    "df": 69.28103433069515,
+    "estimate": 0.0907546768707483,
+    "n_eff": null,
+    "se": 0.02303530734852688
+   },
+   "w0>=0.5": {
+    "ci": [
+     -0.05519273807794846,
+     0.0760260714112818
+    ],
+    "ci_method": "student-t",
+    "classes": 21,
+    "df": 13.8997995991984,
+    "estimate": 0.010416666666666671,
+    "n_eff": null,
+    "se": 0.03036954111898594
+   }
+  },
+  "tiers": {
+   "T1": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      -0.16007668017774077,
+      0.09341001351107411
+     ],
+     "ci_method": "student-t",
+     "classes": 15,
+     "df": 14.0,
+     "estimate": -0.03333333333333333,
+     "items": 30,
+     "n_eff": null,
+     "scored": 30,
+     "se": 0.05909368402852789
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T2": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      -0.12473417726797278,
+      0.12473417726797278
+     ],
+     "ci_method": "student-t",
+     "classes": 30,
+     "df": 19.896387305670757,
+     "estimate": 0.0,
+     "items": 60,
+     "n_eff": null,
+     "scored": 60,
+     "se": 0.0595951952894468
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T3": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 1,
+     "df": null,
+     "estimate": 0.0,
+     "items": 1,
+     "n_eff": null,
+     "scored": 1,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.01260721180960396,
+      0.19051778819039605
+     ],
+     "ci_method": "student-t",
+     "classes": 64,
+     "df": 33.130105233361775,
+     "estimate": 0.1015625,
+     "items": 122,
+     "n_eff": null,
+     "scored": 122,
+     "se": 0.04372308642845742
+    },
+    "w0>=0.5": {
+     "ci": [
+      -0.16557821423384542,
+      0.22807821423384542
+     ],
+     "ci_method": "student-t",
+     "classes": 16,
+     "df": 13.899799599198394,
+     "estimate": 0.03125,
+     "items": 27,
+     "n_eff": null,
+     "scored": 27,
+     "se": 0.09110862335695782
+    }
+   },
+   "T4": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      -0.05250971609505985,
+      0.11917638276172653
+     ],
+     "ci_method": "student-t",
+     "classes": 30,
+     "df": 11.958019375672764,
+     "estimate": 0.03333333333333334,
+     "items": 60,
+     "n_eff": null,
+     "scored": 60,
+     "se": 0.03900210277874799
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T5": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 1,
+     "df": null,
+     "estimate": 0.0,
+     "items": 1,
+     "n_eff": null,
+     "scored": 1,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.10991358354134163,
+      0.2778415184994747
+     ],
+     "ci_method": "student-t",
+     "classes": 49,
+     "df": 35.44905947591606,
+     "estimate": 0.19387755102040816,
+     "items": 97,
+     "n_eff": null,
+     "scored": 97,
+     "se": 0.04135936139682539
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 2,
+     "df": null,
+     "estimate": 0.0,
+     "items": 2,
+     "n_eff": null,
+     "scored": 2,
+     "se": 0.0,
+     "warning": "zero_observed_variance"
+    }
+   },
+   "T6": {
+    "0<w0<0.5": {
+     "ci": [
+      -0.7675509099164853,
+      1.0
+     ],
+     "ci_method": "student-t",
+     "classes": 3,
+     "df": 2.0,
+     "estimate": 0.6666666666666666,
+     "items": 3,
+     "n_eff": null,
+     "scored": 3,
+     "se": 0.33333333333333337
+    },
+    "w0=0": {
+     "ci": [
+      -0.021053995157046035,
+      0.27105399515704603
+     ],
+     "ci_method": "student-t",
+     "classes": 28,
+     "df": 13.746147293425233,
+     "estimate": 0.125,
+     "items": 54,
+     "n_eff": null,
+     "scored": 54,
+     "se": 0.06760605173571754
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 3,
+     "df": null,
+     "estimate": 0.0,
+     "items": 3,
+     "n_eff": null,
+     "scored": 3,
+     "se": 0.0,
+     "warning": "zero_observed_variance"
+    }
+   }
+  }
+ }
+}
