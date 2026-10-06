@@ -32,7 +32,7 @@
  "qwen3.5-4b-mlx": {
   "attemptId": "aab668ad-5488-416d-8633-6f106e411d7a",
   "label": "A8",
-  "status": "started"
+  "status": "succeeded"
  },
  "_superseded": [
   {

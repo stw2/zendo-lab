@@ -1,0 +1,17 @@
+[
+ {
+  "file": "qwen3.8-27b-fp8-vllm-h100.jsonl",
+  "sha256": "3a1ee9069562102729fa89a6ab824507a64d4f61c904cb857e7c4c9cedb6baec",
+  "bytes": 104181802
+ },
+ {
+  "file": "qwen3.8-27b-fp8-vllm-h100.part2.jsonl",
+  "sha256": "93642eb59f44a9aa2b28b32171193f099e506783387235df2ba3df18c0cc54d6",
+  "bytes": 78559599
+ },
+ {
+  "file": "qwen3.8-27b-fp8-vllm-h100.part3.jsonl",
+  "sha256": "97bbeb22d449eee78552beeba90441db05258a48da57f729b8ed517717ce6d0c",
+  "bytes": 242721721
+ }
+]

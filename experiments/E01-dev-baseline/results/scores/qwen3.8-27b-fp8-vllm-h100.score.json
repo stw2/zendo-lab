@@ -1,0 +1,1372 @@
+{
+ "arm": "qwen3.8-27b-fp8-vllm-h100",
+ "composite": false,
+ "context": {
+  "baseline_scope": "One submission from seeds, no experiments; expected win rate with uniform MAP tie breaking on scored items, equal weight per headline tier.",
+  "exposure": "Rule catalogs are public and include classes used in experiments while this benchmark was developed. Sealed items hide seed pairs, not the rule universe. This benchmark does not establish contamination-free reasoning.",
+  "prior": "T1-T4 share the 3-piece catalog prior because their tier is not revealed; T5 and T6 use their registered tier classes.",
+  "seed_only_map_win": 0.04655555555555555,
+  "tiers": {
+   "T1": {
+    "manifest_classes": 15,
+    "manifest_families": 5,
+    "scored_classes": 15,
+    "scored_families": 5,
+    "seed_only_map_win": 0.0
+   },
+   "T2": {
+    "manifest_classes": 30,
+    "manifest_families": 7,
+    "scored_classes": 30,
+    "scored_families": 7,
+    "seed_only_map_win": 0.0
+   },
+   "T3": {
+    "manifest_classes": 75,
+    "manifest_families": 10,
+    "scored_classes": 75,
+    "scored_families": 10,
+    "seed_only_map_win": 0.17555555555555555
+   },
+   "T4": {
+    "manifest_classes": 30,
+    "manifest_families": 5,
+    "scored_classes": 30,
+    "scored_families": 5,
+    "seed_only_map_win": 0.0
+   },
+   "T5": {
+    "manifest_classes": 50,
+    "manifest_families": 17,
+    "scored_classes": 50,
+    "scored_families": 17,
+    "seed_only_map_win": 0.018333333333333333
+   },
+   "T6": {
+    "manifest_classes": 30,
+    "manifest_families": 7,
+    "scored_classes": 30,
+    "scored_families": 7,
+    "seed_only_map_win": 0.03888888888888888
+   }
+  }
+ },
+ "families": {
+  "T1": {
+   "count=1-1-and": {
+    "ci": [
+     0.2924017738212866,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 1.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   },
+   "count=2-1-and": {
+    "ci": [
+     0.2924017738212866,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 1.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   },
+   "count>=2-1-and": {
+    "ci": [
+     0.2924017738212866,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 1.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   },
+   "exists-1-and": {
+    "ci": [
+     0.2924017738212866,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 1.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   },
+   "forall-1-and": {
+    "ci": [
+     0.31115993085344484,
+     0.9978049237867372
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": 2.0,
+    "estimate": 0.8333333333333334,
+    "items": 6,
+    "n_eff": 4.999999999999999,
+    "scored": 6,
+    "se": 0.16666666666666666
+   }
+  },
+  "T2": {
+   "count=1-2-and": {
+    "ci": [
+     0.43980605068023826,
+     0.9980084401658382
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.875,
+    "items": 8,
+    "n_eff": 7.0,
+    "scored": 8,
+    "se": 0.125
+   },
+   "count=1-2-or": {
+    "ci": [
+     0.08523341413725352,
+     0.7551367836334484
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.375,
+    "items": 8,
+    "n_eff": 8.0,
+    "scored": 8,
+    "se": 0.125
+   },
+   "exists-2-and": {
+    "ci": [
+     0.3976353643835254,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": null,
+    "estimate": 1.0,
+    "items": 8,
+    "n_eff": 4,
+    "scored": 8,
+    "se": 0.0
+   },
+   "exists-2-or": {
+    "ci": [
+     0.2924017738212866,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 1.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   },
+   "forall-2-and": {
+    "ci": [
+     0.4781762498950183,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 5,
+    "df": null,
+    "estimate": 1.0,
+    "items": 10,
+    "n_eff": 5,
+    "scored": 10,
+    "se": 0.0
+   },
+   "forall-2-or": {
+    "ci": [
+     0.4439045376923586,
+     0.9747892736731665
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 5,
+    "df": 4.0,
+    "estimate": 0.8,
+    "items": 10,
+    "n_eff": 10.0,
+    "scored": 10,
+    "se": 0.1224744871391589
+   },
+   "outer-2-and": {
+    "ci": [
+     0.4439045376923586,
+     0.9747892736731665
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 5,
+    "df": 4.0,
+    "estimate": 0.8,
+    "items": 10,
+    "n_eff": 10.0,
+    "scored": 10,
+    "se": 0.1224744871391589
+   }
+  },
+  "T3": {
+   "count=1-3-and": {
+    "ci": [
+     0.4099252381720745,
+     0.8665725974938765
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 9,
+    "df": 8.0,
+    "estimate": 0.6666666666666666,
+    "items": 18,
+    "n_eff": 18.0,
+    "scored": 18,
+    "se": 0.08333333333333333
+   },
+   "count=2-2-and": {
+    "ci": [
+     0.3976353643835254,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": null,
+    "estimate": 1.0,
+    "items": 8,
+    "n_eff": 4,
+    "scored": 8,
+    "se": 0.0
+   },
+   "count=2-3-and": {
+    "ci": [
+     0.7177315311075976,
+     0.9988348771373456
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 9,
+    "df": 8.0,
+    "estimate": 0.9444444444444444,
+    "items": 18,
+    "n_eff": 17.000000000000007,
+    "scored": 18,
+    "se": 0.05555555555555556
+   },
+   "count>=2-2-and": {
+    "ci": [
+     0.43980605068023826,
+     0.9980084401658382
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.875,
+    "items": 8,
+    "n_eff": 7.0,
+    "scored": 8,
+    "se": 0.125
+   },
+   "count>=2-3-and": {
+    "ci": [
+     0.7177315311075976,
+     0.9988348771373456
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 9,
+    "df": 8.0,
+    "estimate": 0.9444444444444444,
+    "items": 18,
+    "n_eff": 17.000000000000007,
+    "scored": 18,
+    "se": 0.05555555555555556
+   },
+   "exists-3-and": {
+    "ci": [
+     0.6305833524471807,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": null,
+    "estimate": 1.0,
+    "items": 16,
+    "n_eff": 8,
+    "scored": 16,
+    "se": 0.0
+   },
+   "exists-3-or": {
+    "ci": [
+     0.23831796057209043,
+     0.7616820394279094
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": 6.999999999999999,
+    "estimate": 0.5,
+    "items": 16,
+    "n_eff": 14.941961487588237,
+    "scored": 16,
+    "se": 0.0944911182523068
+   },
+   "forall-3-and": {
+    "ci": [
+     0.6305833524471807,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": null,
+    "estimate": 1.0,
+    "items": 16,
+    "n_eff": 8,
+    "scored": 16,
+    "se": 0.0
+   },
+   "forall-3-or": {
+    "ci": [
+     0.10224933475247583,
+     0.7250018415551474
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.375,
+    "items": 16,
+    "n_eff": 9.545454545454545,
+    "scored": 16,
+    "se": 0.15669579263200217
+   },
+   "outer-3-and": {
+    "ci": [
+     0.3737119117341051,
+     0.9099330966314167
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.6875,
+    "items": 16,
+    "n_eff": 12.419354838709676,
+    "scored": 16,
+    "se": 0.13152607020228782
+   }
+  },
+  "T4": {
+   "count=1-3-or": {
+    "ci": [
+     0.0014126952347834013,
+     0.3530149605244596
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 7,
+    "df": 6.0,
+    "estimate": 0.07142857142857142,
+    "items": 14,
+    "n_eff": 13.0,
+    "scored": 14,
+    "se": 0.07142857142857144
+   },
+   "count=2-2-or": {
+    "ci": [
+     0.001991559834161668,
+     0.5601939493197616
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.125,
+    "items": 8,
+    "n_eff": 7.0,
+    "scored": 8,
+    "se": 0.125
+   },
+   "count=2-3-or": {
+    "ci": [
+     0.0,
+     0.4096163972250032
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 7,
+    "df": null,
+    "estimate": 0.0,
+    "items": 14,
+    "n_eff": 7,
+    "scored": 14,
+    "se": 0.0
+   },
+   "count>=2-2-or": {
+    "ci": [
+     0.031854026249944226,
+     0.6508557944128239
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.25,
+    "items": 8,
+    "n_eff": 8.0,
+    "scored": 8,
+    "se": 0.14433756729740643
+   },
+   "count>=2-3-or": {
+    "ci": [
+     0.0012779244282763937,
+     0.31375511277039114
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.0625,
+    "items": 16,
+    "n_eff": 15.0,
+    "scored": 16,
+    "se": 0.0625
+   }
+  },
+  "T5": {
+   "K01": {
+    "ci": [
+     0.002092015600535833,
+     0.8680679537317599
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": 1.0,
+    "estimate": 0.25,
+    "items": 4,
+    "n_eff": 3.0,
+    "scored": 4,
+    "se": 0.25
+   },
+   "K02": {
+    "ci": [
+     0.15198367508112198,
+     0.645653905697922
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.375,
+    "items": 16,
+    "n_eff": 16.0,
+    "scored": 16,
+    "se": 0.08183170883849714
+   },
+   "K03": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "K04": {
+    "ci": [
+     0.001991559834161668,
+     0.5601939493197616
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.125,
+    "items": 8,
+    "n_eff": 7.0,
+    "scored": 8,
+    "se": 0.125
+   },
+   "K05": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "K06": {
+    "ci": [
+     0.0,
+     0.3362671168799426
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 9,
+    "df": null,
+    "estimate": 0.0,
+    "items": 18,
+    "n_eff": 9,
+    "scored": 18,
+    "se": 0.0
+   },
+   "S04": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S05": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S06": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S07": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S08": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S09": {
+    "ci": [
+     0.158113883008419,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": null,
+    "estimate": 1.0,
+    "items": 4,
+    "n_eff": 2,
+    "scored": 4,
+    "se": 0.0
+   },
+   "S11": {
+    "ci": [
+     0.1319320462682399,
+     0.9979079843994643
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": 1.0,
+    "estimate": 0.75,
+    "items": 4,
+    "n_eff": 3.0,
+    "scored": 4,
+    "se": 0.25
+   },
+   "S12": {
+    "ci": [
+     0.05733399705003274,
+     0.4366140029966684
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 10,
+    "df": 9.0,
+    "estimate": 0.2,
+    "items": 20,
+    "n_eff": 20.0,
+    "scored": 20,
+    "se": 0.08164965809277261
+   },
+   "X01": {
+    "ci": [
+     0.002092015600535833,
+     0.8680679537317599
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": 1.0,
+    "estimate": 0.25,
+    "items": 4,
+    "n_eff": 3.0,
+    "scored": 4,
+    "se": 0.25
+   },
+   "X02": {
+    "ci": [
+     0.012579117093425053,
+     0.9874208829065749
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": null,
+    "estimate": 0.5,
+    "items": 4,
+    "n_eff": 2,
+    "scored": 4,
+    "se": 0.0
+   },
+   "X04": {
+    "ci": [
+     0.1319320462682399,
+     0.9979079843994643
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": 1.0,
+    "estimate": 0.75,
+    "items": 4,
+    "n_eff": 3.0,
+    "scored": 4,
+    "se": 0.25
+   }
+  },
+  "T6": {
+   "C08": {
+    "ci": [
+     0.0,
+     0.6023646356164742
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": 4,
+    "scored": 8,
+    "se": 0.0
+   },
+   "C09": {
+    "ci": [
+     0.0,
+     0.7075982261787133
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 0.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   },
+   "C11": {
+    "ci": [
+     0.0,
+     0.4096163972250032
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 7,
+    "df": null,
+    "estimate": 0.0,
+    "items": 14,
+    "n_eff": 7,
+    "scored": 14,
+    "se": 0.0
+   },
+   "C13": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "C16": {
+    "ci": [
+     0.12366424237682466,
+     0.6067003531820567
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 9,
+    "df": 8.0,
+    "estimate": 0.3333333333333333,
+    "items": 18,
+    "n_eff": 16.000000000000004,
+    "scored": 18,
+    "se": 0.11785113019775792
+   },
+   "C17": {
+    "ci": [
+     0.0667395111777345,
+     0.6524528500599971
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 5,
+    "df": 4.0,
+    "estimate": 0.3,
+    "items": 10,
+    "n_eff": 10.0,
+    "scored": 10,
+    "se": 0.12247448713915891
+   },
+   "C18": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   }
+  }
+ },
+ "files": [
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "backend": "openai-chat-completions",
+      "guided": null,
+      "model": "qwen3.8-27b-fp8",
+      "sampling": {
+       "chat_template_kwargs": {
+        "reasoning_effort": "xhigh"
+       },
+       "max_tokens": 65536,
+       "presence_penalty": 0.0,
+       "temperature": 1.0,
+       "top_k": 20,
+       "top_p": 0.95
+      }
+     },
+     "sha256": "2003cab037b8194b641253ac936edd337efa14b9d43d58527c933866acd817a1"
+    }
+   ],
+   "end": "stopped",
+   "finished": 129,
+   "path": "experiments/E01-dev-baseline/results/runs/qwen3.8-27b-fp8-vllm-h100.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "3a1ee9069562102729fa89a6ab824507a64d4f61c904cb857e7c4c9cedb6baec",
+   "truncated": false
+  },
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "backend": "openai-chat-completions",
+      "guided": null,
+      "model": "qwen3.8-27b-fp8",
+      "sampling": {
+       "chat_template_kwargs": {
+        "reasoning_effort": "xhigh"
+       },
+       "max_tokens": 65536,
+       "presence_penalty": 0.0,
+       "temperature": 1.0,
+       "top_k": 20,
+       "top_p": 0.95
+      }
+     },
+     "sha256": "2003cab037b8194b641253ac936edd337efa14b9d43d58527c933866acd817a1"
+    }
+   ],
+   "end": "stopped",
+   "finished": 94,
+   "path": "experiments/E01-dev-baseline/results/runs/qwen3.8-27b-fp8-vllm-h100.part2.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "93642eb59f44a9aa2b28b32171193f099e506783387235df2ba3df18c0cc54d6",
+   "truncated": false
+  },
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "backend": "openai-chat-completions",
+      "guided": null,
+      "model": "qwen3.8-27b-fp8",
+      "sampling": {
+       "chat_template_kwargs": {
+        "reasoning_effort": "xhigh"
+       },
+       "max_tokens": 65536,
+       "presence_penalty": 0.0,
+       "temperature": 1.0,
+       "top_k": 20,
+       "top_p": 0.95
+      }
+     },
+     "sha256": "2003cab037b8194b641253ac936edd337efa14b9d43d58527c933866acd817a1"
+    }
+   ],
+   "end": "complete",
+   "finished": 237,
+   "path": "experiments/E01-dev-baseline/results/runs/qwen3.8-27b-fp8-vllm-h100.part3.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "97bbeb22d449eee78552beeba90441db05258a48da57f729b8ed517717ce6d0c",
+   "truncated": false
+  }
+ ],
+ "headline": {
+  "ci": [
+   0.40438919817394114,
+   0.48966227522871286
+  ],
+  "ci_method": "korn-graubard-mover",
+  "classes": 215,
+  "complete": true,
+  "df": 96.24547482700511,
+  "estimate": 0.44533333333333336,
+  "finished": 430,
+  "items": 430,
+  "missing": [],
+  "n_eff": null,
+  "over_cap": {},
+  "se": 0.01856492837736159,
+  "unscored_cap": 0.05,
+  "withheld": null
+ },
+ "kind": "score",
+ "malformed": {
+  "T1": {
+   "by_kind": {
+    "schema_error": 3
+   },
+   "decisions": 351,
+   "games": 30,
+   "invalid_submission_rate": 0.08823529411764706,
+   "invalid_submissions": 3,
+   "invalid_turns": 3,
+   "malformed_rate": 0.008547008547008548
+  },
+  "T2": {
+   "by_kind": {
+    "schema_error": 3
+   },
+   "decisions": 884,
+   "games": 60,
+   "invalid_submission_rate": 0.03333333333333333,
+   "invalid_submissions": 3,
+   "invalid_turns": 3,
+   "malformed_rate": 0.003393665158371041
+  },
+  "T3": {
+   "by_kind": {
+    "schema_error": 12
+   },
+   "decisions": 2147,
+   "games": 150,
+   "invalid_submission_rate": 0.04329004329004329,
+   "invalid_submissions": 10,
+   "invalid_turns": 12,
+   "malformed_rate": 0.0055891942244993015
+  },
+  "T4": {
+   "by_kind": {
+    "invalid_action": 1,
+    "schema_error": 12
+   },
+   "decisions": 1104,
+   "games": 60,
+   "invalid_submission_rate": 0.08403361344537816,
+   "invalid_submissions": 10,
+   "invalid_turns": 13,
+   "malformed_rate": 0.01177536231884058
+  },
+  "T5": {
+   "by_kind": {
+    "schema_error": 14
+   },
+   "decisions": 1625,
+   "games": 100,
+   "invalid_submission_rate": 0.07142857142857142,
+   "invalid_submissions": 13,
+   "invalid_turns": 14,
+   "malformed_rate": 0.008615384615384615
+  },
+  "T6": {
+   "by_kind": {
+    "schema_error": 10
+   },
+   "decisions": 1017,
+   "games": 60,
+   "invalid_submission_rate": 0.05982905982905983,
+   "invalid_submissions": 7,
+   "invalid_turns": 10,
+   "malformed_rate": 0.00983284169124877
+  },
+  "all": {
+   "by_kind": {
+    "invalid_action": 1,
+    "schema_error": 54
+   },
+   "decisions": 7128,
+   "games": 460,
+   "invalid_submission_rate": 0.059508408796895215,
+   "invalid_submissions": 46,
+   "invalid_turns": 55,
+   "malformed_rate": 0.007716049382716049
+  },
+  "headline": {
+   "by_kind": {
+    "invalid_action": 1,
+    "schema_error": 51
+   },
+   "decisions": 6777,
+   "games": 430,
+   "invalid_submission_rate": 0.058186738836265225,
+   "invalid_submissions": 43,
+   "invalid_turns": 52,
+   "malformed_rate": 0.007673011657075402
+  }
+ },
+ "manifest_sha256": "6b98d1a59d5f7d3b09b12f9840c83405e6ea2925d71911a10ab572e39facc278",
+ "player": "model",
+ "schema": "zendo-bench-v1-score",
+ "split": "dev",
+ "templates": {},
+ "tiers": {
+  "T1": {
+   "abandoned": 0,
+   "ci": [
+    0.8241262328193699,
+    0.9992439486626572
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 15,
+   "df": 14.0,
+   "estimate": 0.9666666666666667,
+   "finished": 30,
+   "items": 30,
+   "n_eff": 28.999999999999993,
+   "scored": 30,
+   "se": 0.03333333333333333,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 29
+  },
+  "T2": {
+   "abandoned": 0,
+   "ci": [
+    0.7066832248435355,
+    0.9210253373400912
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 30,
+   "df": 21.913043478260864,
+   "estimate": 0.8333333333333334,
+   "finished": 60,
+   "items": 60,
+   "n_eff": 53.733638815488284,
+   "scored": 60,
+   "se": 0.049999999999999996,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 50
+  },
+  "T3": {
+   "abandoned": 0,
+   "ci": [
+    0.7105469798190005,
+    0.850579847960991
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 75,
+   "df": 32.59537911126467,
+   "estimate": 0.7866666666666666,
+   "finished": 150,
+   "items": 150,
+   "n_eff": 143.53349007154088,
+   "scored": 150,
+   "se": 0.028480012484391772,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 118
+  },
+  "T4": {
+   "abandoned": 0,
+   "ci": [
+    0.02637859746767835,
+    0.18804893362990066
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 30,
+   "df": 17.77654755913437,
+   "estimate": 0.08333333333333334,
+   "finished": 60,
+   "items": 60,
+   "n_eff": 56.382771269383134,
+   "scored": 60,
+   "se": 0.033923349639940495,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 5
+  },
+  "T5": {
+   "abandoned": 0,
+   "ci": [
+    0.2470093940094245,
+    0.443019201922905
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 50,
+   "df": 32.51481214442991,
+   "estimate": 0.33999999999999997,
+   "finished": 100,
+   "items": 100,
+   "n_eff": 97.33183388760202,
+   "scored": 100,
+   "se": 0.044740715257264294,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 34
+  },
+  "T6": {
+   "abandoned": 0,
+   "ci": [
+    0.09286232332195382,
+    0.3089250608432025
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 30,
+   "df": 17.276404494382025,
+   "estimate": 0.18333333333333332,
+   "finished": 60,
+   "items": 60,
+   "n_eff": 56.382771269383134,
+   "scored": 60,
+   "se": 0.04639803635691685,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 11
+  }
+ },
+ "verified": true,
+ "w0": {
+  "bands": [
+   "w0=0",
+   "0<w0<0.5",
+   "w0>=0.5"
+  ],
+  "pooled": {
+   "0<w0<0.5": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 5,
+    "df": null,
+    "estimate": 0.4444444444444444,
+    "n_eff": null,
+    "se": null
+   },
+   "w0=0": {
+    "ci": [
+     0.3973562740232802,
+     0.4853738766119595
+    ],
+    "ci_method": "korn-graubard-mover",
+    "classes": 201,
+    "df": 95.17333129507224,
+    "estimate": 0.4395195578231293,
+    "n_eff": null,
+    "se": 0.019346682593324418
+   },
+   "w0>=0.5": {
+    "ci": [
+     0.43238747451738774,
+     0.9574890500167816
+    ],
+    "ci_method": "korn-graubard-mover",
+    "classes": 21,
+    "df": 2.178703957686554,
+    "estimate": 0.7465277777777777,
+    "n_eff": null,
+    "se": 0.11352626891855427
+   }
+  },
+  "tiers": {
+   "T1": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.8241262328193699,
+      0.9992439486626572
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 15,
+     "df": 14.0,
+     "estimate": 0.9666666666666667,
+     "items": 30,
+     "n_eff": 28.999999999999993,
+     "scored": 30,
+     "se": 0.03333333333333333
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T2": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.7066832248435355,
+      0.9210253373400912
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 30,
+     "df": 21.913043478260864,
+     "estimate": 0.8333333333333334,
+     "items": 60,
+     "n_eff": 53.733638815488284,
+     "scored": 60,
+     "se": 0.049999999999999996
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T3": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 1,
+     "df": null,
+     "estimate": 1.0,
+     "items": 1,
+     "n_eff": null,
+     "scored": 1,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.678151615862796,
+      0.8391317635531643
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 64,
+     "df": 29.95499710377401,
+     "estimate": 0.765625,
+     "items": 122,
+     "n_eff": 116.47016016560262,
+     "scored": 122,
+     "se": 0.03268203228648733
+    },
+    "w0>=0.5": {
+     "ci": [
+      0.6429803338512052,
+      0.994184314771128
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 16,
+     "df": 8.955223880597016,
+     "estimate": 0.90625,
+     "items": 27,
+     "n_eff": 14.86548894420428,
+     "scored": 27,
+     "se": 0.06987712429686843
+    }
+   },
+   "T4": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.02637859746767835,
+      0.18804893362990066
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 30,
+     "df": 17.77654755913437,
+     "estimate": 0.08333333333333334,
+     "items": 60,
+     "n_eff": 56.382771269383134,
+     "scored": 60,
+     "se": 0.033923349639940495
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T5": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 1,
+     "df": null,
+     "estimate": 0.0,
+     "items": 1,
+     "n_eff": null,
+     "scored": 1,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.2426166204322357,
+      0.4414250927623028
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 49,
+     "df": 31.160948152447823,
+     "estimate": 0.336734693877551,
+     "items": 97,
+     "n_eff": 94.2724860904841,
+     "scored": 97,
+     "se": 0.045688334297051526
+    },
+    "w0>=0.5": {
+     "ci": [
+      0.158113883008419,
+      1.0
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 2,
+     "df": null,
+     "estimate": 1.0,
+     "items": 2,
+     "n_eff": 2,
+     "scored": 2,
+     "se": 0.0
+    }
+   },
+   "T6": {
+    "0<w0<0.5": {
+     "ci": [
+      0.0015592835712882093,
+      0.9600784822958319
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 3,
+     "df": 2.0,
+     "estimate": 0.3333333333333333,
+     "items": 3,
+     "n_eff": 2.0,
+     "scored": 3,
+     "se": 0.33333333333333337
+    },
+    "w0=0": {
+     "ci": [
+      0.08556784842427145,
+      0.3110361233802371
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 28,
+     "df": 17.01939058171745,
+     "estimate": 0.17857142857142858,
+     "items": 54,
+     "n_eff": 51.07257325173616,
+     "scored": 54,
+     "se": 0.05050762722761054
+    },
+    "w0>=0.5": {
+     "ci": [
+      0.0015592835712882093,
+      0.9600784822958319
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 3,
+     "df": 2.0,
+     "estimate": 0.3333333333333333,
+     "items": 3,
+     "n_eff": 2.0,
+     "scored": 3,
+     "se": 0.33333333333333337
+    }
+   }
+  }
+ }
+}
