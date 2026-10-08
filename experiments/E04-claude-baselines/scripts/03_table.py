@@ -36,6 +36,7 @@ def run_stats(runs, arm):
     files = sorted(runs.glob(f"{arm}.jsonl")) + sorted(runs.glob(f"{arm}.part*.jsonl"),
                                                        key=lambda f: int(f.stem.split(".part")[-1]))
     out = dict(calls=0, unanswered=0, retried=0, truncated=0, continuations_blocked=0,
+               recoveries_blocked=0,
                claude=None, versions=None, start=None, end=None, commits=set())
     for f in files:
         with f.open() as fh:
@@ -52,6 +53,7 @@ def run_stats(runs, arm):
                     out["retried"] += bool((c.get("backend") or {}).get("retries"))
                     out["truncated"] += (c.get("backend") or {}).get("stop_reason") == "max_tokens"
                     out["continuations_blocked"] += (c.get("backend") or {}).get("continuations_blocked", 0)
+                    out["recoveries_blocked"] += (c.get("backend") or {}).get("recoveries_blocked", 0)
         cmd = f.with_suffix(".cmd")
         if cmd.exists():
             for line in cmd.read_text().splitlines():
@@ -83,7 +85,11 @@ def main():
         d = json.loads(dj.read_text())["summary"] if dj.exists() else {}
         st = run_stats(runs, arm)
         h, tiers, mal = s["headline"], s["tiers"], s["malformed"]
-        row = dict(arm=arm, attempt=(attempts.get(arm) or {}).get("label"), model=model, claude=st["claude"],
+        registration = attempts.get(arm) or {}
+        attempt_labels = [entry["label"] for entry in registration.get("priorAttempts", [])]
+        if registration.get("label"):
+            attempt_labels.append(registration["label"])
+        row = dict(arm=arm, attempt=" + ".join(attempt_labels) or None, model=model, claude=st["claude"],
                    versions=st["versions"], commits=sorted(st["commits"]), files=files, start=st["start"], end=st["end"],
                    headline=h["estimate"], ci=h["ci"], finished=h["finished"], items=h["items"], verified=s["verified"],
                    tiers={t: tiers.get(t) for t in TIERS}, seed_only=s["context"].get("seed_only_map_win"),
@@ -106,6 +112,7 @@ def main():
         m[f"{arm}.calls"], m[f"{arm}.calls_without_answer"] = row["calls"], row["unanswered"]
         m[f"{arm}.truncated_calls"] = row["truncated"]
         m[f"{arm}.blocked_cli_continuations"] = row["continuations_blocked"]
+        m[f"{arm}.blocked_cli_recoveries"] = st["recoveries_blocked"]
         m[f"{arm}.unfinished_games"] = sum((tiers.get(t) or {}).get("unfinished", 0) for t in TIERS)
         m[f"{arm}.unscored_games"] = sum((tiers.get(t) or {}).get("unscored", 0) for t in TIERS)
 

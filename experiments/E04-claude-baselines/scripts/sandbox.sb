@@ -9,6 +9,7 @@
   (subpath "/private/var/tmp"))
 (allow file-read* file-write*
   (subpath "@STATE@/config")
+  (literal "@STATE@/config.lock")
   (subpath "@STATE@/tmp")
   (subpath "@STATE@/calls"))
 (allow file-read*

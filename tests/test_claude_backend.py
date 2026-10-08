@@ -143,3 +143,27 @@ def test_environment_does_not_inherit_credentials_or_effort(monkeypatch):
     monkeypatch.setenv("CLAUDE_CODE_EFFORT_LEVEL", "low")
     env = cb.environment()
     assert "ANTHROPIC_API_KEY" not in env and env["CLAUDE_CODE_EFFORT_LEVEL"] == "high"
+
+
+@pytest.mark.parametrize("failure", ["http401", "http429", "http500", "stream", "transport"])
+def test_known_provider_failure_qualifies_for_blocked_recovery(failure):
+    guard = object.__new__(cb.Guard)
+    import threading
+    guard.response_complete = threading.Event()
+    guard.responses = [int(failure[4:])] if failure.startswith("http") else [200]
+    guard.events = [{"type": "error", "error": {"type": "api_error"}}] if failure == "stream" else []
+    guard.transport_failed = failure == "transport"
+    assert guard.recovery_reason()
+    # A completed response, including an output-cap stop, is never retried.
+    guard.response_complete.set()
+    assert guard.recovery_reason() is None
+
+
+def test_unexplained_second_request_is_still_an_isolation_violation():
+    import threading
+    guard = object.__new__(cb.Guard)
+    guard.response_complete = threading.Event()
+    guard.responses = [200]
+    guard.events = [{"type": "message_start"}]
+    guard.transport_failed = False
+    assert guard.recovery_reason() is None

@@ -1,0 +1,84 @@
+{
+  "attempt": "A27",
+  "source_commit": "105a353c9aa58ea4dae8f368cbca97e9072acd7d",
+  "status": "failed",
+  "phase": "partial full baseline",
+  "completed_games": 83,
+  "verified_completed_games": 83,
+  "remaining_manifest_games": 377,
+  "finished_per_tier": {
+    "T1": 30,
+    "T2": 53,
+    "T3": 0,
+    "T4": 0,
+    "T5": 0,
+    "T6": 0
+  },
+  "second_part_finished_games": 0,
+  "verified": true,
+  "actual_tool_calls": 0,
+  "transcript_missing_joins": 0,
+  "unfinalized_traces": 0,
+  "reason": "Part 1 stopped after provider internal server error and blocked native recovery; part 2 stopped on expired/revoked isolated OAuth credentials and denied config-lock creation. Both stops are infrastructure/authentication failures, not model losses. All original files retained. Carry verified completed games into a source-pinned continuation; never replay completed games. Reauthentication required before continuation.",
+  "arm": "claude-haiku-5-5-claude-high",
+  "model": "claude-haiku-5-5",
+  "effort": "high",
+  "sampling": "provider defaults",
+  "max_tokens": 128000,
+  "manifest": "ZendoBench 1.0.0 dev, 460 games planned",
+  "backend": "function, Claude Code 2.1.293",
+  "seed": "manifest episode seeds; model unseeded",
+  "hardware": "Apple M4 Max 128 GB local orchestration; hosted inference hardware unknown",
+  "artifacts": [
+    {
+      "file": "claude-haiku-5-5-claude-high.jsonl",
+      "sha256": "bb4360a289e45b9bc10384eb65cde70e0ee347537df82e91d110e15589a8aecc",
+      "bytes": 52038854
+    },
+    {
+      "file": "claude-haiku-5-5-claude-high.part2.jsonl",
+      "sha256": "130356e5b779534996272679d7d0d4d8eea2bccce492efcdd2b10049bb9a1b75",
+      "bytes": 68401
+    },
+    {
+      "file": "traces/claude-haiku-5-5-claude-high.traces.jsonl.gz",
+      "sha256": "263b5fb0958f9d3c9d33e0d78fabd310c5689642e09bceeb53d44e0760f6f8b8",
+      "bytes": 321527069
+    },
+    {
+      "file": "traces/claude-haiku-5-5-claude-high.part2.traces.jsonl.gz",
+      "sha256": "27a05127fbe20be1c6128ab1ee760c012477410334664106484fec650107085f",
+      "bytes": 15763
+    },
+    {
+      "file": "haiku-part1.verified.score.json",
+      "sha256": "ef6c909337af9f7e3e14556c2d89b9181da5ef9ff66f90764377ded045cb3129",
+      "bytes": 23481
+    },
+    {
+      "file": "haiku-part2.verified.score.json",
+      "sha256": "d2fc1c9d4fec36532157edf25f5e0689264e7a4346e13b0fbd95f3120787e64b",
+      "bytes": 21226
+    },
+    {
+      "file": "haiku-part1.transcript-audit.json",
+      "sha256": "482386a7fb62e01871f417e8bc300eb8257c89a7b20937823037c6f6c89b4f8f",
+      "bytes": 348
+    },
+    {
+      "file": "haiku-part2.transcript-audit.json",
+      "sha256": "320cdb1dd1cf4857d20a8723e2ccc4e7bda3e9578ad924190c3d3393df4929ab",
+      "bytes": 342
+    },
+    {
+      "file": "preflight/a27-auth-stop/10b60199108843bb89f27821253750b0.json",
+      "sha256": "0644015db60479336137ae87bdc9a9f23138c5cd67455187256dd0f740f8cef4",
+      "bytes": 1005
+    },
+    {
+      "file": "preflight/a27-auth-stop/aaf8b788b86c4a37b14537c63805be5e.json",
+      "sha256": "8ddcd5696ee1f69094965b420fffc7d76e4392ee9c04f13095bbaeaafe3e4144",
+      "bytes": 500
+    }
+  ]
+}

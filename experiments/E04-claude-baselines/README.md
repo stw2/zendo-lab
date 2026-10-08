@@ -19,6 +19,8 @@
 
 Runtime state is outside the repository. Existing E2/E3 state is never reused. Resume parts exclude finished games; deliberate reruns require new Room attempts.
 
+For the registered Haiku continuation described in the latest design amendment, use `01_run.sh claude-haiku-5-5-claude-high` after restoring its isolated login and resolving the archived preflight flags. A23's verified smoke is carried forward explicitly; the original smoke exit code is preserved. The fresh-start chain above would otherwise repeat that smoke.
+
 ## Result
 
-Pending. No model measurements have been made for E4.
+Full results are pending. A27 retained 83 verified Haiku games (T1: 30, T2: 53) before infrastructure and authentication stops. The remaining 377 games require the source-pinned continuation in DESIGN.md; no completed game is replayed. See [partial provenance](results/partial-a27.json). Other models have not started. No full-arm headline is available.

@@ -1,5 +1,5 @@
 {
-  "utc": "20261008T101415Z",
+  "utc": "20261008T181525Z",
   "offline_only": true,
   "claude_cli": "2.1.293",
   "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
@@ -64,5 +64,7 @@
     }
   ],
   "cli_continuation_blocked_without_resampling": true,
-  "private_trace_sha256": "57afc9f7123d44e2f251a6054fbc9fd2c4700b4dbe40e153f0e5d8ad41a60e45"
+  "provider_stream_recovery_blocked_and_retryable": true,
+  "isolated_auth_lock_create_remove_allowed": true,
+  "private_trace_sha256": "4d8817c65d98f0f1914759cecd9a15961b32cda574fc9cff9b0e69ac9fb8ad49"
 }

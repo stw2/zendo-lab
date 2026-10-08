@@ -149,6 +149,8 @@ class Guard:
         self.events = []
         self.response_complete = threading.Event()
         self.continuations_blocked = 0
+        self.recoveries_blocked = 0
+        self.transport_failed = False
         self.condition = threading.Condition()
         self.connections = set()
         self.active_handlers = 0
@@ -183,6 +185,12 @@ class Guard:
                             guard.trace.write("continuation_blocked", {"body": body,
                                                "reason": "first API response already complete; no repair/resampling"})
                             self.send_error(409, "E4 returns only the first model response")
+                            return
+                        reason = guard.recovery_reason()
+                        if reason:
+                            guard.recoveries_blocked += 1
+                            guard.trace.write("recovery_blocked", {"body": body, "reason": reason})
+                            self.send_error(409, "E4 retries provider failures in a fresh call; no CLI recovery")
                             return
                         raise ValueError("CLI attempted a second inference request in one decision")
                     validate_request(body, guard.model, guard.system, guard.user)
@@ -237,6 +245,8 @@ class Guard:
                     self.send_error(403, "E4 request rejected by protocol guard")
                 except BaseException as error:
                     # Transport failure is retryable; a failed trace write is not.
+                    if isinstance(error, (OSError, http.client.HTTPException)):
+                        guard.transport_failed = True
                     guard.trace.write("proxy_error", {"type": type(error).__name__, "error": str(error)})
                     self.close_connection = True
                 finally:
@@ -250,6 +260,18 @@ class Guard:
         self.server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), Handler)
         self.server.daemon_threads = True
         self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
+
+    def recovery_reason(self):
+        """Only observed infrastructure failures qualify; no request is forwarded."""
+        if self.response_complete.is_set():
+            return None
+        if self.responses and (self.responses[-1] in (401, 429) or self.responses[-1] >= 500):
+            return f"provider HTTP {self.responses[-1]} before a complete response"
+        if any(event.get("type") == "error" for event in self.events):
+            return "provider emitted a streaming error before a complete response"
+        if self.transport_failed:
+            return "provider transport failed before a complete response"
+        return None
 
     def observe(self, text):
         for line in text.splitlines():
@@ -510,7 +532,8 @@ class ClaudeBackend(Backend):
                     if any(thread.is_alive() for thread in threads):
                         errors.append("stream reader did not finish")
                 record.update(seconds=round(time.monotonic() - began, 3), requests=guard.requests,
-                              response_statuses=guard.responses, continuations_blocked=guard.continuations_blocked)
+                              response_statuses=guard.responses, continuations_blocked=guard.continuations_blocked,
+                              recoveries_blocked=guard.recoveries_blocked)
                 if trace.error or errors:
                     raise IsolationFlag("Incomplete transcript: " + "; ".join(errors), record)
                 if guard.failure:

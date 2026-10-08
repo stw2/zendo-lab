@@ -82,5 +82,38 @@
     "commit": "7e91ebddf2b4535046ddcff4c1eb373ca7138a00",
     "effectivePython": "3.13.13",
     "status": "preflight_failed"
+  },
+  "claude-haiku-5-5-claude-high.A27": {
+    "attemptId": "295f9636-7a0a-4ec7-899d-9b9f239b340a",
+    "label": "A27",
+    "planId": "e46e4b4f-5436-494d-9c52-7df145908a47",
+    "commit": "105a353c9aa58ea4dae8f368cbca97e9072acd7d",
+    "effectivePython": "3.13.13",
+    "smokeEvidenceAttemptId": "5285fa0a-1f3a-4c31-a053-6de312719547",
+    "status": "failed"
+  },
+  "claude-sonnet-5-5-claude-high.A28": {
+    "attemptId": "90c64559-35b4-433a-b0e3-a894aa8fe351",
+    "label": "A28",
+    "planId": "e46e4b4f-5436-494d-9c52-7df145908a47",
+    "commit": "105a353c9aa58ea4dae8f368cbca97e9072acd7d",
+    "effectivePython": "3.13.13",
+    "status": "preflight_failed"
+  },
+  "claude-opus-5-5-claude-high.A29": {
+    "attemptId": "c914a338-7ced-4566-b33c-45c51076b6aa",
+    "label": "A29",
+    "planId": "e46e4b4f-5436-494d-9c52-7df145908a47",
+    "commit": "105a353c9aa58ea4dae8f368cbca97e9072acd7d",
+    "effectivePython": "3.13.13",
+    "status": "preflight_failed"
+  },
+  "claude-fable-5-1-claude-high.A30": {
+    "attemptId": "8bef23b4-cf5b-4aaf-be1b-d2958dfdfa99",
+    "label": "A30",
+    "planId": "e46e4b4f-5436-494d-9c52-7df145908a47",
+    "commit": "105a353c9aa58ea4dae8f368cbca97e9072acd7d",
+    "effectivePython": "3.13.13",
+    "status": "preflight_failed"
   }
 }
