@@ -61,3 +61,35 @@ def test_adopted_exit_uses_numeric_part_order(tmp_path):
     for part, code in [("", 4), (".part9", 3), (".part10", 0)]:
         (tmp_path / ("haiku" + part + ".exit")).write_text(str(code))
     assert parallel.last_exit(tmp_path, "haiku") == 0
+
+
+def test_reviewed_continuation_skips_smoke(monkeypatch, tmp_path):
+    instance = coordinator(monkeypatch, tmp_path)
+    arm = list(parallel.ARMS)[1]
+    instance.handoff = None
+    instance.continuation = {"arms": {arm: {"resume_reviewed": True, "review_summary": "Reviewed."}}}
+    events, launches = [], []
+    instance.event = lambda arm, kind, summary, **kwargs: events.append(kind)
+
+    def launch(arm, smoke=False):
+        launches.append(smoke)
+        return 77  # End before scoring; this test must never invoke inference.
+
+    instance.run_part = launch
+    assert instance.arm(arm) is False
+    assert launches == [False]
+    assert events == ["progress", "progress"]
+
+
+def test_running_opus_is_adopted_without_duplicate_launch(monkeypatch, tmp_path):
+    instance = coordinator(monkeypatch, tmp_path)
+    arm = list(parallel.ARMS)[2]
+    instance.handoff = None
+    instance.continuation = {"arms": {arm: {"worker_pid": 42, "worker_signature": "existing-opus"}}}
+    instance.event = lambda *args, **kwargs: None
+    signatures = iter(["existing-opus", None, None])
+    monkeypatch.setattr(parallel, "process_signature", lambda pid: next(signatures))
+    monkeypatch.setattr(parallel.time, "sleep", lambda delay: None)
+    monkeypatch.setattr(parallel, "last_exit", lambda folder, arm: 5)
+    instance.run_part = lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("duplicate launch"))
+    assert instance.arm(arm) is False

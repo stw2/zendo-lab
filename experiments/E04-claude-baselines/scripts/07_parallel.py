@@ -2,6 +2,8 @@
 
 Use --adopt-haiku with a private parallel-handoff.json to monitor an existing
 01_run.sh child after its old outer controller has exited. --check is read-only.
+After manual diagnosis, --resume-reviewed reads reviewed-continuation.json:
+running arms are adopted and stopped arms continue only after evidence checks.
 The user must authorize the scheduling amendment and register attempts first.
 """
 from concurrent.futures import ThreadPoolExecutor
@@ -84,9 +86,10 @@ def request(path, body=None):
 
 
 class Coordinator:
-    def __init__(self, adopt):
+    def __init__(self, adopt, resume_reviewed=False):
         self.registrations = json.loads((E / "results/attempts.json").read_text())
         self.handoff = json.loads((R / "parallel-handoff.json").read_text()) if adopt else None
+        self.continuation = json.loads((R / "reviewed-continuation.json").read_text()) if resume_reviewed else None
         self.states = {arm: {"phase": "queued"} for arm in ARMS}
         self.status_lock = threading.Lock()
         self.scoring_lock = threading.Lock()
@@ -117,7 +120,41 @@ class Coordinator:
                 raise RuntimeError("Handoff PID belongs to a different process")
             if actual is None and last_exit(R, arm) != 0:
                 raise RuntimeError("Haiku worker stopped before handoff; diagnose first")
+        if self.continuation:
+            if self.handoff or set(self.continuation["arms"]) != set(list(ARMS)[:3]):
+                raise RuntimeError("Reviewed continuation must cover exactly the three active arms")
+            for arm, row in self.continuation["arms"].items():
+                if row.get("worker_pid"):
+                    expected = "bash experiments/E04-claude-baselines/scripts/01_run.sh " + arm
+                    actual = process_signature(row["worker_pid"])
+                    if not row["worker_signature"].endswith(expected) or actual != row["worker_signature"]:
+                        raise RuntimeError("Running-arm handoff does not match its live worker")
+                elif row.get("resume_reviewed"):
+                    if not row.get("evidence") or not row.get("review_summary"):
+                        raise RuntimeError("Stopped-arm continuation needs retained review evidence")
+                    for evidence in row["evidence"]:
+                        path = (REPO / evidence["path"]).resolve()
+                        if not path.is_relative_to(R.resolve()):
+                            raise RuntimeError("Continuation evidence must be a private run artifact")
+                        h = sha256()
+                        with path.open("rb") as stream:
+                            while chunk := stream.read(1024 * 1024):
+                                h.update(chunk)
+                        if h.hexdigest() != evidence["sha256"]:
+                            raise RuntimeError("Continuation evidence changed")
+                    score = json.loads((R / row["score_file"]).read_text())
+                    audit = json.loads((R / row["audit_file"]).read_text())
+                    if (not score["verified"] or audit["missing_joins"] or audit["interrupted_traces"]
+                            or sum(t["finished"] for t in score["tiers"].values()) != row["finished"]):
+                        raise RuntimeError("Partial games or their transcripts have not verified")
+                    smoke_audit = json.loads((R / "smoke" / (arm + ".audit.json")).read_text())
+                    if (last_exit(R / "smoke", arm) != 0 or smoke_audit["missing_joins"]
+                            or smoke_audit["interrupted_traces"]):
+                        raise RuntimeError("Existing smoke evidence does not pass")
+                else:
+                    raise RuntimeError("Each continuation arm must be running or explicitly reviewed")
         return {"measurement_sources_match": True, "adopting_haiku": bool(self.handoff),
+                "reviewed_continuation": bool(self.continuation),
                 "models": list(ARMS.values()), "batch_per_arm": 12, "maximum_active_arms": 3}
 
     def status(self, arm, phase, code=None, worker_pid=None):
@@ -201,15 +238,22 @@ class Coordinator:
                    "disabled tools and full private transcript capture unchanged.")
         try:
             code = None
-            if adopt:
-                self.status(arm, "running_full_baseline", worker_pid=self.handoff["worker_pid"])
+            continuation = (self.continuation or {}).get("arms", {}).get(arm)
+            running = continuation if continuation and continuation.get("worker_pid") else self.handoff if adopt else None
+            if running:
+                self.status(arm, "running_full_baseline", worker_pid=running["worker_pid"])
                 self.event(arm, "progress", "Outer scheduling controller transferred without stopping or restarting "
-                    "the live Haiku worker. Its original attempt and configuration continue; no games rerun. " + context)
-                while process_signature(self.handoff["worker_pid"]) == self.handoff["worker_signature"]:
+                    "this arm's live worker. Its original attempt and configuration continue; no games rerun. " + context)
+                while process_signature(running["worker_pid"]) == running["worker_signature"]:
                     time.sleep(15)
-                if process_signature(self.handoff["worker_pid"]) is not None:
+                if process_signature(running["worker_pid"]) is not None:
                     raise RuntimeError("Adopted worker PID was reused; inspect before continuation")
                 code = last_exit(R, arm)
+            elif continuation and continuation.get("resume_reviewed"):
+                self.status(arm, "resuming_after_review")
+                self.event(arm, "progress", continuation["review_summary"] + " Continuing only unfinished games "
+                    "in a fresh immutable part under the same attempt and byte-identical measurement configuration. "
+                    "Completed games and verified smoke evidence are retained, not resampled. " + context)
             else:
                 self.status(arm, "starting_registered_arm")
                 self.event(arm, "started", "Starting separate six-game smoke; full measurement follows only after "
@@ -281,9 +325,10 @@ class Coordinator:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--adopt-haiku", action="store_true")
+    parser.add_argument("--resume-reviewed", action="store_true")
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
-    coordinator = Coordinator(args.adopt_haiku)
+    coordinator = Coordinator(args.adopt_haiku, args.resume_reviewed)
     if args.check:
         print(json.dumps(coordinator.check(), indent=2))
         return 0
