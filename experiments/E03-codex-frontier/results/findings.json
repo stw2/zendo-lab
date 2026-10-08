@@ -1,0 +1,217 @@
+{
+ "experiment": {
+  "label": "E3",
+  "id": "b574da60-108b-4f3a-b9a1-52ebbe87c35e",
+  "url": "https://thesubstrate.science/experiments/b574da60-108b-4f3a-b9a1-52ebbe87c35e",
+  "status": "completed"
+ },
+ "plan": {
+  "id": "7ce77c5b-393c-41be-9872-235681475a8f",
+  "url": "https://thesubstrate.science/plans/7ce77c5b-393c-41be-9872-235681475a8f",
+  "commit": "9939c141fc598a90e9d05b4735ce584dc8277bdd"
+ },
+ "room": "https://thesubstrate.science/rooms/learning-to-test-hypotheses-da73e44a",
+ "vocabulary": {
+  "defined_in": {
+   "label": "P1",
+   "versionId": "7f391bde-3e66-43b6-9a50-d299f7b7e5b2",
+   "url": "https://thesubstrate.science/records/7f391bde-3e66-43b6-9a50-d299f7b7e5b2"
+  }
+ },
+ "seed_only_baseline": {
+  "label": "P1",
+  "versionId": "7f391bde-3e66-43b6-9a50-d299f7b7e5b2"
+ },
+ "harness_check": {
+  "label": "P27",
+  "versionId": "f4ff537a-9cc4-4b5c-8550-ed3022a83291",
+  "url": "https://thesubstrate.science/records/f4ff537a-9cc4-4b5c-8550-ed3022a83291",
+  "evidence": "results/scores/luna-codex-vs-a2.compare.json",
+  "baseline_attempt": {
+   "label": "A2",
+   "id": "71861d8f-8fc6-490b-9767-59566cfc6830"
+  }
+ },
+ "checkpoint": {
+  "id": "d307e142-64a2-48e3-ad7e-1078d476cf63",
+  "url": "https://thesubstrate.science/checkpoints/d307e142-64a2-48e3-ad7e-1078d476cf63",
+  "state": "open",
+  "covered_cursor": 98
+ },
+ "notes": [
+  "A12 ran in two parts: part 1 stopped on a harness error reading one call's trace (DESIGN.md amendment of 2026-10-06); its games in flight were replayed in part 2 as the same attempt.",
+  "A12's succeeded event gave its public outputs' commit as d351665aa (a typo for d3516659); material location reports M45-M49 give the correct location."
+ ],
+ "arms": {
+  "gpt-6-luna-codex-high": {
+   "attempt": {
+    "label": "A12",
+    "id": "47ef4ae3-4ad8-4a2f-9327-6dcf7025b937",
+    "url": "https://thesubstrate.science/attempts/47ef4ae3-4ad8-4a2f-9327-6dcf7025b937"
+   },
+   "headline": {
+    "label": "P25",
+    "versionId": "37b35a96-4080-4119-afc4-aedf1144cc63",
+    "url": "https://thesubstrate.science/records/37b35a96-4080-4119-afc4-aedf1144cc63"
+   },
+   "behaviour": {
+    "label": "P26",
+    "versionId": "80a9d061-2941-46bc-b9b5-5596f5ab324b",
+    "url": "https://thesubstrate.science/records/80a9d061-2941-46bc-b9b5-5596f5ab324b"
+   },
+   "score": "results/scores/gpt-6-luna-codex-high.score.json",
+   "run_files": [
+    {
+     "file": "gpt-6-luna-codex-high.jsonl",
+     "sha256": "17fbd1a9222058f7e50846dbbb4aba195d46acf50015b7200b72879260c2b0d7",
+     "bytes": 9216646
+    },
+    {
+     "file": "gpt-6-luna-codex-high.part2.jsonl",
+     "sha256": "088c3540fd6428eb3c69175b2d1c936c50c146ee6afa6bd00fb65171d146d77f",
+     "bytes": 9304489
+    }
+   ],
+   "call_traces": [
+    {
+     "file": "gpt-6-luna-codex-high.part2.traces.jsonl.gz",
+     "sha256": "0109865190340bb4a64f5e6822583a8327a645e40eb1f0ab17b28d25c31d3d5e",
+     "bytes": 41045208
+    },
+    {
+     "file": "gpt-6-luna-codex-high.traces.jsonl.gz",
+     "sha256": "b0578c6f57cfd6e83ce1ad9efd4a4f6a7dd0cbbc6879ca6c01c8807da8e24eb2",
+     "bytes": 31811099
+    }
+   ]
+  },
+  "gpt-6-sol-codex-high": {
+   "attempt": {
+    "label": "A13",
+    "id": "0be4d951-2a13-4e4d-8a8c-8a11c01c1184",
+    "url": "https://thesubstrate.science/attempts/0be4d951-2a13-4e4d-8a8c-8a11c01c1184"
+   },
+   "headline": {
+    "label": "P21",
+    "versionId": "83d200cc-3c36-4cde-8eae-3c1ad5268afb",
+    "url": "https://thesubstrate.science/records/83d200cc-3c36-4cde-8eae-3c1ad5268afb"
+   },
+   "behaviour": {
+    "label": "P22",
+    "versionId": "afbcc984-197a-4e2c-89ab-3150d42e6c69",
+    "url": "https://thesubstrate.science/records/afbcc984-197a-4e2c-89ab-3150d42e6c69"
+   },
+   "score": "results/scores/gpt-6-sol-codex-high.score.json",
+   "run_files": [
+    {
+     "file": "gpt-6-sol-codex-high.jsonl",
+     "sha256": "d93d61f6a07116ef5ec62cbc561119f579c666dae57ffe4dc0bd5db27e35a335",
+     "bytes": 22281980
+    }
+   ],
+   "call_traces": [
+    {
+     "file": "gpt-6-sol-codex-high.traces.jsonl.gz",
+     "sha256": "d2851bb91de7cc34579f6ca90191750b9f3867a938454d4c30e5c70b80ead8ea",
+     "bytes": 49900172
+    }
+   ]
+  },
+  "gpt-6.1-sol-codex-high": {
+   "attempt": {
+    "label": "A14",
+    "id": "ff6667ba-8829-4d6f-9dd5-804766d08cc5",
+    "url": "https://thesubstrate.science/attempts/ff6667ba-8829-4d6f-9dd5-804766d08cc5"
+   },
+   "headline": {
+    "label": "P19",
+    "versionId": "8117a6b7-ce4c-46c7-9cfc-1b2fe62afcd9",
+    "url": "https://thesubstrate.science/records/8117a6b7-ce4c-46c7-9cfc-1b2fe62afcd9"
+   },
+   "behaviour": {
+    "label": "P20",
+    "versionId": "f11a20c9-8758-461d-a3cb-624ca6b2500b",
+    "url": "https://thesubstrate.science/records/f11a20c9-8758-461d-a3cb-624ca6b2500b"
+   },
+   "score": "results/scores/gpt-6.1-sol-codex-high.score.json",
+   "run_files": [
+    {
+     "file": "gpt-6.1-sol-codex-high.jsonl",
+     "sha256": "e721c6f6777b2bedbdba67f7288d234e791b4a9cc5b9d95491d823c49a48ec25",
+     "bytes": 23350372
+    }
+   ],
+   "call_traces": [
+    {
+     "file": "gpt-6.1-sol-codex-high.traces.jsonl.gz",
+     "sha256": "ad8c48f5033bbd65364ad07f86156cedab4715d050421cad93a6da320a7c3b97",
+     "bytes": 44444563
+    }
+   ]
+  },
+  "gpt-5.6-terra-codex-high": {
+   "attempt": {
+    "label": "A15",
+    "id": "aae66506-eefd-4ccf-81bf-80023f6a40c7",
+    "url": "https://thesubstrate.science/attempts/aae66506-eefd-4ccf-81bf-80023f6a40c7"
+   },
+   "headline": {
+    "label": "P23",
+    "versionId": "602a6b09-0683-4dc2-aebd-d042736f2922",
+    "url": "https://thesubstrate.science/records/602a6b09-0683-4dc2-aebd-d042736f2922"
+   },
+   "behaviour": {
+    "label": "P24",
+    "versionId": "73127491-c89e-4685-bcad-48a9ff5e5cf4",
+    "url": "https://thesubstrate.science/records/73127491-c89e-4685-bcad-48a9ff5e5cf4"
+   },
+   "score": "results/scores/gpt-5.6-terra-codex-high.score.json",
+   "run_files": [
+    {
+     "file": "gpt-5.6-terra-codex-high.jsonl",
+     "sha256": "e693314e990a5379cc81a59c7d43982a1ec95d447476a03cda659fea4d1518f2",
+     "bytes": 14122119
+    }
+   ],
+   "call_traces": [
+    {
+     "file": "gpt-5.6-terra-codex-high.traces.jsonl.gz",
+     "sha256": "8cb5c29ae30698622f8fa142920dcdb4724bdceef5c2e7d68729a112a1bcc8ca",
+     "bytes": 52411244
+    }
+   ]
+  },
+  "gpt-6-astra-codex-high": {
+   "attempt": {
+    "label": "A16",
+    "id": "dff5beb4-ee79-47c8-ba8b-c9b00be0f343",
+    "url": "https://thesubstrate.science/attempts/dff5beb4-ee79-47c8-ba8b-c9b00be0f343"
+   },
+   "headline": {
+    "label": "P17",
+    "versionId": "3143857e-1e97-4667-88f1-16c8228d167f",
+    "url": "https://thesubstrate.science/records/3143857e-1e97-4667-88f1-16c8228d167f"
+   },
+   "behaviour": {
+    "label": "P18",
+    "versionId": "1b1d403d-5ca4-47a0-bf4d-b020e57fdb0a",
+    "url": "https://thesubstrate.science/records/1b1d403d-5ca4-47a0-bf4d-b020e57fdb0a"
+   },
+   "score": "results/scores/gpt-6-astra-codex-high.score.json",
+   "run_files": [
+    {
+     "file": "gpt-6-astra-codex-high.jsonl",
+     "sha256": "0b199c688b794b75287fdb375f19d32336b593d0de66caef36301958b8702894",
+     "bytes": 19006933
+    }
+   ],
+   "call_traces": [
+    {
+     "file": "gpt-6-astra-codex-high.traces.jsonl.gz",
+     "sha256": "1a9ec066f338d90f5ce26543c4e64c2fcd47801af90b0e6b586fa2c8b5e07a61",
+     "bytes": 41669765
+    }
+   ]
+  }
+ }
+}
