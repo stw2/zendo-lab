@@ -18,6 +18,7 @@ import random
 import re
 import shutil
 import signal
+import socket
 import subprocess
 import tempfile
 import threading
@@ -141,6 +142,9 @@ class Guard:
         self.failure = None
         self.requests = 0
         self.responses = []
+        self.condition = threading.Condition()
+        self.connections = set()
+        self.active_handlers = 0
         self.prefix = "/" + uuid.uuid4().hex
         guard = self
 
@@ -153,6 +157,8 @@ class Guard:
 
             def do_POST(self):
                 connection = None
+                with guard.condition:
+                    guard.active_handlers += 1
                 try:
                     path = urlsplit(self.path)
                     if path.path != guard.prefix + "/v1/messages":
@@ -183,6 +189,8 @@ class Guard:
                         return
                     # Do not allow CLI redirects, arbitrary upstreams or auth headers in traces.
                     connection = http.client.HTTPSConnection("api.anthropic.com", timeout=TIMEOUT)
+                    with guard.condition:
+                        guard.connections.add(connection)
                     headers = {k: v for k, v in self.headers.items()
                                if k.lower() not in ("host", "connection", "transfer-encoding", "accept-encoding")}
                     headers["Accept-Encoding"] = "identity"
@@ -219,6 +227,10 @@ class Guard:
                 finally:
                     if connection is not None:
                         connection.close()
+                    with guard.condition:
+                        guard.connections.discard(connection)
+                        guard.active_handlers -= 1
+                        guard.condition.notify_all()
 
         self.server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), Handler)
         self.server.daemon_threads = True
@@ -230,6 +242,21 @@ class Guard:
 
     def __exit__(self, *args):
         self.server.shutdown()
+        # A killed CLI does not necessarily wake a proxy thread blocked on the
+        # provider's next SSE event. Close that socket and join the handlers
+        # before the trace's final end row or compression can happen.
+        with self.condition:
+            connections = list(self.connections)
+        for connection in connections:
+            if connection.sock is not None:
+                try:
+                    connection.sock.shutdown(socket.SHUT_RDWR)
+                except OSError:
+                    pass
+            connection.close()
+        with self.condition:
+            if not self.condition.wait_for(lambda: self.active_handlers == 0, timeout=10):
+                raise IsolationFlag("Proxy stream failed to finalize before trace close")
         self.server.server_close()
         self.thread.join()
 
