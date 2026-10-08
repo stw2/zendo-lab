@@ -1,0 +1,18 @@
+;; E04: file isolation around the entire Claude CLI. Model tools are separately empty.
+(version 1)
+(allow default)
+(deny file-read* file-write*
+  (subpath "/Users")
+  (subpath "/Volumes")
+  (subpath "/private/tmp")
+  (subpath "/private/var/folders")
+  (subpath "/private/var/tmp"))
+(allow file-read* file-write*
+  (subpath "@STATE@/config")
+  (subpath "@STATE@/tmp")
+  (subpath "@STATE@/calls"))
+(allow file-read*
+  (subpath "@STATE@/bin")
+  (subpath "@STATE@/instructions"))
+(allow file-read-metadata
+  @PARENTS@)

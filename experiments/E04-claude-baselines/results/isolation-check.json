@@ -1,0 +1,47 @@
+{
+  "utc": "20261008T093401Z",
+  "offline_only": true,
+  "claude_cli": "2.1.293",
+  "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+  "repository_read_denied": true,
+  "unrelated_write_denied": true,
+  "models": [
+    {
+      "model": "claude-haiku-5-5",
+      "exact_prompts": true,
+      "tools": [],
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 128000,
+      "stream_reconstruction": true
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "exact_prompts": true,
+      "tools": [],
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 128000,
+      "stream_reconstruction": true
+    },
+    {
+      "model": "claude-opus-5-5",
+      "exact_prompts": true,
+      "tools": [],
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 128000,
+      "stream_reconstruction": true
+    },
+    {
+      "model": "claude-fable-5-1",
+      "exact_prompts": true,
+      "tools": [],
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 128000,
+      "stream_reconstruction": true
+    }
+  ],
+  "private_trace_sha256": "4d7d0c958c87c8ccadaa7d38e0411443cf200053206939784da3e47cdd940e5c"
+}
