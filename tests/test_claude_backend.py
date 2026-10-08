@@ -21,7 +21,7 @@ def isolated_flags(tmp_path, monkeypatch):
 def valid_request():
     return {"model": MODEL, "system": [{"type": "text", "text": cb.SDK_IDENTITY}, {"type": "text", "text": "system"}],
             "messages": [{"role": "user", "content": "user"}], "tools": [],
-            "max_tokens": 128000, "thinking": {"type": "adaptive"},
+            "max_tokens": 128000, "thinking": cb.THINKING,
             "output_config": {"effort": "high"}, "stream": True}
 
 
@@ -86,6 +86,27 @@ def test_actual_subscription_limit_stops_the_arm():
     es[-1].update(is_error=True, terminal_reason="api_error", result="You've hit your usage limit")
     with pytest.raises(cb.UsageLimitReached):
         cb.read_reply(es, "", 1, {}, MODEL)
+
+
+def test_first_provider_response_survives_blocked_cli_repair_unchanged():
+    es = events()
+    raw = [e["event"] for e in es if e.get("type") == "stream_event"]
+    next(e for e in raw if e["type"] == "message_delta")["delta"]["stop_reason"] = "tool_use"
+    malformed = '<parameter name="experiment">malformed</parameter>'
+    next(e for e in raw if e.get("delta", {}).get("type") == "text_delta")["delta"]["text"] = malformed
+    es[-1].update(is_error=True, terminal_reason="api_error", result="409: continuation blocked")
+    reply = cb.read_reply(es, "", 1, {}, MODEL, provider_events=raw)
+    assert reply.text == malformed and reply.finish == cb.FINISH_ACTION
+    assert reply.record["stop_reason"] == "tool_use"
+    assert reply.record["reasoning"] == "Offline fixture."
+
+
+def test_actual_provider_tool_block_still_stops_the_run():
+    es = events()
+    raw = [e["event"] for e in es if e.get("type") == "stream_event"]
+    next(e for e in raw if e["type"] == "content_block_start")["content_block"] = {"type":"tool_use","name":"Bash"}
+    with pytest.raises(cb.IsolationFlag):
+        cb.read_reply(es, "", 0, {}, MODEL, provider_events=raw)
 
 
 def test_streamed_tool_call_stops_run():

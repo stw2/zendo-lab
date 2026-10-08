@@ -1,0 +1,59 @@
+{
+  "attempt": "A22",
+  "status": "failed",
+  "phase": "smoke",
+  "finished_games": 0,
+  "verified": true,
+  "actual_tool_calls": 0,
+  "reason": "Guard blocked CLI continuation after first complete text-only response with tool_use stop. No second model request forwarded. Source amended to return first response unchanged and explicitly request summarized thinking.",
+  "model": "claude-haiku-5-5",
+  "effort": "high",
+  "sampling": "provider defaults",
+  "max_tokens": 128000,
+  "manifest": "dev, first item per tier smoke only",
+  "backend": "function, Claude Code 2.1.293",
+  "seed": "manifest episode seeds; model unseeded",
+  "hardware": "Apple M4 Max 128 GB local orchestrator; provider inference hardware unknown",
+  "artifacts": [
+    {
+      "file": "preflight/a22-smoke/a22-stopped.score.json",
+      "sha256": "a42e20691de251d86bca7af6466fb42952623d3bb5b574750513d48b64ae622f",
+      "bytes": 21061
+    },
+    {
+      "file": "preflight/a22-smoke/claude-haiku-5-5-claude-high.cmd",
+      "sha256": "4cb7b563aa50186ff197038b4523710cca258a69fe89bb56748f89f1d55092e9",
+      "bytes": 264
+    },
+    {
+      "file": "preflight/a22-smoke/claude-haiku-5-5-claude-high.denials.json",
+      "sha256": "f453495aa20d0cccbeb919ba3df704c3b63d88a84d266929d73621d9cc39f6d0",
+      "bytes": 790
+    },
+    {
+      "file": "preflight/a22-smoke/claude-haiku-5-5-claude-high.exit",
+      "sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06",
+      "bytes": 2
+    },
+    {
+      "file": "preflight/a22-smoke/claude-haiku-5-5-claude-high.jsonl",
+      "sha256": "c65240f6877d2962a215d5a32bc16b6435939a7da69b1e5bec2850550c01c611",
+      "bytes": 64536
+    },
+    {
+      "file": "preflight/a22-smoke/claude-haiku-5-5-claude-high.log",
+      "sha256": "86741a8ebbcbb023c1c28f1f1b6d5516d3930c369df8198ac374a3a8927dc053",
+      "bytes": 54
+    },
+    {
+      "file": "preflight/a22-smoke/explained-isolation-flag.json",
+      "sha256": "4f79e4819e5f5194467558ed2bf0f9f68ca4ac7c005fc38e8e97deea14db09e7",
+      "bytes": 467
+    },
+    {
+      "file": "preflight/a22-smoke/traces/claude-haiku-5-5-claude-high.traces.jsonl.gz",
+      "sha256": "d7d9e21e1ab9b0123dc7970344bb514332219919bbd4ea0dfc5efa5e6bfa4e86",
+      "bytes": 36454
+    }
+  ]
+}

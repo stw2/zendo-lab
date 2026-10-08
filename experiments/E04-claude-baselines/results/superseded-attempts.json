@@ -42,5 +42,13 @@
     "commit": "c60e22fcc4dbda7a32d7d7b3ef1f2cfc079619d9",
     "effectivePython": "3.13.13",
     "status": "preflight_failed"
+  },
+  "claude-haiku-5-5-claude-high.A22": {
+    "attemptId": "11b5c46c-a776-4118-bd7d-575282692932",
+    "label": "A22",
+    "planId": "d061eddc-dbfd-40ec-acf4-b8183f328f1c",
+    "commit": "c578f63052a098aca1ff3a6ef98c6836ced0f924",
+    "effectivePython": "3.13.13",
+    "status": "failed"
   }
 }

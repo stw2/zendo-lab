@@ -1,5 +1,5 @@
 {
-  "utc": "20261008T100025Z",
+  "utc": "20261008T101415Z",
   "offline_only": true,
   "claude_cli": "2.1.293",
   "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
@@ -13,7 +13,10 @@
       "other_prompt_additions": false,
       "tools": [],
       "effort": "high",
-      "thinking": "adaptive",
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
       "max_tokens": 128000,
       "stream_reconstruction": true
     },
@@ -24,7 +27,10 @@
       "other_prompt_additions": false,
       "tools": [],
       "effort": "high",
-      "thinking": "adaptive",
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
       "max_tokens": 128000,
       "stream_reconstruction": true
     },
@@ -35,7 +41,10 @@
       "other_prompt_additions": false,
       "tools": [],
       "effort": "high",
-      "thinking": "adaptive",
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
       "max_tokens": 128000,
       "stream_reconstruction": true
     },
@@ -46,10 +55,14 @@
       "other_prompt_additions": false,
       "tools": [],
       "effort": "high",
-      "thinking": "adaptive",
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
       "max_tokens": 128000,
       "stream_reconstruction": true
     }
   ],
-  "private_trace_sha256": "39711ae2184b75208bfbde38a9e3267b58ae032a7f146f4310ebfabc96fe62c8"
+  "cli_continuation_blocked_without_resampling": true,
+  "private_trace_sha256": "57afc9f7123d44e2f251a6054fbc9fd2c4700b4dbe40e153f0e5d8ad41a60e45"
 }

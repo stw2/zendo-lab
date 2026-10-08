@@ -44,6 +44,7 @@ TIMEOUT = 3600
 BACKOFF = [30, 60, 120, 300, 900]
 MAX_OUTPUT = 128000
 SDK_IDENTITY = "You are a Claude agent, built on Anthropic's Claude Agent SDK."
+THINKING = {"type": "adaptive", "display": "summarized"}
 SETTINGS = {"disableAllHooks": True, "showThinkingSummaries": True, "ultracode": False,
             "autoMemoryEnabled": False, "fastMode": False}
 FLAGS = ["--safe-mode", "--restricted", "--setting-sources", "",
@@ -95,7 +96,7 @@ def validate_request(body, model, system, user):
     expected = {"model": model, "system": [{"type": "text", "text": SDK_IDENTITY},
                                           {"type": "text", "text": system}],
                 "messages": [{"role": "user", "content": user}], "tools": [],
-                "max_tokens": MAX_OUTPUT, "thinking": {"type": "adaptive"},
+                "max_tokens": MAX_OUTPUT, "thinking": THINKING,
                 "output_config": {"effort": "high"}, "stream": True}
     differences = [key for key, value in expected.items() if body.get(key) != value]
     # Unexpected sampling/grammar settings change the experiment. Provider defaults apply.
@@ -145,6 +146,9 @@ class Guard:
         self.failure = None
         self.requests = 0
         self.responses = []
+        self.events = []
+        self.response_complete = threading.Event()
+        self.continuations_blocked = 0
         self.condition = threading.Condition()
         self.connections = set()
         self.active_handlers = 0
@@ -173,9 +177,15 @@ class Guard:
                             if self.headers.get(name):
                                 guard.trace.secrets.add(self.headers[name])
                                 guard.trace.secrets.add(self.headers[name].removeprefix("Bearer "))
-                    validate_request(body, guard.model, guard.system, guard.user)
                     if guard.requests:
+                        if guard.response_complete.is_set():
+                            guard.continuations_blocked += 1
+                            guard.trace.write("continuation_blocked", {"body": body,
+                                               "reason": "first API response already complete; no repair/resampling"})
+                            self.send_error(409, "E4 returns only the first model response")
+                            return
                         raise ValueError("CLI attempted a second inference request in one decision")
+                    validate_request(body, guard.model, guard.system, guard.user)
                     guard.requests += 1
                     guard.trace.write("request", {"body": body, "body_sha256": digest(raw),
                                                   "path": "/v1/messages", "sequence": guard.requests,
@@ -188,6 +198,7 @@ class Guard:
                         self.end_headers()
                         for chunk in chunks:
                             guard.trace.write("provider_stream", chunk.decode())
+                            guard.observe(chunk.decode())
                             self.wfile.write(chunk)
                         return
                     # Do not allow CLI redirects, arbitrary upstreams or auth headers in traces.
@@ -216,6 +227,7 @@ class Guard:
                     # readline preserves all SSE bytes, including partial events on EOF.
                     while chunk := response.readline():
                         guard.trace.write("provider_stream", chunk.decode("utf-8", errors="replace"))
+                        guard.observe(chunk.decode("utf-8", errors="replace"))
                         self.wfile.write(chunk)
                         self.wfile.flush()
                     self.close_connection = True
@@ -238,6 +250,14 @@ class Guard:
         self.server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), Handler)
         self.server.daemon_threads = True
         self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
+
+    def observe(self, text):
+        for line in text.splitlines():
+            if line.startswith("data: "):
+                event = json.loads(line[6:])
+                self.events.append(event)
+                if event.get("type") == "message_stop":
+                    self.response_complete.set()
 
     def __enter__(self):
         self.thread.start()
@@ -284,7 +304,7 @@ def mock_response(model):
     return [("event: " + event["type"] + "\ndata: " + json.dumps(event) + "\n\n").encode() for event in events]
 
 
-def read_reply(events, stderr, exit_code, record, model):
+def read_reply(events, stderr, exit_code, record, model, *, provider_events=None):
     init = [e for e in events if e.get("type") == "system" and e.get("subtype") == "init"]
     results = [e for e in events if e.get("type") == "result"]
     messages = [e["message"] for e in events if e.get("type") == "assistant" and "message" in e]
@@ -309,17 +329,20 @@ def read_reply(events, stderr, exit_code, record, model):
     if result.get("permission_denials") or result.get("subagent_stats", {}).get("spawned", 0):
         raise IsolationFlag("CLI attempted a tool or delegated", record)
     problem = " ".join(str(e.get("result", "")) for e in results) + " " + stderr[-2000:]
+    complete_provider = provider_events is not None and any(e.get("type") == "message_stop" for e in provider_events)
     lowered = problem.lower()
     quota = any(term in lowered for term in ("usage limit", "usage_limit", "hit your limit", "weekly limit"))
-    if quota and "not your usage limit" not in lowered:
+    if not complete_provider and quota and "not your usage limit" not in lowered:
         raise UsageLimitReached("Claude subscription limit", record)
-    if exit_code or not result or result.get("is_error") or result.get("terminal_reason") == "api_error":
+    if not complete_provider and (exit_code or not result or result.get("is_error") or result.get("terminal_reason") == "api_error"):
         raise BackendFailure(f"Claude call failed (exit {exit_code}): {problem[:500]}", record)
-    if len(init) != 1 or len(results) != 1:
+    if len(init) != 1 or (not complete_provider and len(results) != 1):
         raise BackendFailure("Missing or duplicate CLI init/result", record)
     # The pinned CLI emits one assistant event per completed content block, not
     # one per API message. Reconstruct the canonical message from raw API events.
-    stream = [e["event"] for e in events if e.get("type") == "stream_event"]
+    stream = provider_events if provider_events is not None else [e["event"] for e in events if e.get("type") == "stream_event"]
+    if any(e.get("type") == "error" for e in stream):
+        raise BackendFailure("Provider emitted a streaming error", record)
     starts = [e["message"] for e in stream if e.get("type") == "message_start"]
     if len(starts) != 1 or sum(e.get("type") == "message_stop" for e in stream) != 1:
         raise BackendFailure("Expected one complete streamed API message", record)
@@ -330,6 +353,8 @@ def read_reply(events, stderr, exit_code, record, model):
     for event in stream:
         kind = event.get("type")
         if kind == "content_block_start":
+            if event["content_block"].get("type") not in ("text", "thinking", "redacted_thinking"):
+                raise IsolationFlag("Provider emitted an actual tool or other unexpected block", record)
             blocks[event["index"]] = dict(event["content_block"])
         elif kind == "content_block_delta":
             delta = event["delta"]
@@ -454,7 +479,7 @@ class ClaudeBackend(Backend):
                 env["ANTHROPIC_BASE_URL"] = endpoint
                 env["CLAUDE_CODE_EXTRA_BODY"] = json.dumps({
                     "system": [{"type": "text", "text": SDK_IDENTITY}, {"type": "text", "text": system}],
-                    "messages": [{"role": "user", "content": user}]}, separators=(",", ":"))
+                    "messages": [{"role": "user", "content": user}], "thinking": THINKING}, separators=(",", ":"))
                 if self.offline:
                     env["ANTHROPIC_API_KEY"] = "offline-placeholder"
                 command = ["/usr/bin/sandbox-exec", "-f", str(self.profile), str(self.binary), *FLAGS,
@@ -485,14 +510,15 @@ class ClaudeBackend(Backend):
                     if any(thread.is_alive() for thread in threads):
                         errors.append("stream reader did not finish")
                 record.update(seconds=round(time.monotonic() - began, 3), requests=guard.requests,
-                              response_statuses=guard.responses)
+                              response_statuses=guard.responses, continuations_blocked=guard.continuations_blocked)
                 if trace.error or errors:
                     raise IsolationFlag("Incomplete transcript: " + "; ".join(errors), record)
                 if guard.failure:
                     raise IsolationFlag(guard.failure, record)
                 if list(folder.iterdir()):
                     raise IsolationFlag("Claude wrote into the empty call directory", record)
-                reply = read_reply(events, "".join(stderr), process.returncode, record, self.model)
+                reply = read_reply(events, "".join(stderr), process.returncode, record, self.model,
+                                   provider_events=guard.events)
                 if guard.requests != 1:
                     raise IsolationFlag("Expected one guarded request per decision", record)
                 outcome = "answer" if reply.text else "no_answer"
@@ -528,7 +554,7 @@ class ClaudeBackend(Backend):
 
     def settings(self):
         return {"harness": "claude-print", "claude_cli": CLI_VERSION, "claude_binary_sha256": CLI_SHA256,
-                "model": self.model, "reasoning_effort": "high", "thinking": "adaptive",
+                "model": self.model, "reasoning_effort": "high", "thinking": THINKING,
                 "show_thinking_summaries": True, "max_tokens": MAX_OUTPUT,
                 "sampling": "provider defaults; temperature, top_p, top_k omitted",
                 "auth": "Claude subscription; dedicated configuration and login",
@@ -536,5 +562,6 @@ class ClaudeBackend(Backend):
                 "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
                 "sdk_identity": SDK_IDENTITY,
                 "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+                "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
                 "traces": "incremental requests, full provider and CLI streams, stderr, every try",
                 "timeout": self.timeout, "retries": {"backoff_seconds": self.backoff, "jitter": "x0.75-1.25"}}
