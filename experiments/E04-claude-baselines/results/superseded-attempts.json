@@ -50,5 +50,37 @@
     "commit": "c578f63052a098aca1ff3a6ef98c6836ced0f924",
     "effectivePython": "3.13.13",
     "status": "failed"
+  },
+  "claude-haiku-5-5-claude-high.A23": {
+    "attemptId": "5285fa0a-1f3a-4c31-a053-6de312719547",
+    "label": "A23",
+    "planId": "c7633336-74cc-46be-940e-b42f7b06a01a",
+    "commit": "7e91ebddf2b4535046ddcff4c1eb373ca7138a00",
+    "effectivePython": "3.13.13",
+    "status": "failed"
+  },
+  "claude-sonnet-5-5-claude-high.A24": {
+    "attemptId": "18b159c3-9a1e-4373-8c55-1ac4511f42a3",
+    "label": "A24",
+    "planId": "c7633336-74cc-46be-940e-b42f7b06a01a",
+    "commit": "7e91ebddf2b4535046ddcff4c1eb373ca7138a00",
+    "effectivePython": "3.13.13",
+    "status": "preflight_failed"
+  },
+  "claude-opus-5-5-claude-high.A25": {
+    "attemptId": "628e22b0-9f54-42bf-8ecb-a80575382a5c",
+    "label": "A25",
+    "planId": "c7633336-74cc-46be-940e-b42f7b06a01a",
+    "commit": "7e91ebddf2b4535046ddcff4c1eb373ca7138a00",
+    "effectivePython": "3.13.13",
+    "status": "preflight_failed"
+  },
+  "claude-fable-5-1-claude-high.A26": {
+    "attemptId": "294383f4-bf90-4774-862c-ab611fe5043e",
+    "label": "A26",
+    "planId": "c7633336-74cc-46be-940e-b42f7b06a01a",
+    "commit": "7e91ebddf2b4535046ddcff4c1eb373ca7138a00",
+    "effectivePython": "3.13.13",
+    "status": "preflight_failed"
   }
 }

@@ -28,7 +28,7 @@ for round in $(seq 1 "${ROUNDS:-40}"); do
   uv run python "$E/scripts/01_play.py" "$arm" "$out" ${resume[@]+"${resume[@]}"} ${extra[@]+"${extra[@]}"} > "$R/$name.log" 2>&1
   code=$?
   sleep 5  # the kernel's sandbox reports reach the log shortly after
-  uv run python "$E/scripts/04_denials.py" "$since" > "$R/$name.denials.json" 2>&1
+  uv run python "$E/scripts/04_denials.py" "$since" "$R/traces/$name.traces.jsonl" > "$R/$name.denials.json" 2>&1
   denials=$?
   set -e
   [ "$denials" = 0 ] || code=5
