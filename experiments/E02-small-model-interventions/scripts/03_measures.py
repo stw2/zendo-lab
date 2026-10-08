@@ -95,7 +95,7 @@ def measures(manifest, arm_files):
         _, g, _ = diagnose.games(manifest, paths)
         found[arm] = {t: r for t, r in f.items() if t in keep}
         games[arm] = {t: r for t, r in g.items() if t in keep}
-    out = {"arms": {arm: {"files": arms[arm], "finished": len(found[arm]), "headline": headline(manifest, found[arm]),
+    out = {"arms": {arm: {"files": [str(Path(f).resolve().relative_to(ROOT)) for f in arms[arm]], "finished": len(found[arm]), "headline": headline(manifest, found[arm]),
                           "behaviour": behaviour(games[arm])} for arm in arms}}
     pairs = [(a, "A8") for a in arm_files] + [(a, b) for a, b in (("force16-show", "force16"), ("force16-show", "show"))
                                                if a in arm_files and b in arm_files]

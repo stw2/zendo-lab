@@ -118,3 +118,10 @@ The results table (`results/runs.md`) has one row per arm, A8 included, with its
 - **In the Room:** one attempt per new arm, citing A8 as the baseline, and findings for the hypotheses and the measures above, each linked to E02's experiment.
 
 ## Amendments
+
+- **2026-10-08, after the runs, before any finding: what happened and two script changes. No change to the design, the measures or the hypotheses.**
+  - **A9 (`show`) was interrupted and resumed.** The Mac lost power at about 2026-10-06T14:06Z, ten minutes into the run, before any game finished. The run resumed at 19:57Z by a second call of `01_run.sh show` into `.part2.jsonl`, with `--exclude-finished` over the first file, which holds no finished game. It is the same attempt.
+  - **A11 (`force16-show`) launched at `33e9624`.** That commit differs from the registered `a028dc9` only by A9's score summaries; the scripts, DESIGN.md, `pyproject.toml` and `uv.lock` are byte-identical.
+  - **`scripts/03_measures.py` records run-file paths relative to the repository.** It recorded absolute paths before. Nothing it computes changed.
+  - **`scripts/04_table.py` is new.** It writes `results/runs.md` from `results/measures.json`, the score summaries and the run files' call counts, and computes no measure.
+
