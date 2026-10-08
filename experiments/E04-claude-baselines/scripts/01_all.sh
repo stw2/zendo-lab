@@ -9,7 +9,7 @@ set -euo pipefail
 cd "$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"
 E=experiments/E04-claude-baselines
 R="$E/results/runs"
-ARMS="claude-haiku-5-5-claude-high claude-sonnet-5-5-claude-high claude-opus-5-5-claude-high claude-fable-5-1-claude-high"
+ARMS="claude-haiku-5-5-claude-high-v2 claude-sonnet-5-5-claude-high-v2 claude-opus-5-5-claude-high-v2 claude-fable-5-1-claude-high-v2"
 log() { echo "$(date -u +%FT%TZ) $*" >> "$R/01_all.log"; }
 
 last_exit() {  # last_exit DIR ARM: the exit code of the arm's last part in DIR, or "none"

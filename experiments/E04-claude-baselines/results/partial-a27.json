@@ -19,7 +19,7 @@
   "actual_tool_calls": 0,
   "transcript_missing_joins": 0,
   "unfinalized_traces": 0,
-  "reason": "Part 1 stopped after provider internal server error and blocked native recovery; part 2 stopped on expired/revoked isolated OAuth credentials and denied config-lock creation. Both stops are infrastructure/authentication failures, not model losses. All original files retained. Carry verified completed games into a source-pinned continuation; never replay completed games. Reauthentication required before continuation.",
+  "reason": "Part 1 stopped after provider internal server error and blocked native recovery; part 2 stopped on expired/revoked isolated OAuth credentials and denied config-lock creation. Both stops are infrastructure/authentication failures, not model losses. Original files retained. Reauthentication required before new corrected-source attempts.",
   "arm": "claude-haiku-5-5-claude-high",
   "model": "claude-haiku-5-5",
   "effort": "high",
@@ -80,5 +80,6 @@
       "sha256": "8ddcd5696ee1f69094965b420fffc7d76e4392ee9c04f13095bbaeaafe3e4144",
       "bytes": 500
     }
-  ]
+  ],
+  "disposition": "Retained as a separate verified partial result. Carry-forward into corrected-source scoring was rejected by the benchmark configuration-identity check before launch. Corrected v2 arms require fresh full attempts; these games are excluded from their headline."
 }

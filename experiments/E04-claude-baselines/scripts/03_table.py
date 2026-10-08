@@ -53,7 +53,9 @@ def run_stats(runs, arm):
                     out["retried"] += bool((c.get("backend") or {}).get("retries"))
                     out["truncated"] += (c.get("backend") or {}).get("stop_reason") == "max_tokens"
                     out["continuations_blocked"] += (c.get("backend") or {}).get("continuations_blocked", 0)
-                    out["recoveries_blocked"] += (c.get("backend") or {}).get("recoveries_blocked", 0)
+                    backend = c.get("backend") or {}
+                    out["recoveries_blocked"] += sum(record.get("recoveries_blocked", 0)
+                                                     for record in [backend, *backend.get("retries", [])])
         cmd = f.with_suffix(".cmd")
         if cmd.exists():
             for line in cmd.read_text().splitlines():
@@ -85,11 +87,7 @@ def main():
         d = json.loads(dj.read_text())["summary"] if dj.exists() else {}
         st = run_stats(runs, arm)
         h, tiers, mal = s["headline"], s["tiers"], s["malformed"]
-        registration = attempts.get(arm) or {}
-        attempt_labels = [entry["label"] for entry in registration.get("priorAttempts", [])]
-        if registration.get("label"):
-            attempt_labels.append(registration["label"])
-        row = dict(arm=arm, attempt=" + ".join(attempt_labels) or None, model=model, claude=st["claude"],
+        row = dict(arm=arm, attempt=(attempts.get(arm) or {}).get("label"), model=model, claude=st["claude"],
                    versions=st["versions"], commits=sorted(st["commits"]), files=files, start=st["start"], end=st["end"],
                    headline=h["estimate"], ci=h["ci"], finished=h["finished"], items=h["items"], verified=s["verified"],
                    tiers={t: tiers.get(t) for t in TIERS}, seed_only=s["context"].get("seed_only_map_win"),

@@ -19,8 +19,8 @@
 
 Runtime state is outside the repository. Existing E2/E3 state is never reused. Resume parts exclude finished games; deliberate reruns require new Room attempts.
 
-For the registered Haiku continuation described in the latest design amendment, use `01_run.sh claude-haiku-5-5-claude-high` after restoring its isolated login and resolving the archived preflight flags. A23's verified smoke is carried forward explicitly; the original smoke exit code is preserved. The fresh-start chain above would otherwise repeat that smoke.
+The corrected arms end in `-claude-high-v2`. This marks the harness revision, not a different model version. They start with fresh smoke and full-run files; original attempts and their transcripts remain unchanged.
 
 ## Result
 
-Full results are pending. A27 retained 83 verified Haiku games (T1: 30, T2: 53) before infrastructure and authentication stops. The remaining 377 games require the source-pinned continuation in DESIGN.md; no completed game is replayed. See [partial provenance](results/partial-a27.json). Other models have not started. No full-arm headline is available.
+Full results are pending. A27 retained 83 verified Haiku games (T1: 30, T2: 53) before infrastructure and authentication stops; see [partial provenance](results/partial-a27.json). ZendoBench's configuration identity includes the harness source, so corrected arms require fresh attempts and their own complete 460-game runs. A27 remains a separate partial result. Other models have not started. No full-arm headline is available.
