@@ -73,6 +73,21 @@ def test_synthetic_api_error_is_not_model_output():
         cb.read_reply(es, "", 1, {}, MODEL)
 
 
+def test_temporary_provider_rate_limit_is_retryable_not_subscription_quota():
+    es = events()
+    es[-1].update(is_error=True, terminal_reason="api_error", api_error_status=429,
+                  result="API Error: Server is temporarily limiting requests (not your usage limit) · Error")
+    with pytest.raises(cb.BackendFailure):
+        cb.read_reply(es, "", 1, {}, MODEL)
+
+
+def test_actual_subscription_limit_stops_the_arm():
+    es = events()
+    es[-1].update(is_error=True, terminal_reason="api_error", result="You've hit your usage limit")
+    with pytest.raises(cb.UsageLimitReached):
+        cb.read_reply(es, "", 1, {}, MODEL)
+
+
 def test_streamed_tool_call_stops_run():
     es = events()
     next(e["event"] for e in es if e.get("event", {}).get("type") == "content_block_start")["content_block"] = {"type": "tool_use", "name": "Bash"}

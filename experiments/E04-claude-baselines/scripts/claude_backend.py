@@ -192,7 +192,10 @@ class Guard:
                     guard.responses.append(response.status)
                     guard.trace.write("provider_status", {"status": response.status,
                                       "request_id": response.getheader("request-id"),
-                                      "content_type": response.getheader("content-type")})
+                                      "content_type": response.getheader("content-type"),
+                                      "retry_after": response.getheader("retry-after"),
+                                      "rate_limit_headers": {k: v for k, v in response.getheaders()
+                                                             if "ratelimit" in k.lower()}})
                     self.send_response(response.status)
                     for k, v in response.getheaders():
                         if k.lower() in ("content-type", "content-length", "retry-after", "request-id"):
@@ -276,7 +279,9 @@ def read_reply(events, stderr, exit_code, record, model):
     if result.get("permission_denials") or result.get("subagent_stats", {}).get("spawned", 0):
         raise IsolationFlag("CLI attempted a tool or delegated", record)
     problem = " ".join(str(e.get("result", "")) for e in results) + " " + stderr[-2000:]
-    if any(term in problem.lower() for term in ("usage limit", "usage_limit", "hit your limit", "weekly limit")):
+    lowered = problem.lower()
+    quota = any(term in lowered for term in ("usage limit", "usage_limit", "hit your limit", "weekly limit"))
+    if quota and "not your usage limit" not in lowered:
         raise UsageLimitReached("Claude subscription limit", record)
     if exit_code or not result or result.get("is_error") or result.get("terminal_reason") == "api_error":
         raise BackendFailure(f"Claude call failed (exit {exit_code}): {problem[:500]}", record)
