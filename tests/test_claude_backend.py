@@ -19,7 +19,7 @@ def isolated_flags(tmp_path, monkeypatch):
 
 
 def valid_request():
-    return {"model": MODEL, "system": [{"type": "text", "text": "system"}],
+    return {"model": MODEL, "system": [{"type": "text", "text": cb.SDK_IDENTITY}, {"type": "text", "text": "system"}],
             "messages": [{"role": "user", "content": "user"}], "tools": [],
             "max_tokens": 128000, "thinking": {"type": "adaptive"},
             "output_config": {"effort": "high"}, "stream": True}

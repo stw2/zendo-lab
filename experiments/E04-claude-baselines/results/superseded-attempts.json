@@ -5,7 +5,8 @@
     "planId": "d0a7eea0-52a3-4ba9-8488-5bb7bcf40873",
     "commit": "55723010f403c534da6ef17ff6cf7150234780b4",
     "effectivePython": "3.13.13",
-    "registrationCorrection": "The registration environmentFacts.python field was mistyped as 3.13.7; actual interpreter is 3.13.13, verified before live inference."
+    "registrationCorrection": "The registration environmentFacts.python field was mistyped as 3.13.7; actual interpreter is 3.13.13, verified before live inference.",
+    "status": "preflight_failed"
   },
   "claude-sonnet-5-5-claude-high": {
     "attemptId": "112dd90c-dc56-4638-9cf8-f804b1e8e733",
@@ -13,7 +14,8 @@
     "planId": "d0a7eea0-52a3-4ba9-8488-5bb7bcf40873",
     "commit": "55723010f403c534da6ef17ff6cf7150234780b4",
     "effectivePython": "3.13.13",
-    "registrationCorrection": "The registration environmentFacts.python field was mistyped as 3.13.7; actual interpreter is 3.13.13, verified before live inference."
+    "registrationCorrection": "The registration environmentFacts.python field was mistyped as 3.13.7; actual interpreter is 3.13.13, verified before live inference.",
+    "status": "preflight_failed"
   },
   "claude-opus-5-5-claude-high": {
     "attemptId": "6b0a95f5-b308-4dfb-b925-e520c1d86363",
@@ -21,7 +23,8 @@
     "planId": "d0a7eea0-52a3-4ba9-8488-5bb7bcf40873",
     "commit": "55723010f403c534da6ef17ff6cf7150234780b4",
     "effectivePython": "3.13.13",
-    "registrationCorrection": "The registration environmentFacts.python field was mistyped as 3.13.7; actual interpreter is 3.13.13, verified before live inference."
+    "registrationCorrection": "The registration environmentFacts.python field was mistyped as 3.13.7; actual interpreter is 3.13.13, verified before live inference.",
+    "status": "preflight_failed"
   },
   "claude-fable-5-1-claude-high": {
     "attemptId": "e7af6890-684b-4bad-8097-a20692a8cb90",
@@ -29,6 +32,15 @@
     "planId": "d0a7eea0-52a3-4ba9-8488-5bb7bcf40873",
     "commit": "55723010f403c534da6ef17ff6cf7150234780b4",
     "effectivePython": "3.13.13",
-    "registrationCorrection": "The registration environmentFacts.python field was mistyped as 3.13.7; actual interpreter is 3.13.13, verified before live inference."
+    "registrationCorrection": "The registration environmentFacts.python field was mistyped as 3.13.7; actual interpreter is 3.13.13, verified before live inference.",
+    "status": "preflight_failed"
+  },
+  "claude-haiku-5-5-claude-high.A21": {
+    "attemptId": "2d464fb4-78cf-4252-ab76-b58e8e416af1",
+    "label": "A21",
+    "planId": "6287f0de-5148-4c32-b0ec-7b44ca044953",
+    "commit": "c60e22fcc4dbda7a32d7d7b3ef1f2cfc079619d9",
+    "effectivePython": "3.13.13",
+    "status": "preflight_failed"
   }
 }

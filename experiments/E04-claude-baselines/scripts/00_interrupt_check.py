@@ -25,7 +25,7 @@ experiment=Path(__file__).resolve().parents[1]
 trace_id=uuid.uuid4().hex
 trace_path=experiment/'results/runs/preflight'/f'interrupted-proxy-fixture-{trace_id}.jsonl'
 trace=cb.Trace(trace_path,trace_id)
-body={'model':cb.MODELS[0],'system':[{'type':'text','text':'system'}],'messages':[{'role':'user','content':'user'}],'tools':[],'max_tokens':128000,'thinking':{'type':'adaptive'},'output_config':{'effort':'high'},'stream':True}
+body={'model':cb.MODELS[0],'system':[{'type':'text','text':cb.SDK_IDENTITY},{'type':'text','text':'system'}],'messages':[{'role':'user','content':'user'}],'tools':[],'max_tokens':128000,'thinking':{'type':'adaptive'},'output_config':{'effort':'high'},'stream':True}
 errors=[]
 with patch.object(cb.http.client,'HTTPSConnection',Connection):
  guard=cb.Guard(cb.MODELS[0],'system','user',trace)

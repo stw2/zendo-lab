@@ -5,7 +5,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 
-from claude_backend import ClaudeBackend, CLI_SHA256, CLI_VERSION, MODELS, STATE, digest, profile
+from claude_backend import ClaudeBackend, CLI_SHA256, CLI_VERSION, MODELS, SDK_IDENTITY, STATE, digest, profile
 
 
 def main():
@@ -32,7 +32,8 @@ def main():
         assert reply.text == "OK" and reply.record["reasoning"] == "Offline fixture."
         assert reply.record["requests"] == 1 and reply.record["stop_reason"] == "end_turn"
         backend.close()
-        rows.append({"model": model, "exact_prompts": True, "tools": [], "effort": "high",
+        rows.append({"model": model, "benchmark_messages_unchanged": True, "sdk_identity": SDK_IDENTITY,
+                     "other_prompt_additions": False, "tools": [], "effort": "high",
                      "thinking": "adaptive", "max_tokens": 128000, "stream_reconstruction": True})
     report = {"utc": stamp, "offline_only": True, "claude_cli": CLI_VERSION,
               "claude_binary_sha256": CLI_SHA256, "repository_read_denied": True,

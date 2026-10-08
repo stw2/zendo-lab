@@ -1,6 +1,7 @@
 """Stateless, tool-free Claude CLI calls for the unmodified ZendoBench runner.
 
-The CLI's documented EXTRA_BODY setting substitutes the exact benchmark messages.
+The CLI's documented EXTRA_BODY setting substitutes unchanged benchmark messages
+plus the fixed SDK identity sentence documented in DESIGN.md's amendments.
 A local forwarding guard checks every inference request BEFORE sending its unchanged
 bytes to Anthropic. Authentication headers are forwarded only to api.anthropic.com
 and never recorded. Every request, response stream, CLI event and stderr line is
@@ -42,6 +43,7 @@ ARMS = {f"{model}-claude-high": model for model in MODELS}
 TIMEOUT = 3600
 BACKOFF = [30, 60, 120, 300, 900]
 MAX_OUTPUT = 128000
+SDK_IDENTITY = "You are a Claude agent, built on Anthropic's Claude Agent SDK."
 SETTINGS = {"disableAllHooks": True, "showThinkingSummaries": True, "ultracode": False,
             "autoMemoryEnabled": False, "fastMode": False}
 FLAGS = ["--safe-mode", "--restricted", "--setting-sources", "",
@@ -90,7 +92,8 @@ class IsolationFlag(RuntimeError):
 
 def validate_request(body, model, system, user):
     """A discrepancy stops inference; no silent fallback, prompt addition or tool."""
-    expected = {"model": model, "system": [{"type": "text", "text": system}],
+    expected = {"model": model, "system": [{"type": "text", "text": SDK_IDENTITY},
+                                          {"type": "text", "text": system}],
                 "messages": [{"role": "user", "content": user}], "tools": [],
                 "max_tokens": MAX_OUTPUT, "thinking": {"type": "adaptive"},
                 "output_config": {"effort": "high"}, "stream": True}
@@ -450,7 +453,7 @@ class ClaudeBackend(Backend):
                 env = environment()
                 env["ANTHROPIC_BASE_URL"] = endpoint
                 env["CLAUDE_CODE_EXTRA_BODY"] = json.dumps({
-                    "system": [{"type": "text", "text": system}],
+                    "system": [{"type": "text", "text": SDK_IDENTITY}, {"type": "text", "text": system}],
                     "messages": [{"role": "user", "content": user}]}, separators=(",", ":"))
                 if self.offline:
                     env["ANTHROPIC_API_KEY"] = "offline-placeholder"
@@ -530,7 +533,8 @@ class ClaudeBackend(Backend):
                 "sampling": "provider defaults; temperature, top_p, top_k omitted",
                 "auth": "Claude subscription; dedicated configuration and login",
                 "flags": FLAGS, "sandbox_profile_sha256": self.profile_sha256,
-                "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; exact benchmark system and user messages",
+                "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+                "sdk_identity": SDK_IDENTITY,
                 "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
                 "traces": "incremental requests, full provider and CLI streams, stderr, every try",
                 "timeout": self.timeout, "retries": {"backoff_seconds": self.backoff, "jitter": "x0.75-1.25"}}

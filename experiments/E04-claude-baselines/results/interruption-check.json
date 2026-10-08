@@ -3,5 +3,5 @@
   "partial_stream_retained": true,
   "handlers_joined_before_trace_end": true,
   "client_stopped": true,
-  "backend_source_sha256": "8096a1454e1fe30b46de48c966eea764e7ff4bdf43dd3c87c942f9210b324e2c"
+  "backend_source_sha256": "46aa4ce2c40604920815a36138e01d01dd69967bc4c91f0f28597e054806c4a3"
 }
