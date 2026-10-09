@@ -1,9 +1,11 @@
-"""Coordinate Haiku/Sonnet/Opus, then Fable, without changing inference.
+"""Coordinate the approved E4 schedule without changing inference.
 
 Use --adopt-haiku with a private parallel-handoff.json to monitor an existing
 01_run.sh child after its old outer controller has exited. --check is read-only.
 After manual diagnosis, --resume-reviewed reads reviewed-continuation.json:
 running arms are adopted and stopped arms continue only after evidence checks.
+--remaining-parallel uses remaining-continuation.json to resume Haiku alongside
+Fable and skip the already verified Sonnet and Opus attempts entirely.
 The user must authorize the scheduling amendment and register attempts first.
 """
 from concurrent.futures import ThreadPoolExecutor
@@ -86,10 +88,12 @@ def request(path, body=None):
 
 
 class Coordinator:
-    def __init__(self, adopt, resume_reviewed=False):
+    def __init__(self, adopt, resume_reviewed=False, remaining_parallel=False):
         self.registrations = json.loads((E / "results/attempts.json").read_text())
         self.handoff = json.loads((R / "parallel-handoff.json").read_text()) if adopt else None
-        self.continuation = json.loads((R / "reviewed-continuation.json").read_text()) if resume_reviewed else None
+        self.remaining_parallel = remaining_parallel
+        continuation_file = "remaining-continuation.json" if remaining_parallel else "reviewed-continuation.json"
+        self.continuation = json.loads((R / continuation_file).read_text()) if resume_reviewed else None
         self.states = {arm: {"phase": "queued"} for arm in ARMS}
         self.status_lock = threading.Lock()
         self.scoring_lock = threading.Lock()
@@ -129,7 +133,7 @@ class Coordinator:
                     actual = process_signature(row["worker_pid"])
                     if not row["worker_signature"].endswith(expected) or actual != row["worker_signature"]:
                         raise RuntimeError("Running-arm handoff does not match its live worker")
-                elif row.get("resume_reviewed"):
+                elif row.get("resume_reviewed") or row.get("verified_complete"):
                     if not row.get("evidence") or not row.get("review_summary"):
                         raise RuntimeError("Stopped-arm continuation needs retained review evidence")
                     for evidence in row["evidence"]:
@@ -147,15 +151,28 @@ class Coordinator:
                     if (not score["verified"] or audit["missing_joins"] or audit["interrupted_traces"]
                             or sum(t["finished"] for t in score["tiers"].values()) != row["finished"]):
                         raise RuntimeError("Partial games or their transcripts have not verified")
+                    if row.get("verified_complete"):
+                        if row["finished"] != 460 or last_exit(R, arm) != 0:
+                            raise RuntimeError("Completed arm must contain all 460 verified games")
+                        current = request("/api/research/attempts/" + self.registrations[arm]["attemptId"])
+                        if current.get("status") != "succeeded":
+                            raise RuntimeError("Completed arm lacks its succeeded attempt receipt")
                     smoke_audit = json.loads((R / "smoke" / (arm + ".audit.json")).read_text())
                     if (last_exit(R / "smoke", arm) != 0 or smoke_audit["missing_joins"]
                             or smoke_audit["interrupted_traces"]):
                         raise RuntimeError("Existing smoke evidence does not pass")
                 else:
                     raise RuntimeError("Each continuation arm must be running or explicitly reviewed")
+        if self.remaining_parallel:
+            arms = list(ARMS)
+            if (self.handoff or not self.continuation
+                    or not self.continuation["arms"][arms[0]].get("resume_reviewed")
+                    or not all(self.continuation["arms"][arm].get("verified_complete") for arm in arms[1:3])):
+                raise RuntimeError("Remaining-arm schedule requires reviewed Haiku and completed Sonnet/Opus")
         return {"measurement_sources_match": True, "adopting_haiku": bool(self.handoff),
                 "reviewed_continuation": bool(self.continuation),
-                "models": list(ARMS.values()), "batch_per_arm": 12, "maximum_active_arms": 3}
+                "models": list(ARMS.values()), "batch_per_arm": 12,
+                "maximum_active_arms": 2 if self.remaining_parallel else 3}
 
     def status(self, arm, phase, code=None, worker_pid=None):
         with self.status_lock:
@@ -230,15 +247,20 @@ class Coordinator:
         return outputs
 
     def arm(self, arm, adopt=False):
+        continuation = (self.continuation or {}).get("arms", {}).get(arm)
+        if continuation and continuation.get("verified_complete"):
+            self.status(arm, "verified", 0)
+            return True
+        schedule = ("Owner-authorized Haiku/Fable overlap; Sonnet and Opus already verified. "
+                    if self.remaining_parallel else "Owner-authorized Haiku/Sonnet/Opus overlap, followed by Fable. ")
         context = (f"Arm {arm}, model {ARMS[arm]}, high effort, adaptive summarized thinking, "
                    "provider-default sampling, max_tokens 128000, Claude Code 2.1.293 function backend; "
                    "dev manifest, 460 full-run games, 12 concurrent calls per arm; manifest episode seeds, "
                    "model unseeded; Apple M4 Max 128 GB local orchestration, hosted inference hardware unknown. "
-                   "Owner-authorized Haiku/Sonnet/Opus overlap, followed by Fable; fixed SDK identity, "
+                   + schedule + "Fixed SDK identity, "
                    "disabled tools and full private transcript capture unchanged.")
         try:
             code = None
-            continuation = (self.continuation or {}).get("arms", {}).get(arm)
             running = continuation if continuation and continuation.get("worker_pid") else self.handoff if adopt else None
             if running:
                 self.status(arm, "running_full_baseline", worker_pid=running["worker_pid"])
@@ -312,6 +334,14 @@ class Coordinator:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
             self.check()
             arms = list(ARMS)
+            if self.remaining_parallel:
+                for arm in arms[1:3]:
+                    self.status(arm, "verified", 0)
+                with ThreadPoolExecutor(max_workers=2) as pool:
+                    pending = [pool.submit(self.arm, arm) for arm in (arms[0], arms[3])]
+                    passed = [future.result() for future in pending]
+                self.status(None, "results_ready_for_review" if all(passed) else "stopped_requires_diagnosis")
+                return 0 if all(passed) else 1
             with ThreadPoolExecutor(max_workers=3) as pool:
                 pending = [pool.submit(self.arm, arm, i == 0 and bool(self.handoff))
                            for i, arm in enumerate(arms[:3])]
@@ -326,9 +356,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--adopt-haiku", action="store_true")
     parser.add_argument("--resume-reviewed", action="store_true")
+    parser.add_argument("--remaining-parallel", action="store_true")
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
-    coordinator = Coordinator(args.adopt_haiku, args.resume_reviewed)
+    if args.remaining_parallel and (not args.resume_reviewed or args.adopt_haiku):
+        parser.error("--remaining-parallel requires --resume-reviewed and excludes --adopt-haiku")
+    coordinator = Coordinator(args.adopt_haiku, args.resume_reviewed, args.remaining_parallel)
     if args.check:
         print(json.dumps(coordinator.check(), indent=2))
         return 0

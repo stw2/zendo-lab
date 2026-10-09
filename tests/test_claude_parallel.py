@@ -15,6 +15,8 @@ def coordinator(monkeypatch, tmp_path):
     monkeypatch.setattr(parallel, "R", tmp_path)
     instance = parallel.Coordinator.__new__(parallel.Coordinator)
     instance.handoff = {"worker_pid": 123}
+    instance.continuation = None
+    instance.remaining_parallel = False
     instance.blocked = threading.Event()
     instance.check = lambda: None
     instance.status = lambda *args, **kwargs: None
@@ -93,3 +95,32 @@ def test_running_opus_is_adopted_without_duplicate_launch(monkeypatch, tmp_path)
     monkeypatch.setattr(parallel, "last_exit", lambda folder, arm: 5)
     instance.run_part = lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("duplicate launch"))
     assert instance.arm(arm) is False
+
+
+def test_remaining_models_overlap_without_relaunching_completed_models(monkeypatch, tmp_path):
+    instance = coordinator(monkeypatch, tmp_path)
+    instance.remaining_parallel = True
+    arms = list(parallel.ARMS)
+    barrier = threading.Barrier(2, timeout=3)
+    called, states = [], []
+    instance.status = lambda arm, phase, *args: states.append((arm, phase))
+
+    def run(arm):
+        assert arm in (arms[0], arms[3])
+        called.append(arm)
+        barrier.wait()
+        return True
+
+    instance.arm = run
+    assert instance.run() == 0
+    assert set(called) == {arms[0], arms[3]}
+    assert (arms[1], "verified") in states and (arms[2], "verified") in states
+
+
+def test_completed_arm_sends_no_new_event_or_inference(monkeypatch, tmp_path):
+    instance = coordinator(monkeypatch, tmp_path)
+    arm = list(parallel.ARMS)[1]
+    instance.continuation = {"arms": {arm: {"verified_complete": True}}}
+    instance.event = lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("terminal attempt event"))
+    instance.run_part = lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("completed arm rerun"))
+    assert instance.arm(arm) is True
