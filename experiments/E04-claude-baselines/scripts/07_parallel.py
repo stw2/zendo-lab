@@ -7,6 +7,7 @@ running arms are adopted and stopped arms continue only after evidence checks.
 --remaining-parallel uses remaining-continuation.json to resume Haiku alongside
 Fable and skip the already verified Sonnet and Opus attempts entirely. Fable
 may also have reviewed continuation evidence once its initial run has started.
+--only ARM selects one remaining arm while the other remains unlaunched.
 The user must authorize the scheduling amendment and register attempts first.
 """
 from concurrent.futures import ThreadPoolExecutor
@@ -89,10 +90,11 @@ def request(path, body=None):
 
 
 class Coordinator:
-    def __init__(self, adopt, resume_reviewed=False, remaining_parallel=False):
+    def __init__(self, adopt, resume_reviewed=False, remaining_parallel=False, only=None):
         self.registrations = json.loads((E / "results/attempts.json").read_text())
         self.handoff = json.loads((R / "parallel-handoff.json").read_text()) if adopt else None
         self.remaining_parallel = remaining_parallel
+        self.only = only
         continuation_file = "remaining-continuation.json" if remaining_parallel else "reviewed-continuation.json"
         self.continuation = json.loads((R / continuation_file).read_text()) if resume_reviewed else None
         self.states = {arm: {"phase": "queued"} for arm in ARMS}
@@ -102,6 +104,8 @@ class Coordinator:
         self.events = R / "controller-events"
 
     def check(self):
+        if self.only and (not self.remaining_parallel or self.only not in (list(ARMS)[0], list(ARMS)[3])):
+            raise RuntimeError("Single-arm continuation requires remaining mode and Haiku or Fable")
         if list(self.registrations) != list(ARMS):
             raise RuntimeError("Attempt mapping must include all four arms in order")
         for arm, row in self.registrations.items():
@@ -180,14 +184,15 @@ class Coordinator:
         return {"measurement_sources_match": True, "adopting_haiku": bool(self.handoff),
                 "reviewed_continuation": bool(self.continuation),
                 "models": list(ARMS.values()), "batch_per_arm": 12,
-                "maximum_active_arms": 2 if self.remaining_parallel else 3}
+                "maximum_active_arms": 1 if self.only else 2 if self.remaining_parallel else 3}
 
     def status(self, arm, phase, code=None, worker_pid=None):
         with self.status_lock:
             if arm:
                 self.states[arm] = {"phase": phase, "exit_code": code,
                                     "worker_pid": worker_pid, "updated_at": now()}
-            value = {"phase": "running_parallel" if arm else phase, "pid": os.getpid(),
+            active_phase = "running_selected_arm" if self.only else "running_parallel"
+            value = {"phase": active_phase if arm else phase, "pid": os.getpid(),
                      "arms": self.states, "updated_at": now()}
             atomic_json(R / "controller.status.json", value)
             print(json.dumps({"arm": arm, "phase": phase, "exit_code": code, "at": now()}), flush=True)
@@ -259,7 +264,8 @@ class Coordinator:
         if continuation and continuation.get("verified_complete"):
             self.status(arm, "verified", 0)
             return True
-        schedule = ("Owner-authorized Haiku/Fable overlap; Sonnet and Opus already verified. "
+        schedule = ("Single-arm execution with 12 concurrent calls. " if self.only else
+                    "Owner-authorized Haiku/Fable overlap; Sonnet and Opus already verified. "
                     if self.remaining_parallel else "Owner-authorized Haiku/Sonnet/Opus overlap, followed by Fable. ")
         context = (f"Arm {arm}, model {ARMS[arm]}, high effort, adaptive summarized thinking, "
                    "provider-default sampling, max_tokens 128000, Claude Code 2.1.293 function backend; "
@@ -346,10 +352,15 @@ class Coordinator:
             if self.remaining_parallel:
                 for arm in arms[1:3]:
                     self.status(arm, "verified", 0)
-                with ThreadPoolExecutor(max_workers=2) as pool:
-                    pending = [pool.submit(self.arm, arm) for arm in (arms[0], arms[3])]
+                selected = [arm for arm in (arms[0], arms[3]) if self.only is None or arm == self.only]
+                for arm in (arms[0], arms[3]):
+                    if arm not in selected:
+                        self.status(arm, "waiting_for_owner_resume")
+                with ThreadPoolExecutor(max_workers=len(selected)) as pool:
+                    pending = [pool.submit(self.arm, arm) for arm in selected]
                     passed = [future.result() for future in pending]
-                self.status(None, "results_ready_for_review" if all(passed) else "stopped_requires_diagnosis")
+                complete_phase = "selected_arm_verified" if self.only else "results_ready_for_review"
+                self.status(None, complete_phase if all(passed) else "stopped_requires_diagnosis")
                 return 0 if all(passed) else 1
             with ThreadPoolExecutor(max_workers=3) as pool:
                 pending = [pool.submit(self.arm, arm, i == 0 and bool(self.handoff))
@@ -366,11 +377,14 @@ def main():
     parser.add_argument("--adopt-haiku", action="store_true")
     parser.add_argument("--resume-reviewed", action="store_true")
     parser.add_argument("--remaining-parallel", action="store_true")
+    parser.add_argument("--only", choices=(list(ARMS)[0], list(ARMS)[3]))
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     if args.remaining_parallel and (not args.resume_reviewed or args.adopt_haiku):
         parser.error("--remaining-parallel requires --resume-reviewed and excludes --adopt-haiku")
-    coordinator = Coordinator(args.adopt_haiku, args.resume_reviewed, args.remaining_parallel)
+    if args.only and not args.remaining_parallel:
+        parser.error("--only requires --remaining-parallel")
+    coordinator = Coordinator(args.adopt_haiku, args.resume_reviewed, args.remaining_parallel, args.only)
     if args.check:
         print(json.dumps(coordinator.check(), indent=2))
         return 0

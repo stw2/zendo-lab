@@ -19,6 +19,7 @@ def coordinator(monkeypatch, tmp_path):
     instance.handoff = {"worker_pid": 123}
     instance.continuation = None
     instance.remaining_parallel = False
+    instance.only = None
     instance.blocked = threading.Event()
     instance.check = lambda: None
     instance.status = lambda *args, **kwargs: None
@@ -128,6 +129,20 @@ def test_completed_arm_sends_no_new_event_or_inference(monkeypatch, tmp_path):
     assert instance.arm(arm) is True
 
 
+def test_haiku_only_never_launches_fable(monkeypatch, tmp_path):
+    instance = coordinator(monkeypatch, tmp_path)
+    arms = list(parallel.ARMS)
+    instance.remaining_parallel = True
+    instance.only = arms[0]
+    calls, states = [], []
+    instance.arm = lambda arm: calls.append(arm) or True
+    instance.status = lambda arm, phase, *args: states.append((arm, phase))
+    assert instance.run() == 0
+    assert calls == [arms[0]]
+    assert (arms[3], "waiting_for_owner_resume") in states
+    assert (None, "selected_arm_verified") in states
+
+
 def test_remaining_check_accepts_verified_fable_continuation(monkeypatch, tmp_path):
     instance = coordinator(monkeypatch, tmp_path)
     instance.handoff = None
@@ -156,6 +171,8 @@ def test_remaining_check_accepts_verified_fable_continuation(monkeypatch, tmp_pa
                                   for p in (score, audit)]}
     instance.continuation = {"arms": rows}
     assert parallel.Coordinator.check(instance)["maximum_active_arms"] == 2
+    instance.only = next(iter(parallel.ARMS))
+    assert parallel.Coordinator.check(instance)["maximum_active_arms"] == 1
 
 
 def test_fable_continuation_skips_smoke_and_keeps_resume_progress_local(monkeypatch, tmp_path):
