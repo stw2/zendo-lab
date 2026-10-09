@@ -1,5 +1,7 @@
 """The scheduler overlaps three arms and keeps Fable behind verification."""
 import importlib.util
+from hashlib import sha256
+import json
 from pathlib import Path
 import sys
 import threading
@@ -124,3 +126,52 @@ def test_completed_arm_sends_no_new_event_or_inference(monkeypatch, tmp_path):
     instance.event = lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("terminal attempt event"))
     instance.run_part = lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("completed arm rerun"))
     assert instance.arm(arm) is True
+
+
+def test_remaining_check_accepts_verified_fable_continuation(monkeypatch, tmp_path):
+    instance = coordinator(monkeypatch, tmp_path)
+    instance.handoff = None
+    instance.remaining_parallel = True
+    instance.registrations = {arm: {"model": model, "attemptId": arm} for arm, model in parallel.ARMS.items()}
+    monkeypatch.setattr(parallel, "REPO", tmp_path)
+    monkeypatch.setattr(parallel, "STATE", tmp_path)
+    monkeypatch.setattr(parallel, "MEASUREMENT_FILES", ())
+    monkeypatch.setattr(parallel, "request", lambda path: {"status": "succeeded"})
+    (tmp_path / "smoke").mkdir()
+    rows = {}
+    for index, arm in enumerate(parallel.ARMS):
+        complete = index in (1, 2)
+        finished = 460 if complete else 200
+        score = tmp_path / (arm + ".score.json")
+        score.write_text(json.dumps({"verified": True, "tiers": {"T1": {"finished": finished}}}))
+        audit = tmp_path / (arm + ".audit.json")
+        audit.write_text(json.dumps({"missing_joins": 0, "interrupted_traces": 0}))
+        (tmp_path / "smoke" / audit.name).write_text(audit.read_text())
+        (tmp_path / "smoke" / (arm + ".exit")).write_text("0")
+        (tmp_path / (arm + ".exit")).write_text("0" if complete else "1")
+        rows[arm] = {"verified_complete": complete, "resume_reviewed": not complete,
+                     "finished": finished, "review_summary": "Verified retained games.",
+                     "score_file": score.name, "audit_file": audit.name,
+                     "evidence": [{"path": p.name, "sha256": sha256(p.read_bytes()).hexdigest()}
+                                  for p in (score, audit)]}
+    instance.continuation = {"arms": rows}
+    assert parallel.Coordinator.check(instance)["maximum_active_arms"] == 2
+
+
+def test_fable_continuation_skips_smoke_and_keeps_resume_progress_local(monkeypatch, tmp_path):
+    instance = coordinator(monkeypatch, tmp_path)
+    arm = list(parallel.ARMS)[3]
+    instance.handoff = None
+    instance.continuation = {"arms": {arm: {"resume_reviewed": True,
+        "report_resume_progress": False, "review_summary": "Local continuation."}}}
+    events, launches = [], []
+    instance.event = lambda arm, kind, summary, **kwargs: events.append(summary)
+
+    def launch(arm, smoke=False):
+        launches.append(smoke)
+        return 77  # Deliberately stop before scoring or model calls.
+
+    instance.run_part = launch
+    assert instance.arm(arm) is False
+    assert launches == [False]
+    assert len(events) == 1 and events[0].startswith("This arm stopped")

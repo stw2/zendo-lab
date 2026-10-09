@@ -5,7 +5,8 @@ Use --adopt-haiku with a private parallel-handoff.json to monitor an existing
 After manual diagnosis, --resume-reviewed reads reviewed-continuation.json:
 running arms are adopted and stopped arms continue only after evidence checks.
 --remaining-parallel uses remaining-continuation.json to resume Haiku alongside
-Fable and skip the already verified Sonnet and Opus attempts entirely.
+Fable and skip the already verified Sonnet and Opus attempts entirely. Fable
+may also have reviewed continuation evidence once its initial run has started.
 The user must authorize the scheduling amendment and register attempts first.
 """
 from concurrent.futures import ThreadPoolExecutor
@@ -125,8 +126,12 @@ class Coordinator:
             if actual is None and last_exit(R, arm) != 0:
                 raise RuntimeError("Haiku worker stopped before handoff; diagnose first")
         if self.continuation:
-            if self.handoff or set(self.continuation["arms"]) != set(list(ARMS)[:3]):
-                raise RuntimeError("Reviewed continuation must cover exactly the three active arms")
+            covered = set(self.continuation["arms"])
+            allowed = [set(list(ARMS)[:3])]
+            if self.remaining_parallel:
+                allowed.append(set(ARMS))
+            if self.handoff or covered not in allowed:
+                raise RuntimeError("Reviewed continuation must cover the first three arms, plus optional Fable in remaining mode")
             for arm, row in self.continuation["arms"].items():
                 if row.get("worker_pid"):
                     expected = "bash experiments/E04-claude-baselines/scripts/01_run.sh " + arm
@@ -169,6 +174,9 @@ class Coordinator:
                     or not self.continuation["arms"][arms[0]].get("resume_reviewed")
                     or not all(self.continuation["arms"][arm].get("verified_complete") for arm in arms[1:3])):
                 raise RuntimeError("Remaining-arm schedule requires reviewed Haiku and completed Sonnet/Opus")
+            fable = self.continuation["arms"].get(arms[3])
+            if fable and not fable.get("resume_reviewed"):
+                raise RuntimeError("An existing Fable run needs reviewed continuation evidence")
         return {"measurement_sources_match": True, "adopting_haiku": bool(self.handoff),
                 "reviewed_continuation": bool(self.continuation),
                 "models": list(ARMS.values()), "batch_per_arm": 12,
@@ -273,9 +281,10 @@ class Coordinator:
                 code = last_exit(R, arm)
             elif continuation and continuation.get("resume_reviewed"):
                 self.status(arm, "resuming_after_review")
-                self.event(arm, "progress", continuation["review_summary"] + " Continuing only unfinished games "
-                    "in a fresh immutable part under the same attempt and byte-identical measurement configuration. "
-                    "Completed games and verified smoke evidence are retained, not resampled. " + context)
+                if continuation.get("report_resume_progress", True):
+                    self.event(arm, "progress", continuation["review_summary"] + " Continuing only unfinished games "
+                        "in a fresh immutable part under the same attempt and byte-identical measurement configuration. "
+                        "Completed games and verified smoke evidence are retained, not resampled. " + context)
             else:
                 self.status(arm, "starting_registered_arm")
                 self.event(arm, "started", "Starting separate six-game smoke; full measurement follows only after "
