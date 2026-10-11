@@ -1,0 +1,30 @@
+{
+  "tries": 10163,
+  "answered_tries": 9961,
+  "cited_tries": 10059,
+  "uncited_tries": 104,
+  "missing_joins": 0,
+  "interrupted_traces": 0,
+  "trace_files": [
+    {
+      "file": "claude-fable-5-1-claude-high-v2.traces.jsonl.gz",
+      "sha256": "f07a27f67f4a2ee57bee62d3e3e79407b6d9a8b8fdfdc5963f91669aa8e8c2f6",
+      "bytes": 108654097
+    },
+    {
+      "file": "claude-fable-5-1-claude-high-v2.part2.traces.jsonl.gz",
+      "sha256": "722456488bbf2614f3fba315184ed23a5bee978159d548b27447c13102551da0",
+      "bytes": 75703375
+    },
+    {
+      "file": "claude-fable-5-1-claude-high-v2.part3.traces.jsonl.gz",
+      "sha256": "b9e025ff46635d8ada5d4da75ba6b64507713260d20fa2bef2acd56f1d3afed7",
+      "bytes": 73059083
+    },
+    {
+      "file": "claude-fable-5-1-claude-high-v2.part4.traces.jsonl.gz",
+      "sha256": "299beb08b876aacae5c6f74849bfe4531b7ccbfb9a97eedbc49c394557927710",
+      "bytes": 17284932
+    }
+  ]
+}

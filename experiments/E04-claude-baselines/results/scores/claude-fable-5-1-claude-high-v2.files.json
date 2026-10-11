@@ -1,0 +1,22 @@
+[
+ {
+  "file": "claude-fable-5-1-claude-high-v2.jsonl",
+  "sha256": "b370cb3c94fe36a170a2ac02202e91ac00d20b6d7c2d178ef5c4477b66fdf6a4",
+  "bytes": 16403276
+ },
+ {
+  "file": "claude-fable-5-1-claude-high-v2.part2.jsonl",
+  "sha256": "e73e022c8ee6501aae441df398987f6b18da6abf05edc163909fe977ddb90b07",
+  "bytes": 8961557
+ },
+ {
+  "file": "claude-fable-5-1-claude-high-v2.part3.jsonl",
+  "sha256": "6acdab92ac2461bc4dab6d007c160f706841fff9f4cd4ad20866b543ad1eae75",
+  "bytes": 8486738
+ },
+ {
+  "file": "claude-fable-5-1-claude-high-v2.part4.jsonl",
+  "sha256": "b6bb1a4c9f945a76af268cf3ab602f21630fa761d0c233226a1fd4885b0f9577",
+  "bytes": 2203848
+ }
+]

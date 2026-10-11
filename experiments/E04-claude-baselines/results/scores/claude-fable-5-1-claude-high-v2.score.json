@@ -1,0 +1,1593 @@
+{
+ "arm": "claude-fable-5-1-claude-high-v2",
+ "composite": false,
+ "context": {
+  "baseline_scope": "One submission from seeds, no experiments; expected win rate with uniform MAP tie breaking on scored items, equal weight per headline tier.",
+  "exposure": "Rule catalogs are public and include classes used in experiments while this benchmark was developed. Sealed items hide seed pairs, not the rule universe. This benchmark does not establish contamination-free reasoning.",
+  "prior": "T1-T4 share the 3-piece catalog prior because their tier is not revealed; T5 and T6 use their registered tier classes.",
+  "seed_only_map_win": 0.04655555555555555,
+  "tiers": {
+   "T1": {
+    "manifest_classes": 15,
+    "manifest_families": 5,
+    "scored_classes": 15,
+    "scored_families": 5,
+    "seed_only_map_win": 0.0
+   },
+   "T2": {
+    "manifest_classes": 30,
+    "manifest_families": 7,
+    "scored_classes": 30,
+    "scored_families": 7,
+    "seed_only_map_win": 0.0
+   },
+   "T3": {
+    "manifest_classes": 75,
+    "manifest_families": 10,
+    "scored_classes": 75,
+    "scored_families": 10,
+    "seed_only_map_win": 0.17555555555555555
+   },
+   "T4": {
+    "manifest_classes": 30,
+    "manifest_families": 5,
+    "scored_classes": 30,
+    "scored_families": 5,
+    "seed_only_map_win": 0.0
+   },
+   "T5": {
+    "manifest_classes": 50,
+    "manifest_families": 17,
+    "scored_classes": 50,
+    "scored_families": 17,
+    "seed_only_map_win": 0.018333333333333333
+   },
+   "T6": {
+    "manifest_classes": 30,
+    "manifest_families": 7,
+    "scored_classes": 30,
+    "scored_families": 7,
+    "seed_only_map_win": 0.03888888888888888
+   }
+  }
+ },
+ "families": {
+  "T1": {
+   "count=1-1-and": {
+    "ci": [
+     0.2924017738212866,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 1.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   },
+   "count=2-1-and": {
+    "ci": [
+     0.2924017738212866,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 1.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   },
+   "count>=2-1-and": {
+    "ci": [
+     0.2924017738212866,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 1.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   },
+   "exists-1-and": {
+    "ci": [
+     0.2924017738212866,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 1.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   },
+   "forall-1-and": {
+    "ci": [
+     0.2924017738212866,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 1.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   }
+  },
+  "T2": {
+   "count=1-2-and": {
+    "ci": [
+     0.3976353643835254,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": null,
+    "estimate": 1.0,
+    "items": 8,
+    "n_eff": 4,
+    "scored": 8,
+    "se": 0.0
+   },
+   "count=1-2-or": {
+    "ci": [
+     0.3976353643835254,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": null,
+    "estimate": 1.0,
+    "items": 8,
+    "n_eff": 4,
+    "scored": 8,
+    "se": 0.0
+   },
+   "exists-2-and": {
+    "ci": [
+     0.3976353643835254,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": null,
+    "estimate": 1.0,
+    "items": 8,
+    "n_eff": 4,
+    "scored": 8,
+    "se": 0.0
+   },
+   "exists-2-or": {
+    "ci": [
+     0.2924017738212866,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 1.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   },
+   "forall-2-and": {
+    "ci": [
+     0.4781762498950183,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 5,
+    "df": null,
+    "estimate": 1.0,
+    "items": 10,
+    "n_eff": 5,
+    "scored": 10,
+    "se": 0.0
+   },
+   "forall-2-or": {
+    "ci": [
+     0.4781762498950183,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 5,
+    "df": null,
+    "estimate": 1.0,
+    "items": 10,
+    "n_eff": 5,
+    "scored": 10,
+    "se": 0.0
+   },
+   "outer-2-and": {
+    "ci": [
+     0.4781762498950183,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 5,
+    "df": null,
+    "estimate": 1.0,
+    "items": 10,
+    "n_eff": 5,
+    "scored": 10,
+    "se": 0.0
+   }
+  },
+  "T3": {
+   "count=1-3-and": {
+    "ci": [
+     0.6637328831200573,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 9,
+    "df": null,
+    "estimate": 1.0,
+    "items": 18,
+    "n_eff": 9,
+    "scored": 18,
+    "se": 0.0
+   },
+   "count=2-2-and": {
+    "ci": [
+     0.3976353643835254,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": null,
+    "estimate": 1.0,
+    "items": 8,
+    "n_eff": 4,
+    "scored": 8,
+    "se": 0.0
+   },
+   "count=2-3-and": {
+    "ci": [
+     0.6637328831200573,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 9,
+    "df": null,
+    "estimate": 1.0,
+    "items": 18,
+    "n_eff": 9,
+    "scored": 18,
+    "se": 0.0
+   },
+   "count>=2-2-and": {
+    "ci": [
+     0.3976353643835254,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": null,
+    "estimate": 1.0,
+    "items": 8,
+    "n_eff": 4,
+    "scored": 8,
+    "se": 0.0
+   },
+   "count>=2-3-and": {
+    "ci": [
+     0.6637328831200573,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 9,
+    "df": null,
+    "estimate": 1.0,
+    "items": 18,
+    "n_eff": 9,
+    "scored": 18,
+    "se": 0.0
+   },
+   "exists-3-and": {
+    "ci": [
+     0.6305833524471807,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": null,
+    "estimate": 1.0,
+    "items": 16,
+    "n_eff": 8,
+    "scored": 16,
+    "se": 0.0
+   },
+   "exists-3-or": {
+    "ci": [
+     0.6305833524471807,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": null,
+    "estimate": 1.0,
+    "items": 16,
+    "n_eff": 8,
+    "scored": 16,
+    "se": 0.0
+   },
+   "forall-3-and": {
+    "ci": [
+     0.6305833524471807,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": null,
+    "estimate": 1.0,
+    "items": 16,
+    "n_eff": 8,
+    "scored": 16,
+    "se": 0.0
+   },
+   "forall-3-or": {
+    "ci": [
+     0.6305833524471807,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": null,
+    "estimate": 1.0,
+    "items": 16,
+    "n_eff": 8,
+    "scored": 16,
+    "se": 0.0
+   },
+   "outer-3-and": {
+    "ci": [
+     0.6305833524471807,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": null,
+    "estimate": 1.0,
+    "items": 16,
+    "n_eff": 8,
+    "scored": 16,
+    "se": 0.0
+   }
+  },
+  "T4": {
+   "count=1-3-or": {
+    "ci": [
+     0.5903836027749965,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 7,
+    "df": null,
+    "estimate": 1.0,
+    "items": 14,
+    "n_eff": 7,
+    "scored": 14,
+    "se": 0.0
+   },
+   "count=2-2-or": {
+    "ci": [
+     0.3976353643835254,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": null,
+    "estimate": 1.0,
+    "items": 8,
+    "n_eff": 4,
+    "scored": 8,
+    "se": 0.0
+   },
+   "count=2-3-or": {
+    "ci": [
+     0.5718708390903009,
+     0.9822054845168084
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 7,
+    "df": 6.0,
+    "estimate": 0.8571428571428571,
+    "items": 14,
+    "n_eff": 14.0,
+    "scored": 14,
+    "se": 0.09221388919541469
+   },
+   "count>=2-2-or": {
+    "ci": [
+     0.3976353643835254,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": null,
+    "estimate": 1.0,
+    "items": 8,
+    "n_eff": 4,
+    "scored": 8,
+    "se": 0.0
+   },
+   "count>=2-3-or": {
+    "ci": [
+     0.6165237631507363,
+     0.984486396184586
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.875,
+    "items": 16,
+    "n_eff": 16.0,
+    "scored": 16,
+    "se": 0.08183170883849714
+   }
+  },
+  "T5": {
+   "K01": {
+    "ci": [
+     0.158113883008419,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": null,
+    "estimate": 1.0,
+    "items": 4,
+    "n_eff": 2,
+    "scored": 4,
+    "se": 0.0
+   },
+   "K02": {
+    "ci": [
+     0.6305833524471807,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": null,
+    "estimate": 1.0,
+    "items": 16,
+    "n_eff": 8,
+    "scored": 16,
+    "se": 0.0
+   },
+   "K03": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "K04": {
+    "ci": [
+     0.3976353643835254,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": null,
+    "estimate": 1.0,
+    "items": 8,
+    "n_eff": 4,
+    "scored": 8,
+    "se": 0.0
+   },
+   "K05": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "K06": {
+    "ci": [
+     0.6637328831200573,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 9,
+    "df": null,
+    "estimate": 1.0,
+    "items": 18,
+    "n_eff": 9,
+    "scored": 18,
+    "se": 0.0
+   },
+   "S04": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S05": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S06": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S07": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S08": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S09": {
+    "ci": [
+     0.158113883008419,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": null,
+    "estimate": 1.0,
+    "items": 4,
+    "n_eff": 2,
+    "scored": 4,
+    "se": 0.0
+   },
+   "S11": {
+    "ci": [
+     0.158113883008419,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": null,
+    "estimate": 1.0,
+    "items": 4,
+    "n_eff": 2,
+    "scored": 4,
+    "se": 0.0
+   },
+   "S12": {
+    "ci": [
+     0.6210731734546859,
+     0.9679290628145363
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 10,
+    "df": 9.0,
+    "estimate": 0.85,
+    "items": 20,
+    "n_eff": 20.0,
+    "scored": 20,
+    "se": 0.07637626158259733
+   },
+   "X01": {
+    "ci": [
+     0.158113883008419,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": null,
+    "estimate": 1.0,
+    "items": 4,
+    "n_eff": 2,
+    "scored": 4,
+    "se": 0.0
+   },
+   "X02": {
+    "ci": [
+     0.158113883008419,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": null,
+    "estimate": 1.0,
+    "items": 4,
+    "n_eff": 2,
+    "scored": 4,
+    "se": 0.0
+   },
+   "X04": {
+    "ci": [
+     0.158113883008419,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": null,
+    "estimate": 1.0,
+    "items": 4,
+    "n_eff": 2,
+    "scored": 4,
+    "se": 0.0
+   }
+  },
+  "T6": {
+   "C08": {
+    "ci": [
+     0.34914420558717574,
+     0.9681459737500557
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.75,
+    "items": 8,
+    "n_eff": 8.0,
+    "scored": 8,
+    "se": 0.14433756729740643
+   },
+   "C09": {
+    "ci": [
+     0.22277809550351207,
+     0.9567281317072582
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": 2.0,
+    "estimate": 0.6666666666666666,
+    "items": 6,
+    "n_eff": 6.0,
+    "scored": 6,
+    "se": 0.16666666666666666
+   },
+   "C11": {
+    "ci": [
+     0.3171756359781229,
+     0.8924885093423205
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 7,
+    "df": 6.0,
+    "estimate": 0.6428571428571429,
+    "items": 14,
+    "n_eff": 11.249999999999998,
+    "scored": 14,
+    "se": 0.14285714285714288
+   },
+   "C13": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "C16": {
+    "ci": [
+     0.47900941558392085,
+     0.9848350886465087
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 9,
+    "df": 8.0,
+    "estimate": 0.8333333333333334,
+    "items": 18,
+    "n_eff": 9.999999999999998,
+    "scored": 18,
+    "se": 0.11785113019775792
+   },
+   "C17": {
+    "ci": [
+     0.4781762498950183,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 5,
+    "df": null,
+    "estimate": 1.0,
+    "items": 10,
+    "n_eff": 5,
+    "scored": 10,
+    "se": 0.0
+   },
+   "C18": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   }
+  }
+ },
+ "files": [
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "agent": "claude_backend:ClaudeBackend (claude -p)",
+      "agent_config": {
+       "auth": "Claude subscription; dedicated configuration and login",
+       "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+       "claude_cli": "2.1.293",
+       "flags": [
+        "--safe-mode",
+        "--restricted",
+        "--setting-sources",
+        "",
+        "--settings",
+        "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--tools",
+        "",
+        "--disallowedTools",
+        "*",
+        "--disable-slash-commands",
+        "--no-chrome",
+        "--no-session-persistence",
+        "--permission-prompts",
+        "none",
+        "--effort",
+        "high",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--max-turns",
+        "1"
+       ],
+       "harness": "claude-print",
+       "max_tokens": 128000,
+       "model": "claude-fable-5-1",
+       "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+       "reasoning_effort": "high",
+       "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+       "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+       "retries": {
+        "backoff_seconds": [
+         30,
+         60,
+         120,
+         300,
+         900
+        ],
+        "jitter": "x0.75-1.25"
+       },
+       "sampling": "provider defaults; temperature, top_p, top_k omitted",
+       "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+       "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+       "show_thinking_summaries": true,
+       "thinking": {
+        "display": "summarized",
+        "type": "adaptive"
+       },
+       "timeout": 3600,
+       "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+      },
+      "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+      "backend": "function",
+      "per_episode": false
+     },
+     "sha256": "c6887b5cface072ea47c0679c1c8236285413874e57c926e11500edc19ef99fe"
+    }
+   ],
+   "end": "stopped",
+   "finished": 269,
+   "path": "experiments/E04-claude-baselines/results/runs/claude-fable-5-1-claude-high-v2.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "b370cb3c94fe36a170a2ac02202e91ac00d20b6d7c2d178ef5c4477b66fdf6a4",
+   "truncated": false
+  },
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "agent": "claude_backend:ClaudeBackend (claude -p)",
+      "agent_config": {
+       "auth": "Claude subscription; dedicated configuration and login",
+       "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+       "claude_cli": "2.1.293",
+       "flags": [
+        "--safe-mode",
+        "--restricted",
+        "--setting-sources",
+        "",
+        "--settings",
+        "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--tools",
+        "",
+        "--disallowedTools",
+        "*",
+        "--disable-slash-commands",
+        "--no-chrome",
+        "--no-session-persistence",
+        "--permission-prompts",
+        "none",
+        "--effort",
+        "high",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--max-turns",
+        "1"
+       ],
+       "harness": "claude-print",
+       "max_tokens": 128000,
+       "model": "claude-fable-5-1",
+       "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+       "reasoning_effort": "high",
+       "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+       "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+       "retries": {
+        "backoff_seconds": [
+         30,
+         60,
+         120,
+         300,
+         900
+        ],
+        "jitter": "x0.75-1.25"
+       },
+       "sampling": "provider defaults; temperature, top_p, top_k omitted",
+       "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+       "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+       "show_thinking_summaries": true,
+       "thinking": {
+        "display": "summarized",
+        "type": "adaptive"
+       },
+       "timeout": 3600,
+       "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+      },
+      "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+      "backend": "function",
+      "per_episode": false
+     },
+     "sha256": "c6887b5cface072ea47c0679c1c8236285413874e57c926e11500edc19ef99fe"
+    }
+   ],
+   "end": "stopped",
+   "finished": 95,
+   "path": "experiments/E04-claude-baselines/results/runs/claude-fable-5-1-claude-high-v2.part2.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "e73e022c8ee6501aae441df398987f6b18da6abf05edc163909fe977ddb90b07",
+   "truncated": false
+  },
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "agent": "claude_backend:ClaudeBackend (claude -p)",
+      "agent_config": {
+       "auth": "Claude subscription; dedicated configuration and login",
+       "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+       "claude_cli": "2.1.293",
+       "flags": [
+        "--safe-mode",
+        "--restricted",
+        "--setting-sources",
+        "",
+        "--settings",
+        "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--tools",
+        "",
+        "--disallowedTools",
+        "*",
+        "--disable-slash-commands",
+        "--no-chrome",
+        "--no-session-persistence",
+        "--permission-prompts",
+        "none",
+        "--effort",
+        "high",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--max-turns",
+        "1"
+       ],
+       "harness": "claude-print",
+       "max_tokens": 128000,
+       "model": "claude-fable-5-1",
+       "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+       "reasoning_effort": "high",
+       "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+       "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+       "retries": {
+        "backoff_seconds": [
+         30,
+         60,
+         120,
+         300,
+         900
+        ],
+        "jitter": "x0.75-1.25"
+       },
+       "sampling": "provider defaults; temperature, top_p, top_k omitted",
+       "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+       "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+       "show_thinking_summaries": true,
+       "thinking": {
+        "display": "summarized",
+        "type": "adaptive"
+       },
+       "timeout": 3600,
+       "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+      },
+      "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+      "backend": "function",
+      "per_episode": false
+     },
+     "sha256": "c6887b5cface072ea47c0679c1c8236285413874e57c926e11500edc19ef99fe"
+    }
+   ],
+   "end": "stopped",
+   "finished": 72,
+   "path": "experiments/E04-claude-baselines/results/runs/claude-fable-5-1-claude-high-v2.part3.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "6acdab92ac2461bc4dab6d007c160f706841fff9f4cd4ad20866b543ad1eae75",
+   "truncated": false
+  },
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "agent": "claude_backend:ClaudeBackend (claude -p)",
+      "agent_config": {
+       "auth": "Claude subscription; dedicated configuration and login",
+       "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+       "claude_cli": "2.1.293",
+       "flags": [
+        "--safe-mode",
+        "--restricted",
+        "--setting-sources",
+        "",
+        "--settings",
+        "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--tools",
+        "",
+        "--disallowedTools",
+        "*",
+        "--disable-slash-commands",
+        "--no-chrome",
+        "--no-session-persistence",
+        "--permission-prompts",
+        "none",
+        "--effort",
+        "high",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--max-turns",
+        "1"
+       ],
+       "harness": "claude-print",
+       "max_tokens": 128000,
+       "model": "claude-fable-5-1",
+       "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+       "reasoning_effort": "high",
+       "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+       "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+       "retries": {
+        "backoff_seconds": [
+         30,
+         60,
+         120,
+         300,
+         900
+        ],
+        "jitter": "x0.75-1.25"
+       },
+       "sampling": "provider defaults; temperature, top_p, top_k omitted",
+       "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+       "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+       "show_thinking_summaries": true,
+       "thinking": {
+        "display": "summarized",
+        "type": "adaptive"
+       },
+       "timeout": 3600,
+       "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+      },
+      "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+      "backend": "function",
+      "per_episode": false
+     },
+     "sha256": "c6887b5cface072ea47c0679c1c8236285413874e57c926e11500edc19ef99fe"
+    }
+   ],
+   "end": "complete",
+   "finished": 24,
+   "path": "experiments/E04-claude-baselines/results/runs/claude-fable-5-1-claude-high-v2.part4.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "b6bb1a4c9f945a76af268cf3ab602f21630fa761d0c233226a1fd4885b0f9577",
+   "truncated": false
+  }
+ ],
+ "headline": {
+  "ci": [
+   0.8961955810948753,
+   0.9635090066232779
+  ],
+  "ci_method": "korn-graubard-mover",
+  "classes": 215,
+  "complete": true,
+  "df": 33.381203312164324,
+  "estimate": 0.9406666666666668,
+  "finished": 430,
+  "items": 430,
+  "missing": [],
+  "n_eff": null,
+  "over_cap": {},
+  "se": 0.013004679662402036,
+  "unscored_cap": 0.05,
+  "withheld": null
+ },
+ "kind": "score",
+ "malformed": {
+  "T1": {
+   "by_kind": {},
+   "decisions": 353,
+   "games": 30,
+   "invalid_submission_rate": 0.0,
+   "invalid_submissions": 0,
+   "invalid_turns": 0,
+   "malformed_rate": 0.0
+  },
+  "T2": {
+   "by_kind": {},
+   "decisions": 1019,
+   "games": 60,
+   "invalid_submission_rate": 0.0,
+   "invalid_submissions": 0,
+   "invalid_turns": 0,
+   "malformed_rate": 0.0
+  },
+  "T3": {
+   "by_kind": {},
+   "decisions": 2890,
+   "games": 150,
+   "invalid_submission_rate": 0.0,
+   "invalid_submissions": 0,
+   "invalid_turns": 0,
+   "malformed_rate": 0.0
+  },
+  "T4": {
+   "by_kind": {
+    "schema_error": 2
+   },
+   "decisions": 1548,
+   "games": 60,
+   "invalid_submission_rate": 0.011904761904761904,
+   "invalid_submissions": 1,
+   "invalid_turns": 2,
+   "malformed_rate": 0.0012919896640826874
+  },
+  "T5": {
+   "by_kind": {},
+   "decisions": 2107,
+   "games": 100,
+   "invalid_submission_rate": 0.0,
+   "invalid_submissions": 0,
+   "invalid_turns": 0,
+   "malformed_rate": 0.0
+  },
+  "T6": {
+   "by_kind": {},
+   "decisions": 1495,
+   "games": 60,
+   "invalid_submission_rate": 0.0,
+   "invalid_submissions": 0,
+   "invalid_turns": 0,
+   "malformed_rate": 0.0
+  },
+  "all": {
+   "by_kind": {
+    "schema_error": 2
+   },
+   "decisions": 9412,
+   "games": 460,
+   "invalid_submission_rate": 0.0017953321364452424,
+   "invalid_submissions": 1,
+   "invalid_turns": 2,
+   "malformed_rate": 0.00021249468763280918
+  },
+  "headline": {
+   "by_kind": {
+    "schema_error": 2
+   },
+   "decisions": 9059,
+   "games": 430,
+   "invalid_submission_rate": 0.0018975332068311196,
+   "invalid_submissions": 1,
+   "invalid_turns": 2,
+   "malformed_rate": 0.00022077491996909152
+  }
+ },
+ "manifest_sha256": "6b98d1a59d5f7d3b09b12f9840c83405e6ea2925d71911a10ab572e39facc278",
+ "player": "model",
+ "schema": "zendo-bench-v1-score",
+ "split": "dev",
+ "templates": {},
+ "tiers": {
+  "T1": {
+   "abandoned": 0,
+   "ci": [
+    0.7819806390894661,
+    1.0
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 15,
+   "df": null,
+   "estimate": 1.0,
+   "finished": 30,
+   "items": 30,
+   "n_eff": 15,
+   "scored": 30,
+   "se": 0.0,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 30
+  },
+  "T2": {
+   "abandoned": 0,
+   "ci": [
+    0.8842966917779722,
+    1.0
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 30,
+   "df": null,
+   "estimate": 1.0,
+   "finished": 60,
+   "items": 60,
+   "n_eff": 30,
+   "scored": 60,
+   "se": 0.0,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 60
+  },
+  "T3": {
+   "abandoned": 0,
+   "ci": [
+    0.9520049359448581,
+    1.0
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 75,
+   "df": null,
+   "estimate": 1.0,
+   "finished": 150,
+   "items": 150,
+   "n_eff": 75,
+   "scored": 150,
+   "se": 0.0,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 150
+  },
+  "T4": {
+   "abandoned": 0,
+   "ci": [
+    0.8294629003941907,
+    0.9835354988600493
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 30,
+   "df": 12.948565836951865,
+   "estimate": 0.9333333333333333,
+   "finished": 60,
+   "items": 60,
+   "n_eff": 52.868326024752804,
+   "scored": 60,
+   "se": 0.030645610438583847,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 56
+  },
+  "T5": {
+   "abandoned": 0,
+   "ci": [
+    0.9044909106429451,
+    0.9953268991900115
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 50,
+   "df": 9.0,
+   "estimate": 0.97,
+   "finished": 100,
+   "items": 100,
+   "n_eff": 78.91562361103108,
+   "scored": 100,
+   "se": 0.015275252316519468,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 97
+  },
+  "T6": {
+   "abandoned": 0,
+   "ci": [
+    0.6633594241676151,
+    0.8994112826654097
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 30,
+   "df": 20.236933797909405,
+   "estimate": 0.8,
+   "finished": 60,
+   "items": 60,
+   "n_eff": 50.338534441184905,
+   "scored": 60,
+   "se": 0.055277079839256664,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 48
+  }
+ },
+ "verified": true,
+ "w0": {
+  "bands": [
+   "w0=0",
+   "0<w0<0.5",
+   "w0>=0.5"
+  ],
+  "pooled": {
+   "0<w0<0.5": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 5,
+    "df": null,
+    "estimate": 0.7777777777777777,
+    "n_eff": null,
+    "se": null
+   },
+   "w0=0": {
+    "ci": [
+     0.9036867467596672,
+     0.9696670982071163
+    ],
+    "ci_method": "korn-graubard-mover",
+    "classes": 201,
+    "df": 24.91081948154339,
+    "estimate": 0.9484013605442178,
+    "n_eff": null,
+    "se": 0.011410191664250115
+   },
+   "w0>=0.5": {
+    "ci": [
+     0.5323656316462648,
+     0.9994802388095705
+    ],
+    "ci_method": "korn-graubard-mover",
+    "classes": 21,
+    "df": 2.0,
+    "estimate": 0.8888888888888888,
+    "n_eff": null,
+    "se": 0.11111111111111112
+   }
+  },
+  "tiers": {
+   "T1": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.7819806390894661,
+      1.0
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 15,
+     "df": null,
+     "estimate": 1.0,
+     "items": 30,
+     "n_eff": 15,
+     "scored": 30,
+     "se": 0.0
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T2": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.8842966917779722,
+      1.0
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 30,
+     "df": null,
+     "estimate": 1.0,
+     "items": 60,
+     "n_eff": 30,
+     "scored": 60,
+     "se": 0.0
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T3": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 1,
+     "df": null,
+     "estimate": 1.0,
+     "items": 1,
+     "n_eff": null,
+     "scored": 1,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.9439909106133628,
+      1.0
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 64,
+     "df": null,
+     "estimate": 1.0,
+     "items": 122,
+     "n_eff": 64,
+     "scored": 122,
+     "se": 0.0
+    },
+    "w0>=0.5": {
+     "ci": [
+      0.7940927857921773,
+      1.0
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 16,
+     "df": null,
+     "estimate": 1.0,
+     "items": 27,
+     "n_eff": 16,
+     "scored": 27,
+     "se": 0.0
+    }
+   },
+   "T4": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.8294629003941907,
+      0.9835354988600493
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 30,
+     "df": 12.948565836951865,
+     "estimate": 0.9333333333333333,
+     "items": 60,
+     "n_eff": 52.868326024752804,
+     "scored": 60,
+     "se": 0.030645610438583847
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T5": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 1,
+     "df": null,
+     "estimate": 1.0,
+     "items": 1,
+     "n_eff": null,
+     "scored": 1,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.9021583547103182,
+      0.9952899357454024
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 49,
+     "df": 9.0,
+     "estimate": 0.9693877551020408,
+     "items": 97,
+     "n_eff": 76.62889407388428,
+     "scored": 97,
+     "se": 0.015586992159713743
+    },
+    "w0>=0.5": {
+     "ci": [
+      0.158113883008419,
+      1.0
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 2,
+     "df": null,
+     "estimate": 1.0,
+     "items": 2,
+     "n_eff": 2,
+     "scored": 2,
+     "se": 0.0
+    }
+   },
+   "T6": {
+    "0<w0<0.5": {
+     "ci": [
+      0.0015592835712882093,
+      0.9600784822958319
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 3,
+     "df": 2.0,
+     "estimate": 0.3333333333333333,
+     "items": 3,
+     "n_eff": 2.0,
+     "scored": 3,
+     "se": 0.33333333333333337
+    },
+    "w0=0": {
+     "ci": [
+      0.7045571560506447,
+      0.9293668420152634
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 28,
+     "df": 12.253776435045323,
+     "estimate": 0.8392857142857143,
+     "items": 54,
+     "n_eff": 47.88912273742868,
+     "scored": 54,
+     "se": 0.045526959942792725
+    },
+    "w0>=0.5": {
+     "ci": [
+      0.03992151770416802,
+      0.9984407164287117
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 3,
+     "df": 2.0,
+     "estimate": 0.6666666666666666,
+     "items": 3,
+     "n_eff": 2.0,
+     "scored": 3,
+     "se": 0.33333333333333337
+    }
+   }
+  }
+ }
+}

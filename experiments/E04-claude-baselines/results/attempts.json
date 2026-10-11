@@ -1,0 +1,34 @@
+{
+  "claude-haiku-5-5-claude-high-v2": {
+    "attemptId": "ca2b3271-a293-4b3e-a0af-bf80bab566ba",
+    "label": "A31",
+    "planId": "8cd97ecc-b7c5-478a-8110-4335d7c96bff",
+    "commit": "189f8aa71482c09ccc7ae8eba765a44952bbeb0c",
+    "effectivePython": "3.13.13",
+    "model": "claude-haiku-5-5"
+  },
+  "claude-sonnet-5-5-claude-high-v2": {
+    "attemptId": "79436501-f7f0-49bb-b380-197973eb319d",
+    "label": "A35",
+    "planId": "8bf6eee1-e71f-4540-91b3-9943fbfed650",
+    "commit": "c4bf8e221582d3fbfa576ec88253ede4c9ccc03e",
+    "effectivePython": "3.13.13",
+    "model": "claude-sonnet-5-5"
+  },
+  "claude-opus-5-5-claude-high-v2": {
+    "attemptId": "e6384132-1f55-4727-be14-f2eaa70c7886",
+    "label": "A36",
+    "planId": "8bf6eee1-e71f-4540-91b3-9943fbfed650",
+    "commit": "c4bf8e221582d3fbfa576ec88253ede4c9ccc03e",
+    "effectivePython": "3.13.13",
+    "model": "claude-opus-5-5"
+  },
+  "claude-fable-5-1-claude-high-v2": {
+    "attemptId": "1a64177d-1299-4087-8197-e5262dd1b613",
+    "label": "A38",
+    "planId": "4f231347-ce1a-4f66-bc85-3afaa4af2c02",
+    "commit": "552752353a9eda80ef94286078af1d2cfa0c4eb0",
+    "effectivePython": "3.13.13",
+    "model": "claude-fable-5-1"
+  }
+}

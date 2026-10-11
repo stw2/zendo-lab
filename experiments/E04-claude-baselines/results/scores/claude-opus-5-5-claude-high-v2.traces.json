@@ -1,0 +1,15 @@
+{
+  "tries": 8822,
+  "answered_tries": 8710,
+  "cited_tries": 8822,
+  "uncited_tries": 0,
+  "missing_joins": 0,
+  "interrupted_traces": 0,
+  "trace_files": [
+    {
+      "file": "claude-opus-5-5-claude-high-v2.traces.jsonl.gz",
+      "sha256": "1b8a428ea90d592f02e96240d8631d4a77e0452b6d45403ec4bdc83dedb3fa2f",
+      "bytes": 160192921
+    }
+  ]
+}

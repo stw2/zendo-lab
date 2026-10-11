@@ -1,0 +1,1545 @@
+{
+ "arms": [
+  "claude-fable-5-1-claude-high-v2",
+  "gpt-6.1-sol-codex-high"
+ ],
+ "composite_arms": [],
+ "difference": "claude-fable-5-1-claude-high-v2 - gpt-6.1-sol-codex-high",
+ "families": {
+  "T1": {
+   "count=1-1-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 3,
+    "df": null,
+    "estimate": 0.0,
+    "items": 6,
+    "n_eff": null,
+    "scored": 6,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "count=2-1-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 3,
+    "df": null,
+    "estimate": 0.0,
+    "items": 6,
+    "n_eff": null,
+    "scored": 6,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "count>=2-1-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 3,
+    "df": null,
+    "estimate": 0.0,
+    "items": 6,
+    "n_eff": null,
+    "scored": 6,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "exists-1-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 3,
+    "df": null,
+    "estimate": 0.0,
+    "items": 6,
+    "n_eff": null,
+    "scored": 6,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "forall-1-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 3,
+    "df": null,
+    "estimate": 0.0,
+    "items": 6,
+    "n_eff": null,
+    "scored": 6,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   }
+  },
+  "T2": {
+   "count=1-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "count=1-2-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "exists-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "exists-2-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 3,
+    "df": null,
+    "estimate": 0.0,
+    "items": 6,
+    "n_eff": null,
+    "scored": 6,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "forall-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 5,
+    "df": null,
+    "estimate": 0.0,
+    "items": 10,
+    "n_eff": null,
+    "scored": 10,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "forall-2-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 5,
+    "df": null,
+    "estimate": 0.0,
+    "items": 10,
+    "n_eff": null,
+    "scored": 10,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "outer-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 5,
+    "df": null,
+    "estimate": 0.0,
+    "items": 10,
+    "n_eff": null,
+    "scored": 10,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   }
+  },
+  "T3": {
+   "count=1-3-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 9,
+    "df": null,
+    "estimate": 0.0,
+    "items": 18,
+    "n_eff": null,
+    "scored": 18,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "count=2-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "count=2-3-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 9,
+    "df": null,
+    "estimate": 0.0,
+    "items": 18,
+    "n_eff": null,
+    "scored": 18,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "count>=2-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "count>=2-3-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 9,
+    "df": null,
+    "estimate": 0.0,
+    "items": 18,
+    "n_eff": null,
+    "scored": 18,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "exists-3-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 8,
+    "df": null,
+    "estimate": 0.0,
+    "items": 16,
+    "n_eff": null,
+    "scored": 16,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "exists-3-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 8,
+    "df": null,
+    "estimate": 0.0,
+    "items": 16,
+    "n_eff": null,
+    "scored": 16,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "forall-3-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 8,
+    "df": null,
+    "estimate": 0.0,
+    "items": 16,
+    "n_eff": null,
+    "scored": 16,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "forall-3-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 8,
+    "df": null,
+    "estimate": 0.0,
+    "items": 16,
+    "n_eff": null,
+    "scored": 16,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "outer-3-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 8,
+    "df": null,
+    "estimate": 0.0,
+    "items": 16,
+    "n_eff": null,
+    "scored": 16,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   }
+  },
+  "T4": {
+   "count=1-3-or": {
+    "ci": [
+     0.13150359883042803,
+     0.5827821154552862
+    ],
+    "ci_method": "student-t",
+    "classes": 7,
+    "df": 6.0,
+    "estimate": 0.35714285714285715,
+    "items": 14,
+    "n_eff": null,
+    "scored": 14,
+    "se": 0.09221388919541469
+   },
+   "count=2-2-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "count=2-3-or": {
+    "ci": [
+     -0.08270903223443749,
+     0.7969947465201518
+    ],
+    "ci_method": "student-t",
+    "classes": 7,
+    "df": 6.0,
+    "estimate": 0.35714285714285715,
+    "items": 14,
+    "n_eff": null,
+    "scored": 14,
+    "se": 0.17975796274454167
+   },
+   "count>=2-2-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "count>=2-3-or": {
+    "ci": [
+     -0.1235097353170248,
+     0.4985097353170248
+    ],
+    "ci_method": "student-t",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.1875,
+    "items": 16,
+    "n_eff": null,
+    "scored": 16,
+    "se": 0.13152607020228782
+   }
+  },
+  "T5": {
+   "K01": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 2,
+    "df": null,
+    "estimate": 0.0,
+    "items": 4,
+    "n_eff": null,
+    "scored": 4,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "K02": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 8,
+    "df": null,
+    "estimate": 0.0,
+    "items": 16,
+    "n_eff": null,
+    "scored": 16,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "K03": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "K04": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "K05": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "K06": {
+    "ci": [
+     0.21348844025248295,
+     0.6754004486364059
+    ],
+    "ci_method": "student-t",
+    "classes": 9,
+    "df": 8.0,
+    "estimate": 0.4444444444444444,
+    "items": 18,
+    "n_eff": null,
+    "scored": 18,
+    "se": 0.10015420209622192
+   },
+   "S04": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S05": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S06": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S07": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S08": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S09": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 2,
+    "df": null,
+    "estimate": 0.0,
+    "items": 4,
+    "n_eff": null,
+    "scored": 4,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "S11": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 2,
+    "df": null,
+    "estimate": 0.0,
+    "items": 4,
+    "n_eff": null,
+    "scored": 4,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "S12": {
+    "ci": [
+     -0.253034819021802,
+     0.153034819021802
+    ],
+    "ci_method": "student-t",
+    "classes": 10,
+    "df": 9.0,
+    "estimate": -0.05,
+    "items": 20,
+    "n_eff": null,
+    "scored": 20,
+    "se": 0.08975274678557507
+   },
+   "X01": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 2,
+    "df": null,
+    "estimate": 0.0,
+    "items": 4,
+    "n_eff": null,
+    "scored": 4,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "X02": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 2,
+    "df": null,
+    "estimate": 0.0,
+    "items": 4,
+    "n_eff": null,
+    "scored": 4,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "X04": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 2,
+    "df": null,
+    "estimate": 0.0,
+    "items": 4,
+    "n_eff": null,
+    "scored": 4,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   }
+  },
+  "T6": {
+   "C08": {
+    "ci": [
+     -0.7093465577592692,
+     0.2093465577592692
+    ],
+    "ci_method": "student-t",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": -0.25,
+    "items": 8,
+    "n_eff": null,
+    "scored": 8,
+    "se": 0.14433756729740643
+   },
+   "C09": {
+    "ci": [
+     -1.0,
+     0.38377545495824267
+    ],
+    "ci_method": "student-t",
+    "classes": 3,
+    "df": 2.0,
+    "estimate": -0.3333333333333333,
+    "items": 6,
+    "n_eff": null,
+    "scored": 6,
+    "se": 0.16666666666666669
+   },
+   "C11": {
+    "ci": [
+     -0.23699280233914397,
+     0.6655642309105725
+    ],
+    "ci_method": "student-t",
+    "classes": 7,
+    "df": 6.0,
+    "estimate": 0.21428571428571427,
+    "items": 14,
+    "n_eff": null,
+    "scored": 14,
+    "se": 0.18442777839082938
+   },
+   "C13": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "C16": {
+    "ci": [
+     -0.43843186024118097,
+     0.10509852690784763
+    ],
+    "ci_method": "student-t",
+    "classes": 9,
+    "df": 8.0,
+    "estimate": -0.16666666666666666,
+    "items": 18,
+    "n_eff": null,
+    "scored": 18,
+    "se": 0.11785113019775792
+   },
+   "C17": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 5,
+    "df": null,
+    "estimate": 0.0,
+    "items": 10,
+    "n_eff": null,
+    "scored": 10,
+    "se": 0.0,
+    "warning": "zero_observed_variance"
+   },
+   "C18": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   }
+  }
+ },
+ "files": {
+  "claude-fable-5-1-claude-high-v2": [
+   {
+    "composite": false,
+    "configurations": [
+     {
+      "settings": {
+       "agent": "claude_backend:ClaudeBackend (claude -p)",
+       "agent_config": {
+        "auth": "Claude subscription; dedicated configuration and login",
+        "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+        "claude_cli": "2.1.293",
+        "flags": [
+         "--safe-mode",
+         "--restricted",
+         "--setting-sources",
+         "",
+         "--settings",
+         "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+         "--strict-mcp-config",
+         "--mcp-config",
+         "{\"mcpServers\":{}}",
+         "--tools",
+         "",
+         "--disallowedTools",
+         "*",
+         "--disable-slash-commands",
+         "--no-chrome",
+         "--no-session-persistence",
+         "--permission-prompts",
+         "none",
+         "--effort",
+         "high",
+         "--output-format",
+         "stream-json",
+         "--verbose",
+         "--include-partial-messages",
+         "--max-turns",
+         "1"
+        ],
+        "harness": "claude-print",
+        "max_tokens": 128000,
+        "model": "claude-fable-5-1",
+        "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+        "reasoning_effort": "high",
+        "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+        "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+        "retries": {
+         "backoff_seconds": [
+          30,
+          60,
+          120,
+          300,
+          900
+         ],
+         "jitter": "x0.75-1.25"
+        },
+        "sampling": "provider defaults; temperature, top_p, top_k omitted",
+        "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+        "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+        "show_thinking_summaries": true,
+        "thinking": {
+         "display": "summarized",
+         "type": "adaptive"
+        },
+        "timeout": 3600,
+        "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+       },
+       "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+       "backend": "function",
+       "per_episode": false
+      },
+      "sha256": "c6887b5cface072ea47c0679c1c8236285413874e57c926e11500edc19ef99fe"
+     }
+    ],
+    "end": "stopped",
+    "finished": 269,
+    "path": "experiments/E04-claude-baselines/results/runs/claude-fable-5-1-claude-high-v2.jsonl",
+    "player": "model",
+    "reply_policy": "action-object-v1",
+    "sha256": "b370cb3c94fe36a170a2ac02202e91ac00d20b6d7c2d178ef5c4477b66fdf6a4",
+    "truncated": false
+   },
+   {
+    "composite": false,
+    "configurations": [
+     {
+      "settings": {
+       "agent": "claude_backend:ClaudeBackend (claude -p)",
+       "agent_config": {
+        "auth": "Claude subscription; dedicated configuration and login",
+        "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+        "claude_cli": "2.1.293",
+        "flags": [
+         "--safe-mode",
+         "--restricted",
+         "--setting-sources",
+         "",
+         "--settings",
+         "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+         "--strict-mcp-config",
+         "--mcp-config",
+         "{\"mcpServers\":{}}",
+         "--tools",
+         "",
+         "--disallowedTools",
+         "*",
+         "--disable-slash-commands",
+         "--no-chrome",
+         "--no-session-persistence",
+         "--permission-prompts",
+         "none",
+         "--effort",
+         "high",
+         "--output-format",
+         "stream-json",
+         "--verbose",
+         "--include-partial-messages",
+         "--max-turns",
+         "1"
+        ],
+        "harness": "claude-print",
+        "max_tokens": 128000,
+        "model": "claude-fable-5-1",
+        "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+        "reasoning_effort": "high",
+        "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+        "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+        "retries": {
+         "backoff_seconds": [
+          30,
+          60,
+          120,
+          300,
+          900
+         ],
+         "jitter": "x0.75-1.25"
+        },
+        "sampling": "provider defaults; temperature, top_p, top_k omitted",
+        "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+        "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+        "show_thinking_summaries": true,
+        "thinking": {
+         "display": "summarized",
+         "type": "adaptive"
+        },
+        "timeout": 3600,
+        "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+       },
+       "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+       "backend": "function",
+       "per_episode": false
+      },
+      "sha256": "c6887b5cface072ea47c0679c1c8236285413874e57c926e11500edc19ef99fe"
+     }
+    ],
+    "end": "stopped",
+    "finished": 95,
+    "path": "experiments/E04-claude-baselines/results/runs/claude-fable-5-1-claude-high-v2.part2.jsonl",
+    "player": "model",
+    "reply_policy": "action-object-v1",
+    "sha256": "e73e022c8ee6501aae441df398987f6b18da6abf05edc163909fe977ddb90b07",
+    "truncated": false
+   },
+   {
+    "composite": false,
+    "configurations": [
+     {
+      "settings": {
+       "agent": "claude_backend:ClaudeBackend (claude -p)",
+       "agent_config": {
+        "auth": "Claude subscription; dedicated configuration and login",
+        "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+        "claude_cli": "2.1.293",
+        "flags": [
+         "--safe-mode",
+         "--restricted",
+         "--setting-sources",
+         "",
+         "--settings",
+         "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+         "--strict-mcp-config",
+         "--mcp-config",
+         "{\"mcpServers\":{}}",
+         "--tools",
+         "",
+         "--disallowedTools",
+         "*",
+         "--disable-slash-commands",
+         "--no-chrome",
+         "--no-session-persistence",
+         "--permission-prompts",
+         "none",
+         "--effort",
+         "high",
+         "--output-format",
+         "stream-json",
+         "--verbose",
+         "--include-partial-messages",
+         "--max-turns",
+         "1"
+        ],
+        "harness": "claude-print",
+        "max_tokens": 128000,
+        "model": "claude-fable-5-1",
+        "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+        "reasoning_effort": "high",
+        "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+        "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+        "retries": {
+         "backoff_seconds": [
+          30,
+          60,
+          120,
+          300,
+          900
+         ],
+         "jitter": "x0.75-1.25"
+        },
+        "sampling": "provider defaults; temperature, top_p, top_k omitted",
+        "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+        "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+        "show_thinking_summaries": true,
+        "thinking": {
+         "display": "summarized",
+         "type": "adaptive"
+        },
+        "timeout": 3600,
+        "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+       },
+       "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+       "backend": "function",
+       "per_episode": false
+      },
+      "sha256": "c6887b5cface072ea47c0679c1c8236285413874e57c926e11500edc19ef99fe"
+     }
+    ],
+    "end": "stopped",
+    "finished": 72,
+    "path": "experiments/E04-claude-baselines/results/runs/claude-fable-5-1-claude-high-v2.part3.jsonl",
+    "player": "model",
+    "reply_policy": "action-object-v1",
+    "sha256": "6acdab92ac2461bc4dab6d007c160f706841fff9f4cd4ad20866b543ad1eae75",
+    "truncated": false
+   },
+   {
+    "composite": false,
+    "configurations": [
+     {
+      "settings": {
+       "agent": "claude_backend:ClaudeBackend (claude -p)",
+       "agent_config": {
+        "auth": "Claude subscription; dedicated configuration and login",
+        "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+        "claude_cli": "2.1.293",
+        "flags": [
+         "--safe-mode",
+         "--restricted",
+         "--setting-sources",
+         "",
+         "--settings",
+         "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+         "--strict-mcp-config",
+         "--mcp-config",
+         "{\"mcpServers\":{}}",
+         "--tools",
+         "",
+         "--disallowedTools",
+         "*",
+         "--disable-slash-commands",
+         "--no-chrome",
+         "--no-session-persistence",
+         "--permission-prompts",
+         "none",
+         "--effort",
+         "high",
+         "--output-format",
+         "stream-json",
+         "--verbose",
+         "--include-partial-messages",
+         "--max-turns",
+         "1"
+        ],
+        "harness": "claude-print",
+        "max_tokens": 128000,
+        "model": "claude-fable-5-1",
+        "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+        "reasoning_effort": "high",
+        "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+        "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+        "retries": {
+         "backoff_seconds": [
+          30,
+          60,
+          120,
+          300,
+          900
+         ],
+         "jitter": "x0.75-1.25"
+        },
+        "sampling": "provider defaults; temperature, top_p, top_k omitted",
+        "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+        "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+        "show_thinking_summaries": true,
+        "thinking": {
+         "display": "summarized",
+         "type": "adaptive"
+        },
+        "timeout": 3600,
+        "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+       },
+       "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+       "backend": "function",
+       "per_episode": false
+      },
+      "sha256": "c6887b5cface072ea47c0679c1c8236285413874e57c926e11500edc19ef99fe"
+     }
+    ],
+    "end": "complete",
+    "finished": 24,
+    "path": "experiments/E04-claude-baselines/results/runs/claude-fable-5-1-claude-high-v2.part4.jsonl",
+    "player": "model",
+    "reply_policy": "action-object-v1",
+    "sha256": "b6bb1a4c9f945a76af268cf3ab602f21630fa761d0c233226a1fd4885b0f9577",
+    "truncated": false
+   }
+  ],
+  "gpt-6.1-sol-codex-high": [
+   {
+    "composite": false,
+    "configurations": [
+     {
+      "settings": {
+       "agent": "codex_backend:CodexBackend (codex exec)",
+       "agent_config": {
+        "auth": "ChatGPT sign-in, a Codex home of its own",
+        "call_folder": "new and empty per call",
+        "catalog_edit": {
+         "apply_patch_tool_type": null,
+         "experimental_supported_tools": [],
+         "multi_agent_version": null,
+         "tool_mode": "direct_only"
+        },
+        "catalog_sha256": "6b1f65a0f06f02eb9a0f4632af0775a97deaf7a88a734eeeba20bb1fcd8b9ad5",
+        "codex_binary_sha256": "112fae7a5a1223e673c8a1791d32338f37df8b527ff1159bb8adac6c4dbf1b4b",
+        "codex_cli": "0.160.0",
+        "config": [
+         "include_permissions_instructions=false",
+         "include_apps_instructions=false",
+         "include_collaboration_mode_instructions=false",
+         "include_environment_context=false",
+         "skills.include_instructions=false",
+         "tools.update_plan.enabled=false",
+         "tools.experimental_request_user_input.enabled=false",
+         "web_search=\"disabled\"",
+         "project_doc_max_bytes=0",
+         "sandbox_mode=\"read-only\""
+        ],
+        "features_disabled": [
+         "apps",
+         "auth_elicitation",
+         "browser_use",
+         "browser_use_external",
+         "browser_use_full_cdp_access",
+         "code_mode_host",
+         "compaction_image_budget",
+         "computer_use",
+         "content_item_kinds",
+         "daemon_auto_start",
+         "enable_request_compression",
+         "fast_mode",
+         "goals",
+         "guardian_approval",
+         "guardian_reuse_parent_compaction",
+         "hooks",
+         "image_generation",
+         "in_app_browser",
+         "in_app_chat",
+         "in_app_dictation",
+         "in_app_local_automation",
+         "in_app_updates",
+         "mentions_v2",
+         "multi_agent",
+         "plugin_sharing",
+         "plugins",
+         "realtime_conversation",
+         "remote_plugin",
+         "shell_snapshot",
+         "shell_tool",
+         "skill_mcp_dependency_install",
+         "skill_search",
+         "sleep_tool",
+         "system_proxy_fallback",
+         "tool_call_mcp_elicitation",
+         "tool_suggest",
+         "unbounded_connection_retries",
+         "unified_exec",
+         "unified_exec_tty",
+         "view_image",
+         "workspace_dependencies",
+         "worktrees",
+         "write_stdin_approval"
+        ],
+        "features_sha256": "8cbf4b6d2e424fdc7a6e505dd8e326121bf43792db025441a5fedc27bb3640a9",
+        "flags": [
+         "--ignore-user-config",
+         "--ignore-rules",
+         "--ephemeral",
+         "--skip-git-repo-check",
+         "--sandbox read-only",
+         "--json"
+        ],
+        "harness": "codex-exec",
+        "model": "gpt-6.1-sol",
+        "output_cap": "none settable in Codex (the provider's default)",
+        "reasoning_effort": "high",
+        "reasoning_summary": "detailed",
+        "retries": {
+         "backoff_seconds": [
+          30,
+          60,
+          120,
+          300,
+          900
+         ],
+         "jitter": "x0.75-1.25"
+        },
+        "sandbox_profile_sha256": "27e25a33d937c05b07d8da5cc4f8f73124671e466b4761bd796ec737740db712",
+        "service_tier": "default",
+        "timeout": 3600,
+        "traces": "every try: Codex's events and the server's messages (deltas counted), beside the run file"
+       },
+       "agent_source_sha256": "d7dd576873089c2ce59d3794f8c672376aecdfc83a321c9ff5cd189f4f79f3ff",
+       "backend": "function",
+       "per_episode": false
+      },
+      "sha256": "22238c6821a8a704a9c4fe1dbaae0a86b028fe908bac5582720691f792ba36ee"
+     }
+    ],
+    "end": "complete",
+    "finished": 460,
+    "path": "experiments/E03-codex-frontier/results/runs/gpt-6.1-sol-codex-high.jsonl",
+    "player": "model",
+    "reply_policy": "action-object-v1",
+    "sha256": "e721c6f6777b2bedbdba67f7288d234e791b4a9cc5b9d95491d823c49a48ec25",
+    "truncated": false
+   }
+  ]
+ },
+ "headline": {
+  "arms_over_cap": {},
+  "ci": [
+   0.008022922852728993,
+   0.07997707714727101
+  ],
+  "ci_method": "student-t",
+  "classes": 215,
+  "complete": true,
+  "df": 38.49345729960329,
+  "estimate": 0.044,
+  "finished": 430,
+  "items": 430,
+  "missing": [],
+  "n_eff": null,
+  "over_cap": {},
+  "se": 0.01777177478013884,
+  "unscored_cap": 0.05,
+  "withheld": null
+ },
+ "kind": "compare",
+ "manifest_sha256": "6b98d1a59d5f7d3b09b12f9840c83405e6ea2925d71911a10ab572e39facc278",
+ "player": "model",
+ "schema": "zendo-bench-v1-score",
+ "split": "dev",
+ "templates": {},
+ "tiers": {
+  "T1": {
+   "abandoned": {
+    "claude-fable-5-1-claude-high-v2": 0,
+    "gpt-6.1-sol-codex-high": 0
+   },
+   "ci": null,
+   "ci_method": "student-t",
+   "classes": 15,
+   "df": null,
+   "estimate": 0.0,
+   "finished": 30,
+   "items": 30,
+   "n_eff": null,
+   "scored": 30,
+   "scored_in_one_arm_only": 0,
+   "se": 0.0,
+   "timing_unverifiable": {
+    "claude-fable-5-1-claude-high-v2": 0,
+    "gpt-6.1-sol-codex-high": 0
+   },
+   "unfinished": 0,
+   "unscored": 0,
+   "warning": "zero_observed_variance"
+  },
+  "T2": {
+   "abandoned": {
+    "claude-fable-5-1-claude-high-v2": 0,
+    "gpt-6.1-sol-codex-high": 0
+   },
+   "ci": null,
+   "ci_method": "student-t",
+   "classes": 30,
+   "df": null,
+   "estimate": 0.0,
+   "finished": 60,
+   "items": 60,
+   "n_eff": null,
+   "scored": 60,
+   "scored_in_one_arm_only": 0,
+   "se": 0.0,
+   "timing_unverifiable": {
+    "claude-fable-5-1-claude-high-v2": 0,
+    "gpt-6.1-sol-codex-high": 0
+   },
+   "unfinished": 0,
+   "unscored": 0,
+   "warning": "zero_observed_variance"
+  },
+  "T3": {
+   "abandoned": {
+    "claude-fable-5-1-claude-high-v2": 0,
+    "gpt-6.1-sol-codex-high": 0
+   },
+   "ci": null,
+   "ci_method": "student-t",
+   "classes": 75,
+   "df": null,
+   "estimate": 0.0,
+   "finished": 150,
+   "items": 150,
+   "n_eff": null,
+   "scored": 150,
+   "scored_in_one_arm_only": 0,
+   "se": 0.0,
+   "timing_unverifiable": {
+    "claude-fable-5-1-claude-high-v2": 0,
+    "gpt-6.1-sol-codex-high": 0
+   },
+   "unfinished": 0,
+   "unscored": 0,
+   "warning": "zero_observed_variance"
+  },
+  "T4": {
+   "abandoned": {
+    "claude-fable-5-1-claude-high-v2": 0,
+    "gpt-6.1-sol-codex-high": 0
+   },
+   "ci": [
+    0.09142916002203358,
+    0.34190417331129974
+   ],
+   "ci_method": "student-t",
+   "classes": 30,
+   "df": 15.524721637401516,
+   "estimate": 0.21666666666666667,
+   "finished": 60,
+   "items": 60,
+   "n_eff": null,
+   "scored": 60,
+   "scored_in_one_arm_only": 0,
+   "se": 0.058756965139300316,
+   "timing_unverifiable": {
+    "claude-fable-5-1-claude-high-v2": 0,
+    "gpt-6.1-sol-codex-high": 0
+   },
+   "unfinished": 0,
+   "unscored": 0
+  },
+  "T5": {
+   "abandoned": {
+    "claude-fable-5-1-claude-high-v2": 0,
+    "gpt-6.1-sol-codex-high": 0
+   },
+   "ci": [
+    0.016068416661676757,
+    0.1239315833383232
+   ],
+   "ci_method": "student-t",
+   "classes": 50,
+   "df": 16.93231506309319,
+   "estimate": 0.06999999999999998,
+   "finished": 100,
+   "items": 100,
+   "n_eff": null,
+   "scored": 100,
+   "scored_in_one_arm_only": 0,
+   "se": 0.02544056253745625,
+   "timing_unverifiable": {
+    "claude-fable-5-1-claude-high-v2": 0,
+    "gpt-6.1-sol-codex-high": 0
+   },
+   "unfinished": 0,
+   "unscored": 0
+  },
+  "T6": {
+   "abandoned": {
+    "claude-fable-5-1-claude-high-v2": 0,
+    "gpt-6.1-sol-codex-high": 0
+   },
+   "ci": [
+    -0.19666103715417593,
+    0.06332770382084262
+   ],
+   "ci_method": "student-t",
+   "classes": 30,
+   "df": 17.423450658605056,
+   "estimate": -0.06666666666666667,
+   "finished": 60,
+   "items": 60,
+   "n_eff": null,
+   "scored": 60,
+   "scored_in_one_arm_only": 0,
+   "se": 0.06161409170227455,
+   "timing_unverifiable": {
+    "claude-fable-5-1-claude-high-v2": 0,
+    "gpt-6.1-sol-codex-high": 0
+   },
+   "unfinished": 0,
+   "unscored": 0
+  }
+ },
+ "verified": true,
+ "w0": {
+  "bands": [
+   "w0=0",
+   "0<w0<0.5",
+   "w0>=0.5"
+  ],
+  "pooled": {
+   "0<w0<0.5": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 5,
+    "df": null,
+    "estimate": -0.2222222222222222,
+    "n_eff": null,
+    "se": null
+   },
+   "w0=0": {
+    "ci": [
+     0.019753652041206916,
+     0.08834158605403117
+    ],
+    "ci_method": "student-t",
+    "classes": 201,
+    "df": 30.53889922025461,
+    "estimate": 0.054047619047619046,
+    "n_eff": null,
+    "se": 0.016792062636207736
+   },
+   "w0>=0.5": {
+    "ci": [
+     -0.5891836366388284,
+     0.36696141441660624
+    ],
+    "ci_method": "student-t",
+    "classes": 21,
+    "df": 2.0,
+    "estimate": -0.1111111111111111,
+    "n_eff": null,
+    "se": 0.11111111111111112
+   }
+  },
+  "tiers": {
+   "T1": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 15,
+     "df": null,
+     "estimate": 0.0,
+     "items": 30,
+     "n_eff": null,
+     "scored": 30,
+     "se": 0.0,
+     "warning": "zero_observed_variance"
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T2": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 30,
+     "df": null,
+     "estimate": 0.0,
+     "items": 60,
+     "n_eff": null,
+     "scored": 60,
+     "se": 0.0,
+     "warning": "zero_observed_variance"
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T3": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 1,
+     "df": null,
+     "estimate": 0.0,
+     "items": 1,
+     "n_eff": null,
+     "scored": 1,
+     "se": null
+    },
+    "w0=0": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 64,
+     "df": null,
+     "estimate": 0.0,
+     "items": 122,
+     "n_eff": null,
+     "scored": 122,
+     "se": 0.0,
+     "warning": "zero_observed_variance"
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 16,
+     "df": null,
+     "estimate": 0.0,
+     "items": 27,
+     "n_eff": null,
+     "scored": 27,
+     "se": 0.0,
+     "warning": "zero_observed_variance"
+    }
+   },
+   "T4": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.09142916002203358,
+      0.34190417331129974
+     ],
+     "ci_method": "student-t",
+     "classes": 30,
+     "df": 15.524721637401516,
+     "estimate": 0.21666666666666667,
+     "items": 60,
+     "n_eff": null,
+     "scored": 60,
+     "se": 0.058756965139300316
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T5": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 1,
+     "df": null,
+     "estimate": 0.0,
+     "items": 1,
+     "n_eff": null,
+     "scored": 1,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.016396343532323242,
+      0.1264607993248196
+     ],
+     "ci_method": "student-t",
+     "classes": 49,
+     "df": 16.932315063093192,
+     "estimate": 0.07142857142857142,
+     "items": 97,
+     "n_eff": null,
+     "scored": 97,
+     "se": 0.025959757691281886
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 2,
+     "df": null,
+     "estimate": 0.0,
+     "items": 2,
+     "n_eff": null,
+     "scored": 2,
+     "se": 0.0,
+     "warning": "zero_observed_variance"
+    }
+   },
+   "T6": {
+    "0<w0<0.5": {
+     "ci": [
+      -1.0,
+      0.7675509099164853
+     ],
+     "ci_method": "student-t",
+     "classes": 3,
+     "df": 2.0,
+     "estimate": -0.6666666666666666,
+     "items": 3,
+     "n_eff": null,
+     "scored": 3,
+     "se": 0.33333333333333337
+    },
+    "w0=0": {
+     "ci": [
+      -0.13832188186061825,
+      0.10260759614633252
+     ],
+     "ci_method": "student-t",
+     "classes": 28,
+     "df": 10.26148409893993,
+     "estimate": -0.017857142857142856,
+     "items": 54,
+     "n_eff": null,
+     "scored": 54,
+     "se": 0.05406518489459807
+    },
+    "w0>=0.5": {
+     "ci": [
+      -1.0,
+      1.0
+     ],
+     "ci_method": "student-t",
+     "classes": 3,
+     "df": 2.0,
+     "estimate": -0.3333333333333333,
+     "items": 3,
+     "n_eff": null,
+     "scored": 3,
+     "se": 0.33333333333333337
+    }
+   }
+  }
+ }
+}
