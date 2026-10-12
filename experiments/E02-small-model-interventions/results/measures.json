@@ -1,0 +1,343 @@
+{
+ "arms": {
+  "A8": {
+   "behaviour": {
+    "alive_first": 90.0,
+    "bits_per_exp": 0.8335921711832707,
+    "certain_wrong": 5,
+    "contradicting": "44/203",
+    "contradicting_share": 0.21674876847290642,
+    "conversion": 0.0,
+    "eig": 0.7557598174699988,
+    "exp_per_game": 1.8823529411764706,
+    "extra_or_per_sub": 0.029556650246305417,
+    "fits_ce": "91/101",
+    "games": 102,
+    "headline_expected_wins": 7.604141130887558,
+    "headline_wins": 0,
+    "more_or_than_truth": "6/203",
+    "nodes_ratio": 1.2881147861443427,
+    "over_simplest": "89/203",
+    "p_first": 0.08482563263614282,
+    "relational_outside_tier": "57/203",
+    "repeats": 1,
+    "subs_per_game": 1.9901960784313726,
+    "wins": 1,
+    "zero": 0.06770833333333333
+   },
+   "files": [
+    "experiments/E01-dev-baseline/results/runs/qwen3.5-4b-mlx.jsonl"
+   ],
+   "finished": 102,
+   "headline": {
+    "ci": [
+     0.0,
+     0.17217337396389026
+    ],
+    "ci_method": "korn-graubard-mover",
+    "classes": 46,
+    "complete": false,
+    "df": null,
+    "estimate": 0.0,
+    "finished": 92,
+    "items": 430,
+    "missing": [],
+    "n_eff": null,
+    "over_cap": {},
+    "se": 0.0,
+    "unscored_cap": 0.05,
+    "withheld": null
+   }
+  },
+  "force16": {
+   "behaviour": {
+    "alive_first": 2.0,
+    "bits_per_exp": 0.4024043424865157,
+    "certain_wrong": 84,
+    "contradicting": "97/189",
+    "contradicting_share": 0.5132275132275133,
+    "conversion": 0.2937853624383762,
+    "eig": 0.38796745564218327,
+    "exp_per_game": 16.254901960784313,
+    "extra_or_per_sub": 0.15343915343915343,
+    "fits_ce": "57/87",
+    "games": 102,
+    "headline_expected_wins": 64.67306554112409,
+    "headline_wins": 19,
+    "more_or_than_truth": "23/189",
+    "nodes_ratio": 2.1078693205677332,
+    "over_simplest": "116/189",
+    "p_first": 0.7006028611105314,
+    "relational_outside_tier": "20/189",
+    "repeats": 86,
+    "subs_per_game": 1.8529411764705883,
+    "wins": 26,
+    "zero": 0.5078407720144753
+   },
+   "files": [
+    "experiments/E02-small-model-interventions/results/runs/qwen3.5-4b-mlx-force16.jsonl"
+   ],
+   "finished": 102,
+   "headline": {
+    "ci": [
+     0.1143177161395354,
+     0.3477567196985253
+    ],
+    "ci_method": "korn-graubard-mover",
+    "classes": 46,
+    "complete": false,
+    "df": 21.644026812109338,
+    "estimate": 0.19100840336134456,
+    "finished": 92,
+    "items": 430,
+    "missing": [],
+    "n_eff": null,
+    "over_cap": {},
+    "se": 0.046224140219628236,
+    "unscored_cap": 0.05,
+    "withheld": null
+   }
+  },
+  "force16-show": {
+   "behaviour": {
+    "alive_first": 2.0,
+    "bits_per_exp": 0.3930336029809723,
+    "certain_wrong": 80,
+    "contradicting": "94/184",
+    "contradicting_share": 0.5108695652173914,
+    "conversion": 0.3363336934496528,
+    "eig": 0.3891146632768784,
+    "exp_per_game": 16.401960784313726,
+    "extra_or_per_sub": 0.20652173913043478,
+    "fits_ce": "54/82",
+    "games": 102,
+    "headline_expected_wins": 62.43799062951621,
+    "headline_wins": 21,
+    "more_or_than_truth": "23/184",
+    "nodes_ratio": 1.964660973084886,
+    "over_simplest": "104/184",
+    "p_first": 0.6700740244222702,
+    "relational_outside_tier": "23/184",
+    "repeats": 84,
+    "subs_per_game": 1.803921568627451,
+    "wins": 29,
+    "zero": 0.5008965929468021
+   },
+   "files": [
+    "experiments/E02-small-model-interventions/results/runs/qwen3.5-4b-mlx-force16-show.jsonl"
+   ],
+   "finished": 102,
+   "headline": {
+    "ci": [
+     0.1359788422250047,
+     0.3866265096056438
+    ],
+    "ci_method": "korn-graubard-mover",
+    "classes": 46,
+    "complete": false,
+    "df": 17.044134111147752,
+    "estimate": 0.2235294117647059,
+    "finished": 92,
+    "items": 430,
+    "missing": [],
+    "n_eff": null,
+    "over_cap": {},
+    "se": 0.045025059693901484,
+    "unscored_cap": 0.05,
+    "withheld": null
+   }
+  },
+  "show": {
+   "behaviour": {
+    "alive_first": 84.5,
+    "bits_per_exp": 0.8255843535821588,
+    "certain_wrong": 5,
+    "contradicting": "29/201",
+    "contradicting_share": 0.14427860696517414,
+    "conversion": 0.42480258713399527,
+    "eig": 0.7783322901978028,
+    "exp_per_game": 2.303921568627451,
+    "extra_or_per_sub": 0.0945273631840796,
+    "fits_ce": "93/99",
+    "games": 102,
+    "headline_expected_wins": 9.416138510329462,
+    "headline_wins": 4,
+    "more_or_than_truth": "13/201",
+    "nodes_ratio": 1.1626944641870014,
+    "over_simplest": "91/201",
+    "p_first": 0.10472544341796458,
+    "relational_outside_tier": "31/201",
+    "repeats": 0,
+    "subs_per_game": 1.9705882352941178,
+    "wins": 9,
+    "zero": 0.05106382978723404
+   },
+   "files": [
+    "experiments/E02-small-model-interventions/results/runs/qwen3.5-4b-mlx-show.jsonl",
+    "experiments/E02-small-model-interventions/results/runs/qwen3.5-4b-mlx-show.part2.jsonl"
+   ],
+   "finished": 102,
+   "headline": {
+    "ci": [
+     0.016765762762264803,
+     0.2154301930044499
+    ],
+    "ci_method": "korn-graubard-mover",
+    "classes": 46,
+    "complete": false,
+    "df": 14.781525756718061,
+    "estimate": 0.04857142857142857,
+    "finished": 92,
+    "items": 430,
+    "missing": [],
+    "n_eff": null,
+    "over_cap": {},
+    "se": 0.027205441632544194,
+    "unscored_cap": 0.05,
+    "withheld": null
+   }
+  }
+ },
+ "hypotheses": {
+  "H_stopping": {
+   "ci": [
+    0.09488004139997214,
+    0.287136765322717
+   ],
+   "difference": 0.19100840336134456,
+   "verdict": "holds"
+  },
+  "H_tracking": {
+   "at_least": 0.1,
+   "contradicting_share": 0.5132275132275133,
+   "verdict": "holds"
+  },
+  "H_uncertainty": {
+   "ci": [
+    0.10109282750159526,
+    0.7420444274003655
+   ],
+   "mean_difference": 0.4215686274509804,
+   "verdict": "holds"
+  },
+  "precondition_force16_narrowed": {
+   "alive_first_median": 2.0,
+   "at_most": 10,
+   "holds": true
+  }
+ },
+ "paired_experiments": {
+  "force16 - A8": {
+   "ci": [
+    14.104681735440899,
+    14.640416303774789
+   ],
+   "mean": 14.372549019607844,
+   "n": 102,
+   "se": 0.1350320601774341
+  },
+  "force16-show - A8": {
+   "ci": [
+    14.209682464167596,
+    14.829533222106914
+   ],
+   "mean": 14.519607843137255,
+   "n": 102,
+   "se": 0.15623357123919165
+  },
+  "force16-show - force16": {
+   "ci": [
+    -0.058662997313227855,
+    0.35278064437205137
+   ],
+   "mean": 0.14705882352941177,
+   "n": 102,
+   "se": 0.10370449447839893
+  },
+  "force16-show - show": {
+   "ci": [
+    13.752252918128779,
+    14.44382551324377
+   ],
+   "mean": 14.098039215686274,
+   "n": 102,
+   "se": 0.17431108201782283
+  },
+  "show - A8": {
+   "ci": [
+    0.10109282750159526,
+    0.7420444274003655
+   ],
+   "mean": 0.4215686274509804,
+   "n": 102,
+   "se": 0.16155204484473906
+  }
+ },
+ "paired_wins": {
+  "force16 - A8": {
+   "ci": [
+    0.09488004139997214,
+    0.287136765322717
+   ],
+   "ci_method": "student-t",
+   "df": 21.644026812109338,
+   "estimate": 0.19100840336134456,
+   "finished": 92,
+   "missing": [],
+   "se": 0.046224140219628236,
+   "withheld": null
+  },
+  "force16-show - A8": {
+   "ci": [
+    0.12853483942963762,
+    0.31852398409977417
+   ],
+   "ci_method": "student-t",
+   "df": 17.044134111147752,
+   "estimate": 0.2235294117647059,
+   "finished": 92,
+   "missing": [],
+   "se": 0.045025059693901484,
+   "withheld": null
+  },
+  "force16-show - force16": {
+   "ci": [
+    -0.05717659288058392,
+    0.1222186096873066
+   ],
+   "ci_method": "student-t",
+   "df": 19.812942357862912,
+   "estimate": 0.03252100840336134,
+   "finished": 92,
+   "missing": [],
+   "se": 0.042855504261895626,
+   "withheld": null
+  },
+  "force16-show - show": {
+   "ci": [
+    0.07158577036487547,
+    0.2783301960216792
+   ],
+   "ci_method": "student-t",
+   "df": 14.996328178696597,
+   "estimate": 0.17495798319327732,
+   "finished": 92,
+   "missing": [],
+   "se": 0.04819696681759877,
+   "withheld": null
+  },
+  "show - A8": {
+   "ci": [
+    -0.009778440480976966,
+    0.10692129762383411
+   ],
+   "ci_method": "student-t",
+   "df": 14.781525756718061,
+   "estimate": 0.04857142857142857,
+   "finished": 92,
+   "missing": [],
+   "se": 0.027205441632544194,
+   "withheld": null
+  }
+ }
+}

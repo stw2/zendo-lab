@@ -13,3 +13,6 @@ experiments/*/data/cache/
 
 # Run files (every game, with reasoning) stay on this machine; git keeps their statistics and hashes
 experiments/*/results/runs/
+
+# Local Claude Code state (session worktrees); never part of the repository
+.claude/

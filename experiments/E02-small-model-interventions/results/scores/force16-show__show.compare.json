@@ -1,0 +1,1191 @@
+{
+ "arms": [
+  "qwen3.5-4b-mlx-force16-show",
+  "qwen3.5-4b-mlx-show"
+ ],
+ "composite_arms": [],
+ "difference": "qwen3.5-4b-mlx-force16-show - qwen3.5-4b-mlx-show",
+ "families": {
+  "T1": {
+   "count=1-1-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 6,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "count=2-1-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 6,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "count>=2-1-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 6,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "exists-1-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 6,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "forall-1-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 6,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   }
+  },
+  "T2": {
+   "count=1-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "count=1-2-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "exists-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "exists-2-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 6,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "forall-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 10,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "forall-2-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 10,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "outer-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 10,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   }
+  },
+  "T3": {
+   "count=1-3-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 18,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "count=2-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "count=2-3-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 18,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "count>=2-2-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "count>=2-3-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 18,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "exists-3-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 16,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "exists-3-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 16,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "forall-3-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 16,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "forall-3-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 16,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "outer-3-and": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 16,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   }
+  },
+  "T4": {
+   "count=1-3-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 14,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "count=2-2-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "count=2-3-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 14,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "count>=2-2-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "count>=2-3-or": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 16,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   }
+  },
+  "T5": {
+   "K01": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 4,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "K02": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 16,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "K03": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "K04": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "K05": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "K06": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 18,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S04": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S05": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S06": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S07": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S08": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S09": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 4,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S11": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 4,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S12": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 20,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "X01": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 4,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "X02": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 4,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "X04": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 4,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   }
+  },
+  "T6": {
+   "C08": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "C09": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 6,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "C11": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 14,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "C13": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "C16": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 18,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "C17": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 10,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "C18": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   }
+  }
+ },
+ "files": {
+  "qwen3.5-4b-mlx-force16-show": [
+   {
+    "composite": false,
+    "configurations": [
+     {
+      "settings": {
+       "agent": "e02-intervention-v1",
+       "agent_config": {
+        "arm": "force16-show",
+        "force_experiments": 16,
+        "show_consistent_rules": true
+       },
+       "agent_source_sha256": "ded59be23e3d236c3c63210803e7e3c1e0c4583663fd9c60c4345b84c275c4b6",
+       "backend": "mlx",
+       "decoding": {
+        "action_allowance": 2048,
+        "action_temperature": 1.0,
+        "min_p": 0.0,
+        "presence_penalty": 1.5,
+        "seed": 0,
+        "temperature": 1.0,
+        "thinking": true,
+        "thinking_budget": 63487,
+        "top_k": 20,
+        "top_p": 0.95
+       },
+       "local_model": {
+        "model": "Qwen/Qwen3.5-4B",
+        "model_sha256": "76eef3317d2e81bba118981981c38e0ccbd267fdcda9689e531a20ebdc3703a2",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "tokenizer_sha256": "2cc0b586a258eb03d2369016d2dbd0422d7eb86ee8a2cfcfb6fe037a11dcc543"
+       },
+       "model": "Qwen/Qwen3.5-4B",
+       "model_sha256": "76eef3317d2e81bba118981981c38e0ccbd267fdcda9689e531a20ebdc3703a2",
+       "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+       "settings": {
+        "compile_threads": 8,
+        "completion_batch_size": 36,
+        "prefill_batch_size": 1
+       },
+       "tokenizer_sha256": "2cc0b586a258eb03d2369016d2dbd0422d7eb86ee8a2cfcfb6fe037a11dcc543"
+      },
+      "sha256": "d0868b7d493039250032ff18ddb2b2512ba7e17853ede7e5cbb37a557b62a8b4"
+     }
+    ],
+    "end": "complete",
+    "finished": 102,
+    "path": "experiments/E02-small-model-interventions/results/runs/qwen3.5-4b-mlx-force16-show.jsonl",
+    "player": "agent-tools",
+    "reply_policy": "action-object-v1",
+    "sha256": "40e66401bf30cededfadefb1f977fbf121fd2311482a917fdddb51c4e43f6f34",
+    "truncated": false
+   }
+  ],
+  "qwen3.5-4b-mlx-show": [
+   {
+    "composite": false,
+    "configurations": [
+     {
+      "settings": {
+       "agent": "e02-intervention-v1",
+       "agent_config": {
+        "arm": "show",
+        "force_experiments": null,
+        "show_consistent_rules": true
+       },
+       "agent_source_sha256": "ded59be23e3d236c3c63210803e7e3c1e0c4583663fd9c60c4345b84c275c4b6",
+       "backend": "mlx",
+       "decoding": {
+        "action_allowance": 2048,
+        "action_temperature": 1.0,
+        "min_p": 0.0,
+        "presence_penalty": 1.5,
+        "seed": 0,
+        "temperature": 1.0,
+        "thinking": true,
+        "thinking_budget": 63487,
+        "top_k": 20,
+        "top_p": 0.95
+       },
+       "local_model": {
+        "model": "Qwen/Qwen3.5-4B",
+        "model_sha256": "76eef3317d2e81bba118981981c38e0ccbd267fdcda9689e531a20ebdc3703a2",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "tokenizer_sha256": "2cc0b586a258eb03d2369016d2dbd0422d7eb86ee8a2cfcfb6fe037a11dcc543"
+       },
+       "model": "Qwen/Qwen3.5-4B",
+       "model_sha256": "76eef3317d2e81bba118981981c38e0ccbd267fdcda9689e531a20ebdc3703a2",
+       "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+       "settings": {
+        "compile_threads": 8,
+        "completion_batch_size": 36,
+        "prefill_batch_size": 1
+       },
+       "tokenizer_sha256": "2cc0b586a258eb03d2369016d2dbd0422d7eb86ee8a2cfcfb6fe037a11dcc543"
+      },
+      "sha256": "6438d68b0db04f372a83c514c7db1114c666e6f9727a7df89c037b670534841e"
+     }
+    ],
+    "end": null,
+    "finished": 0,
+    "path": "experiments/E02-small-model-interventions/results/runs/qwen3.5-4b-mlx-show.jsonl",
+    "player": "agent-tools",
+    "reply_policy": "action-object-v1",
+    "sha256": "7b1ff1e727a0d7462d33709d80cb09456d62731483a5298de286483133d95c1b",
+    "truncated": false
+   },
+   {
+    "composite": false,
+    "configurations": [
+     {
+      "settings": {
+       "agent": "e02-intervention-v1",
+       "agent_config": {
+        "arm": "show",
+        "force_experiments": null,
+        "show_consistent_rules": true
+       },
+       "agent_source_sha256": "ded59be23e3d236c3c63210803e7e3c1e0c4583663fd9c60c4345b84c275c4b6",
+       "backend": "mlx",
+       "decoding": {
+        "action_allowance": 2048,
+        "action_temperature": 1.0,
+        "min_p": 0.0,
+        "presence_penalty": 1.5,
+        "seed": 0,
+        "temperature": 1.0,
+        "thinking": true,
+        "thinking_budget": 63487,
+        "top_k": 20,
+        "top_p": 0.95
+       },
+       "local_model": {
+        "model": "Qwen/Qwen3.5-4B",
+        "model_sha256": "76eef3317d2e81bba118981981c38e0ccbd267fdcda9689e531a20ebdc3703a2",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "tokenizer_sha256": "2cc0b586a258eb03d2369016d2dbd0422d7eb86ee8a2cfcfb6fe037a11dcc543"
+       },
+       "model": "Qwen/Qwen3.5-4B",
+       "model_sha256": "76eef3317d2e81bba118981981c38e0ccbd267fdcda9689e531a20ebdc3703a2",
+       "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+       "settings": {
+        "compile_threads": 8,
+        "completion_batch_size": 36,
+        "prefill_batch_size": 1
+       },
+       "tokenizer_sha256": "2cc0b586a258eb03d2369016d2dbd0422d7eb86ee8a2cfcfb6fe037a11dcc543"
+      },
+      "sha256": "6438d68b0db04f372a83c514c7db1114c666e6f9727a7df89c037b670534841e"
+     }
+    ],
+    "end": "complete",
+    "finished": 102,
+    "path": "experiments/E02-small-model-interventions/results/runs/qwen3.5-4b-mlx-show.part2.jsonl",
+    "player": "agent-tools",
+    "reply_policy": "action-object-v1",
+    "sha256": "1a58a578fe3bf4f1ebf5b9413a234ad6e12133c2eb4e0ffa4739dbcfc18a32fd",
+    "truncated": false
+   }
+  ]
+ },
+ "headline": {
+  "arms_over_cap": {},
+  "ci": [
+   0.07158577036487547,
+   0.2783301960216792
+  ],
+  "ci_method": "student-t",
+  "classes": 46,
+  "complete": false,
+  "df": 14.996328178696597,
+  "estimate": 0.17495798319327732,
+  "finished": 92,
+  "items": 430,
+  "missing": [],
+  "n_eff": null,
+  "over_cap": {},
+  "se": 0.04819696681759877,
+  "unscored_cap": 0.05,
+  "withheld": null
+ },
+ "kind": "compare",
+ "manifest_sha256": "6b98d1a59d5f7d3b09b12f9840c83405e6ea2925d71911a10ab572e39facc278",
+ "player": "agent-tools",
+ "schema": "zendo-bench-v1-score",
+ "split": "dev",
+ "templates": {},
+ "tiers": {
+  "T1": {
+   "abandoned": {
+    "qwen3.5-4b-mlx-force16-show": 0,
+    "qwen3.5-4b-mlx-show": 0
+   },
+   "ci": [
+    -0.040043690329127524,
+    0.6400436903291276
+   ],
+   "ci_method": "student-t",
+   "classes": 5,
+   "df": 4.0,
+   "estimate": 0.3,
+   "finished": 10,
+   "items": 30,
+   "n_eff": null,
+   "scored": 10,
+   "scored_in_one_arm_only": 0,
+   "se": 0.12247448713915891,
+   "timing_unverifiable": {
+    "qwen3.5-4b-mlx-force16-show": 0,
+    "qwen3.5-4b-mlx-show": 0
+   },
+   "unfinished": 20,
+   "unscored": 0
+  },
+  "T2": {
+   "abandoned": {
+    "qwen3.5-4b-mlx-force16-show": 0,
+    "qwen3.5-4b-mlx-show": 0
+   },
+   "ci": [
+    -0.08270903223443743,
+    0.7969947465201517
+   ],
+   "ci_method": "student-t",
+   "classes": 7,
+   "df": 6.0,
+   "estimate": 0.35714285714285715,
+   "finished": 14,
+   "items": 60,
+   "n_eff": null,
+   "scored": 14,
+   "scored_in_one_arm_only": 0,
+   "se": 0.17975796274454164,
+   "timing_unverifiable": {
+    "qwen3.5-4b-mlx-force16-show": 0,
+    "qwen3.5-4b-mlx-show": 0
+   },
+   "unfinished": 46,
+   "unscored": 0
+  },
+  "T3": {
+   "abandoned": {
+    "qwen3.5-4b-mlx-force16-show": 0,
+    "qwen3.5-4b-mlx-show": 0
+   },
+   "ci": [
+    0.07131618443186488,
+    0.7286838155681352
+   ],
+   "ci_method": "student-t",
+   "classes": 10,
+   "df": 9.0,
+   "estimate": 0.4,
+   "finished": 20,
+   "items": 150,
+   "n_eff": null,
+   "scored": 20,
+   "scored_in_one_arm_only": 0,
+   "se": 0.1452966314513558,
+   "timing_unverifiable": {
+    "qwen3.5-4b-mlx-force16-show": 0,
+    "qwen3.5-4b-mlx-show": 0
+   },
+   "unfinished": 130,
+   "unscored": 0
+  },
+  "T4": {
+   "abandoned": {
+    "qwen3.5-4b-mlx-force16-show": 0,
+    "qwen3.5-4b-mlx-show": 0
+   },
+   "ci": null,
+   "ci_method": "student-t",
+   "classes": 5,
+   "df": null,
+   "estimate": 0.0,
+   "finished": 10,
+   "items": 60,
+   "n_eff": null,
+   "scored": 10,
+   "scored_in_one_arm_only": 0,
+   "se": 0.0,
+   "timing_unverifiable": {
+    "qwen3.5-4b-mlx-force16-show": 0,
+    "qwen3.5-4b-mlx-show": 0
+   },
+   "unfinished": 50,
+   "unscored": 0,
+   "warning": "zero_observed_variance"
+  },
+  "T5": {
+   "abandoned": {
+    "qwen3.5-4b-mlx-force16-show": 0,
+    "qwen3.5-4b-mlx-show": 0
+   },
+   "ci": [
+    -0.026905830820276283,
+    0.2621999484673351
+   ],
+   "ci_method": "student-t",
+   "classes": 17,
+   "df": 16.0,
+   "estimate": 0.11764705882352941,
+   "finished": 34,
+   "items": 100,
+   "n_eff": null,
+   "scored": 34,
+   "scored_in_one_arm_only": 0,
+   "se": 0.06818837129040958,
+   "timing_unverifiable": {
+    "qwen3.5-4b-mlx-force16-show": 0,
+    "qwen3.5-4b-mlx-show": 0
+   },
+   "unfinished": 66,
+   "unscored": 0
+  },
+  "T6": {
+   "abandoned": {
+    "qwen3.5-4b-mlx-force16-show": 0,
+    "qwen3.5-4b-mlx-show": 0
+   },
+   "ci": null,
+   "ci_method": "student-t",
+   "classes": 7,
+   "df": null,
+   "estimate": 0.0,
+   "finished": 14,
+   "items": 60,
+   "n_eff": null,
+   "scored": 14,
+   "scored_in_one_arm_only": 0,
+   "se": 0.0,
+   "timing_unverifiable": {
+    "qwen3.5-4b-mlx-force16-show": 0,
+    "qwen3.5-4b-mlx-show": 0
+   },
+   "unfinished": 46,
+   "unscored": 0,
+   "warning": "zero_observed_variance"
+  }
+ },
+ "verified": true,
+ "w0": {
+  "bands": [
+   "w0=0",
+   "0<w0<0.5",
+   "w0>=0.5"
+  ],
+  "pooled": {
+   "0<w0<0.5": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 0,
+    "df": null,
+    "estimate": null,
+    "n_eff": null,
+    "se": null
+   },
+   "w0=0": {
+    "ci": [
+     0.05849995809114039,
+     0.2647493416287476
+    ],
+    "ci_method": "student-t",
+    "classes": 45,
+    "df": 14.547021222138095,
+    "estimate": 0.161624649859944,
+    "n_eff": null,
+    "se": 0.048081560907541315
+   },
+   "w0>=0.5": {
+    "ci": null,
+    "ci_method": "student-t",
+    "classes": 3,
+    "df": null,
+    "estimate": 0.3333333333333333,
+    "n_eff": null,
+    "se": null
+   }
+  },
+  "tiers": {
+   "T1": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      -0.040043690329127524,
+      0.6400436903291276
+     ],
+     "ci_method": "student-t",
+     "classes": 5,
+     "df": 4.0,
+     "estimate": 0.3,
+     "items": 30,
+     "n_eff": null,
+     "scored": 10,
+     "se": 0.12247448713915891
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T2": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      -0.08270903223443743,
+      0.7969947465201517
+     ],
+     "ci_method": "student-t",
+     "classes": 7,
+     "df": 6.0,
+     "estimate": 0.35714285714285715,
+     "items": 60,
+     "n_eff": null,
+     "scored": 14,
+     "se": 0.17975796274454164
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T3": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 1,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.0004903062802044666,
+      0.6661763603864621
+     ],
+     "ci_method": "student-t",
+     "classes": 9,
+     "df": 8.0,
+     "estimate": 0.3333333333333333,
+     "items": 122,
+     "n_eff": null,
+     "scored": 18,
+     "se": 0.14433756729740646
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 1,
+     "df": null,
+     "estimate": 1.0,
+     "items": 27,
+     "n_eff": null,
+     "scored": 2,
+     "se": null
+    }
+   },
+   "T4": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 5,
+     "df": null,
+     "estimate": 0.0,
+     "items": 60,
+     "n_eff": null,
+     "scored": 10,
+     "se": 0.0,
+     "warning": "zero_observed_variance"
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T5": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 1,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      -0.026905830820276283,
+      0.2621999484673351
+     ],
+     "ci_method": "student-t",
+     "classes": 17,
+     "df": 16.0,
+     "estimate": 0.11764705882352941,
+     "items": 97,
+     "n_eff": null,
+     "scored": 33,
+     "se": 0.06818837129040958
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 1,
+     "df": null,
+     "estimate": 0.0,
+     "items": 2,
+     "n_eff": null,
+     "scored": 1,
+     "se": null
+    }
+   },
+   "T6": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 3,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 7,
+     "df": null,
+     "estimate": 0.0,
+     "items": 54,
+     "n_eff": null,
+     "scored": 13,
+     "se": 0.0,
+     "warning": "zero_observed_variance"
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "student-t",
+     "classes": 1,
+     "df": null,
+     "estimate": 0.0,
+     "items": 3,
+     "n_eff": null,
+     "scored": 1,
+     "se": null
+    }
+   }
+  }
+ }
+}
