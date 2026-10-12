@@ -1,0 +1,20 @@
+{
+  "tries": 10139,
+  "answered_tries": 9931,
+  "cited_tries": 10125,
+  "uncited_tries": 14,
+  "missing_joins": 0,
+  "interrupted_traces": 0,
+  "trace_files": [
+    {
+      "file": "claude-sonnet-5-5-claude-high-v2.traces.jsonl.gz",
+      "sha256": "70ee52754304afc31e55fd18e5a477a747582c49c33585a5ed5734ad3a2c917f",
+      "bytes": 12334354
+    },
+    {
+      "file": "claude-sonnet-5-5-claude-high-v2.part2.traces.jsonl.gz",
+      "sha256": "98b5d26fff2aadc1826fb19263885c6a35db82a591360ad2ae905a5216412eb8",
+      "bytes": 368138807
+    }
+  ]
+}

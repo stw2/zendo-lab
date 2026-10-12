@@ -1,0 +1,226 @@
+{
+  "operation": "Replace only files.<arm>[].path absolute checkout paths with repository-relative paths. Preserve all other JSON values; original bytes are retained privately and still match the registered attempt output digests.",
+  "content_digest_definition": "SHA-256 of UTF-8 JSON with files.<arm>[].path removed, sort_keys=true, separators=(comma,colon), ensure_ascii=false.",
+  "files": [
+    {
+      "path": "comparisons/claude-fable-5-1-claude-high-v2__vs__gpt-5.6-terra-codex-high.json",
+      "attempt": "A38",
+      "attempt_id": "1a64177d-1299-4087-8197-e5262dd1b613",
+      "registered_output_label": "comparisons/claude-fable-5-1-claude-high-v2__vs__gpt-5.6-terra-codex-high.json",
+      "registered_original_sha256": "80d6b8b42c739b39a9bc89190a012e7a8d1745e890a17ba90262299efbef8533",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "811757b2ab8e4c26f2f7b35fcb3bc705e3a88bfec6a3baca497c4bb5f1ad0db5",
+      "path_fields_rewritten": 5,
+      "content_without_file_paths_sha256": "99745b5a56d24ee62697f8132a7053142c843478dc7a51d86e79f46c8f4903ea"
+    },
+    {
+      "path": "comparisons/claude-fable-5-1-claude-high-v2__vs__gpt-6-astra-codex-high.json",
+      "attempt": "A38",
+      "attempt_id": "1a64177d-1299-4087-8197-e5262dd1b613",
+      "registered_output_label": "comparisons/claude-fable-5-1-claude-high-v2__vs__gpt-6-astra-codex-high.json",
+      "registered_original_sha256": "e36ff848029320e300a1c30cdc8dc8f4c008fee272e7f5e4d4976c7a2faf47d2",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "74e606903723a9efe5c52df29b20f89475f2ed2cba0b0307f3bcd48374d081be",
+      "path_fields_rewritten": 5,
+      "content_without_file_paths_sha256": "d0d097e62630b5b5312b3d0d40a3c47f4f0a02750c50a48402262fee01a9471a"
+    },
+    {
+      "path": "comparisons/claude-fable-5-1-claude-high-v2__vs__gpt-6-luna-codex-high.json",
+      "attempt": "A38",
+      "attempt_id": "1a64177d-1299-4087-8197-e5262dd1b613",
+      "registered_output_label": "comparisons/claude-fable-5-1-claude-high-v2__vs__gpt-6-luna-codex-high.json",
+      "registered_original_sha256": "363131065df2a607582283268157f077eb8a67ae792665b16ea7f3ec0d50de2f",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "00671ab2bd2fdc2e207ed9d4f714e3caa49c8d0f6ce8179ab0dea6916ce23622",
+      "path_fields_rewritten": 6,
+      "content_without_file_paths_sha256": "e83bc182cdc502f002f4a52f1f24172f733f057077d5cae0170ba05e1cd8dec7"
+    },
+    {
+      "path": "comparisons/claude-fable-5-1-claude-high-v2__vs__gpt-6-sol-codex-high.json",
+      "attempt": "A38",
+      "attempt_id": "1a64177d-1299-4087-8197-e5262dd1b613",
+      "registered_output_label": "comparisons/claude-fable-5-1-claude-high-v2__vs__gpt-6-sol-codex-high.json",
+      "registered_original_sha256": "405bd4250ac90a10f3d65e01ef7fc3c992f6247ec3565703691750d40015325f",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "11f80b0f87c07cf41ffd6841c0970626dbc266f024a5bbc864d35579f28a1beb",
+      "path_fields_rewritten": 5,
+      "content_without_file_paths_sha256": "8a447bac6c0212ceb58e42e728691ec7386845df9144a4f540d2ae952165fb7d"
+    },
+    {
+      "path": "comparisons/claude-fable-5-1-claude-high-v2__vs__gpt-6.1-sol-codex-high.json",
+      "attempt": "A38",
+      "attempt_id": "1a64177d-1299-4087-8197-e5262dd1b613",
+      "registered_output_label": "comparisons/claude-fable-5-1-claude-high-v2__vs__gpt-6.1-sol-codex-high.json",
+      "registered_original_sha256": "bff57d9f2e2a4f14d940825cc387995c83312ae40d878643244aa3bb42a2dfc7",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "87b3402515c5dcde81a7c48092fd1608a9c0ab0930a44d5d99294d5c6b3fb921",
+      "path_fields_rewritten": 5,
+      "content_without_file_paths_sha256": "1cdb6a937cc18244888d4a3b33e8aa6f2ab4b723e5dd5142c6303c1b40ec830a"
+    },
+    {
+      "path": "comparisons/claude-haiku-5-5-claude-high-v2__vs__gpt-5.6-terra-codex-high.json",
+      "attempt": "A31",
+      "attempt_id": "ca2b3271-a293-4b3e-a0af-bf80bab566ba",
+      "registered_output_label": "comparisons/claude-haiku-5-5-claude-high-v2__vs__gpt-5.6-terra-codex-high.json",
+      "registered_original_sha256": "cbd9d258e16b148f8ce4edfe86b1cf6e322ded7c0d4ec48fc455cf59d37ce948",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "598613bffe2926c7ff51c65435fd7dab6ec95b1c98b83e772a0285d10b62a7dc",
+      "path_fields_rewritten": 10,
+      "content_without_file_paths_sha256": "8eeeeb6cccd9c400a605cddd924906c3fed454c40ed9e859aca181941b708398"
+    },
+    {
+      "path": "comparisons/claude-haiku-5-5-claude-high-v2__vs__gpt-6-astra-codex-high.json",
+      "attempt": "A31",
+      "attempt_id": "ca2b3271-a293-4b3e-a0af-bf80bab566ba",
+      "registered_output_label": "comparisons/claude-haiku-5-5-claude-high-v2__vs__gpt-6-astra-codex-high.json",
+      "registered_original_sha256": "06f72687ca55dd75a50bd74f465920bbee86abec0d6a9dee89a917861f1d9c5e",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "c00b0635e5663a577ac1b068e5f2919fa5c379214ed779fb47dedd64795d7406",
+      "path_fields_rewritten": 10,
+      "content_without_file_paths_sha256": "93c9573a56a22eeb6b914ee34108ff612ef9a61d7d8456e6b36f7369ec928e60"
+    },
+    {
+      "path": "comparisons/claude-haiku-5-5-claude-high-v2__vs__gpt-6-luna-codex-high.json",
+      "attempt": "A31",
+      "attempt_id": "ca2b3271-a293-4b3e-a0af-bf80bab566ba",
+      "registered_output_label": "comparisons/claude-haiku-5-5-claude-high-v2__vs__gpt-6-luna-codex-high.json",
+      "registered_original_sha256": "36f864c98f7c706a8945e0b4e35371ff15e9cfa21c02b1e3295ccd464afbc5bf",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "d0d81098fe83facb054fdfc72f340629ff4e6239eb99c8cda7425d87f78174ba",
+      "path_fields_rewritten": 11,
+      "content_without_file_paths_sha256": "9fa5e3c907a31cc5701d8963a18e68446cfa982439ed1fea786544e40ed08168"
+    },
+    {
+      "path": "comparisons/claude-haiku-5-5-claude-high-v2__vs__gpt-6-sol-codex-high.json",
+      "attempt": "A31",
+      "attempt_id": "ca2b3271-a293-4b3e-a0af-bf80bab566ba",
+      "registered_output_label": "comparisons/claude-haiku-5-5-claude-high-v2__vs__gpt-6-sol-codex-high.json",
+      "registered_original_sha256": "16ef66625bd39341a4001638ad445a8ca36273a2e7ebc60373969bbf9f56d883",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "5145551aa6d74a9d67a07119ec0aebda7edc5f27756a094d6d716e213c7bd80d",
+      "path_fields_rewritten": 10,
+      "content_without_file_paths_sha256": "6e9d17af0dfbe972d9646aba433320dae8aaece4b588984d03010e53f17eef98"
+    },
+    {
+      "path": "comparisons/claude-haiku-5-5-claude-high-v2__vs__gpt-6.1-sol-codex-high.json",
+      "attempt": "A31",
+      "attempt_id": "ca2b3271-a293-4b3e-a0af-bf80bab566ba",
+      "registered_output_label": "comparisons/claude-haiku-5-5-claude-high-v2__vs__gpt-6.1-sol-codex-high.json",
+      "registered_original_sha256": "c7ae757fc4151a3e29821c817c1aec2dc331b5973e62a1ca3c946ec440ea6ccf",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "57997c74b0a1437494c96608f36a573c9f8cd0b46d21120f49a03701a154af6a",
+      "path_fields_rewritten": 10,
+      "content_without_file_paths_sha256": "d50028dbcdcb6633eb5fae8d25d96a04e47b19ee2946e3aa3640569f8a178b7c"
+    },
+    {
+      "path": "comparisons/claude-opus-5-5-claude-high-v2__vs__gpt-5.6-terra-codex-high.json",
+      "attempt": "A36",
+      "attempt_id": "e6384132-1f55-4727-be14-f2eaa70c7886",
+      "registered_output_label": "comparisons/claude-opus-5-5-claude-high-v2__vs__gpt-5.6-terra-codex-high.json",
+      "registered_original_sha256": "7197fc4412bf015473c11476d166cbde98ecb12babb48566f3352a91dce49e13",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "de84507a0e652d4bd748f7a8b47b854b28c7a085184ea8fc6d82be2a9d37ec54",
+      "path_fields_rewritten": 2,
+      "content_without_file_paths_sha256": "7f2cbcd62b9edcaff15b38bdfd94146ed9c865e039ac38d01ad4d64c4df34971"
+    },
+    {
+      "path": "comparisons/claude-opus-5-5-claude-high-v2__vs__gpt-6-astra-codex-high.json",
+      "attempt": "A36",
+      "attempt_id": "e6384132-1f55-4727-be14-f2eaa70c7886",
+      "registered_output_label": "comparisons/claude-opus-5-5-claude-high-v2__vs__gpt-6-astra-codex-high.json",
+      "registered_original_sha256": "291c4c51fa838b773b7d379c8e8d3a39e17bf4963b73d10827233ce8bb20feae",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "b12b107ab000e7ebfb62cd4046e3314d52e0fd4fdd066907cc51f203468d38a8",
+      "path_fields_rewritten": 2,
+      "content_without_file_paths_sha256": "9abc2c1bf6fa8a3f178b5b68319cd74ef0cac1a0e6455ba512ba39167b2bac97"
+    },
+    {
+      "path": "comparisons/claude-opus-5-5-claude-high-v2__vs__gpt-6-luna-codex-high.json",
+      "attempt": "A36",
+      "attempt_id": "e6384132-1f55-4727-be14-f2eaa70c7886",
+      "registered_output_label": "comparisons/claude-opus-5-5-claude-high-v2__vs__gpt-6-luna-codex-high.json",
+      "registered_original_sha256": "21cc00c6ca8c327a84e1f9af2ff2cde5eaff465d25e1515c6cb3abb01d9146b9",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "f47b1c31a9e3a2c6951bb8ceebd5b5235855ca5ab08b0dd969106594b4e5b707",
+      "path_fields_rewritten": 3,
+      "content_without_file_paths_sha256": "d6671f3cf732d743f165e84c149fdc42625a530090db1f24574f274238692ea0"
+    },
+    {
+      "path": "comparisons/claude-opus-5-5-claude-high-v2__vs__gpt-6-sol-codex-high.json",
+      "attempt": "A36",
+      "attempt_id": "e6384132-1f55-4727-be14-f2eaa70c7886",
+      "registered_output_label": "comparisons/claude-opus-5-5-claude-high-v2__vs__gpt-6-sol-codex-high.json",
+      "registered_original_sha256": "96a745655b383a872a3ca214612f0fa4e476b8aa546a3d18942664f870eb78e7",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "b2d7b6deb1372c31127c0c3de2a677c82e7e447a4332871244fcdb29ab785ed9",
+      "path_fields_rewritten": 2,
+      "content_without_file_paths_sha256": "699db46ca15567d211b0e6fd535039ad200639bc9cd8e176b0aae4bc4f07a260"
+    },
+    {
+      "path": "comparisons/claude-opus-5-5-claude-high-v2__vs__gpt-6.1-sol-codex-high.json",
+      "attempt": "A36",
+      "attempt_id": "e6384132-1f55-4727-be14-f2eaa70c7886",
+      "registered_output_label": "comparisons/claude-opus-5-5-claude-high-v2__vs__gpt-6.1-sol-codex-high.json",
+      "registered_original_sha256": "9829e6cdb72ee06478f23df1d6a61f72a768d4cc399bad88d41eb5c87e6f549b",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "568546ddb948ec6da68b357724810a601bf17ae2aac50521af2bf7806e82f0b8",
+      "path_fields_rewritten": 2,
+      "content_without_file_paths_sha256": "a8b8b169ec6e68c2c29a9f38eac38ae0c680a436b50e95510b2c429a0dc74685"
+    },
+    {
+      "path": "comparisons/claude-sonnet-5-5-claude-high-v2__vs__gpt-5.6-terra-codex-high.json",
+      "attempt": "A35",
+      "attempt_id": "79436501-f7f0-49bb-b380-197973eb319d",
+      "registered_output_label": "comparisons/claude-sonnet-5-5-claude-high-v2__vs__gpt-5.6-terra-codex-high.json",
+      "registered_original_sha256": "f2df11492c63bc2f945242f6a173cab6b492e03df907282c286bd524c254ab3f",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "0b6051c227a3906a88eb494e21d1e5a379810be99836de12513521b6e1b5fdef",
+      "path_fields_rewritten": 3,
+      "content_without_file_paths_sha256": "4e6e272305a0d4cf0e50ebe934d340250f8aea388d5b40e7c2b88523d3f89cbd"
+    },
+    {
+      "path": "comparisons/claude-sonnet-5-5-claude-high-v2__vs__gpt-6-astra-codex-high.json",
+      "attempt": "A35",
+      "attempt_id": "79436501-f7f0-49bb-b380-197973eb319d",
+      "registered_output_label": "comparisons/claude-sonnet-5-5-claude-high-v2__vs__gpt-6-astra-codex-high.json",
+      "registered_original_sha256": "3c6b6757665d6ce7b4e40bad1e9ab0fbbb1f6378707dd8f17f0a28d4958d88cf",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "8ec19240c7f49e583bfaf5b02e0e917d880e8023f8de0eb37bfe20db66603533",
+      "path_fields_rewritten": 3,
+      "content_without_file_paths_sha256": "c9ab46746ae29c7936161d97a113df9963bdf6e70b1a016850fade680e4382e9"
+    },
+    {
+      "path": "comparisons/claude-sonnet-5-5-claude-high-v2__vs__gpt-6-luna-codex-high.json",
+      "attempt": "A35",
+      "attempt_id": "79436501-f7f0-49bb-b380-197973eb319d",
+      "registered_output_label": "comparisons/claude-sonnet-5-5-claude-high-v2__vs__gpt-6-luna-codex-high.json",
+      "registered_original_sha256": "446c72b9cc10714dc5d86a62fe4b39f02a55c96612bd312604b3abaf4a7031d6",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "0876f172a784fd9bfce3b84539efba88950e713b8ab1a3a39021a70af2b942fe",
+      "path_fields_rewritten": 4,
+      "content_without_file_paths_sha256": "5abcfd6154b442f0ef4e08878edddbbfcec5bff9b88cacc4534fdb8fff86b5df"
+    },
+    {
+      "path": "comparisons/claude-sonnet-5-5-claude-high-v2__vs__gpt-6-sol-codex-high.json",
+      "attempt": "A35",
+      "attempt_id": "79436501-f7f0-49bb-b380-197973eb319d",
+      "registered_output_label": "comparisons/claude-sonnet-5-5-claude-high-v2__vs__gpt-6-sol-codex-high.json",
+      "registered_original_sha256": "30c6de4d5eb50fa9329700963cfa3fdc5186de134c212ce47b402fd732d6aedf",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "29981f1dbc20699f437afe08dcf919dd3f6b75bf73b6268e504e6f6d896536b7",
+      "path_fields_rewritten": 3,
+      "content_without_file_paths_sha256": "9636e3c813f40a7124a708d350f9aa6a94a43ff1f7c5c4368e72075181474fe9"
+    },
+    {
+      "path": "comparisons/claude-sonnet-5-5-claude-high-v2__vs__gpt-6.1-sol-codex-high.json",
+      "attempt": "A35",
+      "attempt_id": "79436501-f7f0-49bb-b380-197973eb319d",
+      "registered_output_label": "comparisons/claude-sonnet-5-5-claude-high-v2__vs__gpt-6.1-sol-codex-high.json",
+      "registered_original_sha256": "a7502b227fa52681f336e8e091eb443a31f7fc6591e4724c63329e5c8899aa95",
+      "original_access": "restricted; exact original retained by owner",
+      "public_sha256": "0125239e3c51bb4390f15a472e95995ec3007ea85afb73c1d262f452ab36dd9b",
+      "path_fields_rewritten": 3,
+      "content_without_file_paths_sha256": "68ade315bb9249301a54659b643571fc6dad5fe5a0b4a7456b492a39b6d60731"
+    }
+  ]
+}

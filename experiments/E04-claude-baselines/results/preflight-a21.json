@@ -1,0 +1,37 @@
+{
+  "label": "A21",
+  "status": "preflight_failed",
+  "benchmark_games": 0,
+  "model": "claude-haiku-5-5",
+  "effort": "high",
+  "max_tokens": 128000,
+  "sampling": "provider defaults",
+  "backend": "Claude Code 2.1.293, function adapter and direct diagnostic controls",
+  "manifest": "none; connection diagnostics only",
+  "games": 0,
+  "seed": "none",
+  "hardware": "Apple M4 Max 128 GB local orchestrator; provider inference hardware unknown",
+  "reason": "Five exact-prompt tries and direct exact-prompt control returned HTTP 429. Standard wrapper and minimal SDK identity controls each returned OK. Stopped final identical backoff; fixed identity sentence will be declared in amended baseline protocol.",
+  "trace_files": [
+    {
+      "file": "a21-haiku-connection.jsonl.gz",
+      "sha256": "d051cf402bd8c5f0532fb3e59bf4c6fde1bd3b4ef3bdeb905fa3032311eda6a1",
+      "bytes": 6754
+    },
+    {
+      "file": "a21-haiku-direct-control.jsonl.gz",
+      "sha256": "cc0f73f2f43a6d70bb3b6b88b395c7c492b481b5227900a1a25ba658785498d1",
+      "bytes": 1873
+    },
+    {
+      "file": "a21-haiku-identity-control.jsonl.gz",
+      "sha256": "2fc365e95aa75aa9c2d10487f04b5ce7d717287cb93f8d9cc436be67f7e479d8",
+      "bytes": 2558
+    },
+    {
+      "file": "a21-haiku-standard-prompt-control.jsonl.gz",
+      "sha256": "6fb9a8af9cd10859668f949bea9f2147485323f276a7cdcd481d3c2ce9f9ba79",
+      "bytes": 2493
+    }
+  ]
+}

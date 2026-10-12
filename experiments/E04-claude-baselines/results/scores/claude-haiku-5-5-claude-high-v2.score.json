@@ -1,0 +1,2015 @@
+{
+ "arm": "claude-haiku-5-5-claude-high-v2",
+ "composite": false,
+ "context": {
+  "baseline_scope": "One submission from seeds, no experiments; expected win rate with uniform MAP tie breaking on scored items, equal weight per headline tier.",
+  "exposure": "Rule catalogs are public and include classes used in experiments while this benchmark was developed. Sealed items hide seed pairs, not the rule universe. This benchmark does not establish contamination-free reasoning.",
+  "prior": "T1-T4 share the 3-piece catalog prior because their tier is not revealed; T5 and T6 use their registered tier classes.",
+  "seed_only_map_win": 0.04655555555555555,
+  "tiers": {
+   "T1": {
+    "manifest_classes": 15,
+    "manifest_families": 5,
+    "scored_classes": 15,
+    "scored_families": 5,
+    "seed_only_map_win": 0.0
+   },
+   "T2": {
+    "manifest_classes": 30,
+    "manifest_families": 7,
+    "scored_classes": 30,
+    "scored_families": 7,
+    "seed_only_map_win": 0.0
+   },
+   "T3": {
+    "manifest_classes": 75,
+    "manifest_families": 10,
+    "scored_classes": 75,
+    "scored_families": 10,
+    "seed_only_map_win": 0.17555555555555555
+   },
+   "T4": {
+    "manifest_classes": 30,
+    "manifest_families": 5,
+    "scored_classes": 30,
+    "scored_families": 5,
+    "seed_only_map_win": 0.0
+   },
+   "T5": {
+    "manifest_classes": 50,
+    "manifest_families": 17,
+    "scored_classes": 50,
+    "scored_families": 17,
+    "seed_only_map_win": 0.018333333333333333
+   },
+   "T6": {
+    "manifest_classes": 30,
+    "manifest_families": 7,
+    "scored_classes": 30,
+    "scored_families": 7,
+    "seed_only_map_win": 0.03888888888888888
+   }
+  }
+ },
+ "families": {
+  "T1": {
+   "count=1-1-and": {
+    "ci": [
+     0.03874761778516518,
+     0.9612523822148347
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": 2.0,
+    "estimate": 0.5,
+    "items": 6,
+    "n_eff": 3.0,
+    "scored": 6,
+    "se": 0.28867513459481287
+   },
+   "count=2-1-and": {
+    "ci": [
+     0.31115993085344484,
+     0.9978049237867372
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": 2.0,
+    "estimate": 0.8333333333333334,
+    "items": 6,
+    "n_eff": 4.999999999999999,
+    "scored": 6,
+    "se": 0.16666666666666666
+   },
+   "count>=2-1-and": {
+    "ci": [
+     0.2924017738212866,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 1.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   },
+   "exists-1-and": {
+    "ci": [
+     0.2924017738212866,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 1.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   },
+   "forall-1-and": {
+    "ci": [
+     0.2924017738212866,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 1.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   }
+  },
+  "T2": {
+   "count=1-2-and": {
+    "ci": [
+     0.001991559834161668,
+     0.5601939493197616
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.125,
+    "items": 8,
+    "n_eff": 7.0,
+    "scored": 8,
+    "se": 0.125
+   },
+   "count=1-2-or": {
+    "ci": [
+     0.11811724875702517,
+     0.8818827512429748
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.5,
+    "items": 8,
+    "n_eff": 6.0,
+    "scored": 8,
+    "se": 0.2041241452319315
+   },
+   "exists-2-and": {
+    "ci": [
+     0.3976353643835254,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": null,
+    "estimate": 1.0,
+    "items": 8,
+    "n_eff": 4,
+    "scored": 8,
+    "se": 0.0
+   },
+   "exists-2-or": {
+    "ci": [
+     0.22277809550351207,
+     0.9567281317072582
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": 2.0,
+    "estimate": 0.6666666666666666,
+    "items": 6,
+    "n_eff": 6.0,
+    "scored": 6,
+    "se": 0.16666666666666666
+   },
+   "forall-2-and": {
+    "ci": [
+     0.5304998670169705,
+     0.9982310983010443
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 5,
+    "df": 4.0,
+    "estimate": 0.9,
+    "items": 10,
+    "n_eff": 8.999999999999998,
+    "scored": 10,
+    "se": 0.1
+   },
+   "forall-2-or": {
+    "ci": [
+     0.5304998670169705,
+     0.9982310983010443
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 5,
+    "df": 4.0,
+    "estimate": 0.9,
+    "items": 10,
+    "n_eff": 8.999999999999998,
+    "scored": 10,
+    "se": 0.1
+   },
+   "outer-2-and": {
+    "ci": [
+     0.4439045376923586,
+     0.9747892736731665
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 5,
+    "df": 4.0,
+    "estimate": 0.8,
+    "items": 10,
+    "n_eff": 10.0,
+    "scored": 10,
+    "se": 0.1224744871391589
+   }
+  },
+  "T3": {
+   "count=1-3-and": {
+    "ci": [
+     0.3574512058930627,
+     0.827014145210248
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 9,
+    "df": 8.0,
+    "estimate": 0.6111111111111112,
+    "items": 18,
+    "n_eff": 18.0,
+    "scored": 18,
+    "se": 0.1111111111111111
+   },
+   "count=2-2-and": {
+    "ci": [
+     0.031854026249944226,
+     0.6508557944128239
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.25,
+    "items": 8,
+    "n_eff": 8.0,
+    "scored": 8,
+    "se": 0.14433756729740643
+   },
+   "count=2-3-and": {
+    "ci": [
+     0.17298585478975176,
+     0.6425487941069372
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 9,
+    "df": 8.0,
+    "estimate": 0.3888888888888889,
+    "items": 18,
+    "n_eff": 18.0,
+    "scored": 18,
+    "se": 0.11111111111111112
+   },
+   "count>=2-2-and": {
+    "ci": [
+     0.1319320462682399,
+     0.9979079843994643
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.75,
+    "items": 8,
+    "n_eff": 3.0,
+    "scored": 8,
+    "se": 0.25
+   },
+   "count>=2-3-and": {
+    "ci": [
+     0.3291637702494924,
+     0.9108137001142236
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 9,
+    "df": 8.0,
+    "estimate": 0.6666666666666666,
+    "items": 18,
+    "n_eff": 10.666666666666668,
+    "scored": 18,
+    "se": 0.14433756729740643
+   },
+   "exists-3-and": {
+    "ci": [
+     0.6165237631507363,
+     0.984486396184586
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.875,
+    "items": 16,
+    "n_eff": 16.0,
+    "scored": 16,
+    "se": 0.08183170883849714
+   },
+   "exists-3-or": {
+    "ci": [
+     0.41337936354864124,
+     0.8898300452828825
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.6875,
+    "items": 16,
+    "n_eff": 16.0,
+    "scored": 16,
+    "se": 0.09149063183892499
+   },
+   "forall-3-and": {
+    "ci": [
+     0.6305833524471807,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": null,
+    "estimate": 1.0,
+    "items": 16,
+    "n_eff": 8,
+    "scored": 16,
+    "se": 0.0
+   },
+   "forall-3-or": {
+    "ci": [
+     0.2987768990831774,
+     0.8024658594673322
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.5625,
+    "items": 16,
+    "n_eff": 16.0,
+    "scored": 16,
+    "se": 0.11329087089687072
+   },
+   "outer-3-and": {
+    "ci": [
+     0.14593007769157212,
+     0.6547524414722261
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.375,
+    "items": 16,
+    "n_eff": 15.0,
+    "scored": 16,
+    "se": 0.125
+   }
+  },
+  "T4": {
+   "count=1-3-or": {
+    "ci": [
+     0.0,
+     0.4096163972250032
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 7,
+    "df": null,
+    "estimate": 0.0,
+    "items": 14,
+    "n_eff": 7,
+    "scored": 14,
+    "se": 0.0
+   },
+   "count=2-2-or": {
+    "ci": [
+     0.001991559834161668,
+     0.5601939493197616
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.125,
+    "items": 8,
+    "n_eff": 7.0,
+    "scored": 8,
+    "se": 0.125
+   },
+   "count=2-3-or": {
+    "ci": [
+     0.0,
+     0.4096163972250032
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 7,
+    "df": null,
+    "estimate": 0.0,
+    "items": 14,
+    "n_eff": 7,
+    "scored": 14,
+    "se": 0.0
+   },
+   "count>=2-2-or": {
+    "ci": [
+     0.031854026249944226,
+     0.6508557944128239
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.25,
+    "items": 8,
+    "n_eff": 8.0,
+    "scored": 8,
+    "se": 0.14433756729740643
+   },
+   "count>=2-3-or": {
+    "ci": [
+     0.0,
+     0.369416647552819
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": null,
+    "estimate": 0.0,
+    "items": 16,
+    "n_eff": 8,
+    "scored": 16,
+    "se": 0.0
+   }
+  },
+  "T5": {
+   "K01": {
+    "ci": [
+     0.158113883008419,
+     1.0
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": null,
+    "estimate": 1.0,
+    "items": 4,
+    "n_eff": 2,
+    "scored": 4,
+    "se": 0.0
+   },
+   "K02": {
+    "ci": [
+     0.10224933475247583,
+     0.7250018415551474
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 8,
+    "df": 7.0,
+    "estimate": 0.375,
+    "items": 16,
+    "n_eff": 9.545454545454545,
+    "scored": 16,
+    "se": 0.15669579263200217
+   },
+   "K03": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "K04": {
+    "ci": [
+     0.24486321636655156,
+     0.9147665858627463
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": 3.0,
+    "estimate": 0.625,
+    "items": 8,
+    "n_eff": 8.0,
+    "scored": 8,
+    "se": 0.125
+   },
+   "K05": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "K06": {
+    "ci": [
+     0.0,
+     0.3362671168799426
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 9,
+    "df": null,
+    "estimate": 0.0,
+    "items": 18,
+    "n_eff": 9,
+    "scored": 18,
+    "se": 0.0
+   },
+   "S04": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S05": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S06": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S07": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S08": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 1.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "S09": {
+    "ci": [
+     0.002092015600535833,
+     0.8680679537317599
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": 1.0,
+    "estimate": 0.25,
+    "items": 4,
+    "n_eff": 3.0,
+    "scored": 4,
+    "se": 0.25
+   },
+   "S11": {
+    "ci": [
+     0.012579117093425053,
+     0.9874208829065749
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": null,
+    "estimate": 0.5,
+    "items": 4,
+    "n_eff": 2,
+    "scored": 4,
+    "se": 0.0
+   },
+   "S12": {
+    "ci": [
+     0.012348527170294794,
+     0.31698271401908207
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 10,
+    "df": 9.0,
+    "estimate": 0.1,
+    "items": 20,
+    "n_eff": 20.0,
+    "scored": 20,
+    "se": 0.06666666666666668
+   },
+   "X01": {
+    "ci": [
+     0.0,
+     0.8418861169915808
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": null,
+    "estimate": 0.0,
+    "items": 4,
+    "n_eff": 2,
+    "scored": 4,
+    "se": 0.0
+   },
+   "X02": {
+    "ci": [
+     0.012579117093425053,
+     0.9874208829065749
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": null,
+    "estimate": 0.5,
+    "items": 4,
+    "n_eff": 2,
+    "scored": 4,
+    "se": 0.0
+   },
+   "X04": {
+    "ci": [
+     0.1319320462682399,
+     0.9979079843994643
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 2,
+    "df": 1.0,
+    "estimate": 0.75,
+    "items": 4,
+    "n_eff": 3.0,
+    "scored": 4,
+    "se": 0.25
+   }
+  },
+  "T6": {
+   "C08": {
+    "ci": [
+     0.0,
+     0.6023646356164742
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 4,
+    "df": null,
+    "estimate": 0.0,
+    "items": 8,
+    "n_eff": 4,
+    "scored": 8,
+    "se": 0.0
+   },
+   "C09": {
+    "ci": [
+     0.0,
+     0.7075982261787133
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 3,
+    "df": null,
+    "estimate": 0.0,
+    "items": 6,
+    "n_eff": 3,
+    "scored": 6,
+    "se": 0.0
+   },
+   "C11": {
+    "ci": [
+     0.0,
+     0.4096163972250032
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 7,
+    "df": null,
+    "estimate": 0.0,
+    "items": 14,
+    "n_eff": 7,
+    "scored": 14,
+    "se": 0.0
+   },
+   "C13": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.5,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   },
+   "C16": {
+    "ci": [
+     0.041286881095846176,
+     0.5469261815932029
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 9,
+    "df": 8.0,
+    "estimate": 0.2222222222222222,
+    "items": 18,
+    "n_eff": 11.789473684210526,
+    "scored": 18,
+    "se": 0.12108052620946316
+   },
+   "C17": {
+    "ci": [
+     0.3475471499400028,
+     0.9332604888222653
+    ],
+    "ci_method": "korn-graubard",
+    "classes": 5,
+    "df": 4.0,
+    "estimate": 0.7,
+    "items": 10,
+    "n_eff": 10.0,
+    "scored": 10,
+    "se": 0.1224744871391589
+   },
+   "C18": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 1,
+    "df": null,
+    "estimate": 0.0,
+    "items": 2,
+    "n_eff": null,
+    "scored": 2,
+    "se": null
+   }
+  }
+ },
+ "files": [
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "agent": "claude_backend:ClaudeBackend (claude -p)",
+      "agent_config": {
+       "auth": "Claude subscription; dedicated configuration and login",
+       "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+       "claude_cli": "2.1.293",
+       "flags": [
+        "--safe-mode",
+        "--restricted",
+        "--setting-sources",
+        "",
+        "--settings",
+        "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--tools",
+        "",
+        "--disallowedTools",
+        "*",
+        "--disable-slash-commands",
+        "--no-chrome",
+        "--no-session-persistence",
+        "--permission-prompts",
+        "none",
+        "--effort",
+        "high",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--max-turns",
+        "1"
+       ],
+       "harness": "claude-print",
+       "max_tokens": 128000,
+       "model": "claude-haiku-5-5",
+       "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+       "reasoning_effort": "high",
+       "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+       "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+       "retries": {
+        "backoff_seconds": [
+         30,
+         60,
+         120,
+         300,
+         900
+        ],
+        "jitter": "x0.75-1.25"
+       },
+       "sampling": "provider defaults; temperature, top_p, top_k omitted",
+       "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+       "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+       "show_thinking_summaries": true,
+       "thinking": {
+        "display": "summarized",
+        "type": "adaptive"
+       },
+       "timeout": 3600,
+       "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+      },
+      "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+      "backend": "function",
+      "per_episode": false
+     },
+     "sha256": "6879f174fed112d51980d634b608e5e1726b9f03811adab3ab9ab18b67e4f2c6"
+    }
+   ],
+   "end": "stopped",
+   "finished": 34,
+   "path": "experiments/E04-claude-baselines/results/runs/claude-haiku-5-5-claude-high-v2.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "fdf0b3322357d4ded65109a1463f76f5b3004f87787032dd46e77701109703e2",
+   "truncated": false
+  },
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "agent": "claude_backend:ClaudeBackend (claude -p)",
+      "agent_config": {
+       "auth": "Claude subscription; dedicated configuration and login",
+       "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+       "claude_cli": "2.1.293",
+       "flags": [
+        "--safe-mode",
+        "--restricted",
+        "--setting-sources",
+        "",
+        "--settings",
+        "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--tools",
+        "",
+        "--disallowedTools",
+        "*",
+        "--disable-slash-commands",
+        "--no-chrome",
+        "--no-session-persistence",
+        "--permission-prompts",
+        "none",
+        "--effort",
+        "high",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--max-turns",
+        "1"
+       ],
+       "harness": "claude-print",
+       "max_tokens": 128000,
+       "model": "claude-haiku-5-5",
+       "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+       "reasoning_effort": "high",
+       "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+       "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+       "retries": {
+        "backoff_seconds": [
+         30,
+         60,
+         120,
+         300,
+         900
+        ],
+        "jitter": "x0.75-1.25"
+       },
+       "sampling": "provider defaults; temperature, top_p, top_k omitted",
+       "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+       "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+       "show_thinking_summaries": true,
+       "thinking": {
+        "display": "summarized",
+        "type": "adaptive"
+       },
+       "timeout": 3600,
+       "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+      },
+      "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+      "backend": "function",
+      "per_episode": false
+     },
+     "sha256": "6879f174fed112d51980d634b608e5e1726b9f03811adab3ab9ab18b67e4f2c6"
+    }
+   ],
+   "end": "stopped",
+   "finished": 221,
+   "path": "experiments/E04-claude-baselines/results/runs/claude-haiku-5-5-claude-high-v2.part2.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "f104331805458f0092b013ba3d8bfc556097ea790d427242f3ccd5d01d3d5fda",
+   "truncated": false
+  },
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "agent": "claude_backend:ClaudeBackend (claude -p)",
+      "agent_config": {
+       "auth": "Claude subscription; dedicated configuration and login",
+       "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+       "claude_cli": "2.1.293",
+       "flags": [
+        "--safe-mode",
+        "--restricted",
+        "--setting-sources",
+        "",
+        "--settings",
+        "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--tools",
+        "",
+        "--disallowedTools",
+        "*",
+        "--disable-slash-commands",
+        "--no-chrome",
+        "--no-session-persistence",
+        "--permission-prompts",
+        "none",
+        "--effort",
+        "high",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--max-turns",
+        "1"
+       ],
+       "harness": "claude-print",
+       "max_tokens": 128000,
+       "model": "claude-haiku-5-5",
+       "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+       "reasoning_effort": "high",
+       "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+       "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+       "retries": {
+        "backoff_seconds": [
+         30,
+         60,
+         120,
+         300,
+         900
+        ],
+        "jitter": "x0.75-1.25"
+       },
+       "sampling": "provider defaults; temperature, top_p, top_k omitted",
+       "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+       "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+       "show_thinking_summaries": true,
+       "thinking": {
+        "display": "summarized",
+        "type": "adaptive"
+       },
+       "timeout": 3600,
+       "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+      },
+      "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+      "backend": "function",
+      "per_episode": false
+     },
+     "sha256": "6879f174fed112d51980d634b608e5e1726b9f03811adab3ab9ab18b67e4f2c6"
+    }
+   ],
+   "end": "stopped",
+   "finished": 0,
+   "path": "experiments/E04-claude-baselines/results/runs/claude-haiku-5-5-claude-high-v2.part3.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "2c43afea91976958eba32efd89746b957fda64c8ee6fc70d74e1e092e9a89821",
+   "truncated": false
+  },
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "agent": "claude_backend:ClaudeBackend (claude -p)",
+      "agent_config": {
+       "auth": "Claude subscription; dedicated configuration and login",
+       "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+       "claude_cli": "2.1.293",
+       "flags": [
+        "--safe-mode",
+        "--restricted",
+        "--setting-sources",
+        "",
+        "--settings",
+        "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--tools",
+        "",
+        "--disallowedTools",
+        "*",
+        "--disable-slash-commands",
+        "--no-chrome",
+        "--no-session-persistence",
+        "--permission-prompts",
+        "none",
+        "--effort",
+        "high",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--max-turns",
+        "1"
+       ],
+       "harness": "claude-print",
+       "max_tokens": 128000,
+       "model": "claude-haiku-5-5",
+       "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+       "reasoning_effort": "high",
+       "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+       "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+       "retries": {
+        "backoff_seconds": [
+         30,
+         60,
+         120,
+         300,
+         900
+        ],
+        "jitter": "x0.75-1.25"
+       },
+       "sampling": "provider defaults; temperature, top_p, top_k omitted",
+       "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+       "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+       "show_thinking_summaries": true,
+       "thinking": {
+        "display": "summarized",
+        "type": "adaptive"
+       },
+       "timeout": 3600,
+       "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+      },
+      "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+      "backend": "function",
+      "per_episode": false
+     },
+     "sha256": "6879f174fed112d51980d634b608e5e1726b9f03811adab3ab9ab18b67e4f2c6"
+    }
+   ],
+   "end": "stopped",
+   "finished": 0,
+   "path": "experiments/E04-claude-baselines/results/runs/claude-haiku-5-5-claude-high-v2.part4.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "d21c755858f2ccb6edc2b19dceafb5bc42207d662b92ec655ee36f419148c8b9",
+   "truncated": false
+  },
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "agent": "claude_backend:ClaudeBackend (claude -p)",
+      "agent_config": {
+       "auth": "Claude subscription; dedicated configuration and login",
+       "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+       "claude_cli": "2.1.293",
+       "flags": [
+        "--safe-mode",
+        "--restricted",
+        "--setting-sources",
+        "",
+        "--settings",
+        "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--tools",
+        "",
+        "--disallowedTools",
+        "*",
+        "--disable-slash-commands",
+        "--no-chrome",
+        "--no-session-persistence",
+        "--permission-prompts",
+        "none",
+        "--effort",
+        "high",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--max-turns",
+        "1"
+       ],
+       "harness": "claude-print",
+       "max_tokens": 128000,
+       "model": "claude-haiku-5-5",
+       "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+       "reasoning_effort": "high",
+       "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+       "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+       "retries": {
+        "backoff_seconds": [
+         30,
+         60,
+         120,
+         300,
+         900
+        ],
+        "jitter": "x0.75-1.25"
+       },
+       "sampling": "provider defaults; temperature, top_p, top_k omitted",
+       "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+       "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+       "show_thinking_summaries": true,
+       "thinking": {
+        "display": "summarized",
+        "type": "adaptive"
+       },
+       "timeout": 3600,
+       "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+      },
+      "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+      "backend": "function",
+      "per_episode": false
+     },
+     "sha256": "6879f174fed112d51980d634b608e5e1726b9f03811adab3ab9ab18b67e4f2c6"
+    }
+   ],
+   "end": "stopped",
+   "finished": 0,
+   "path": "experiments/E04-claude-baselines/results/runs/claude-haiku-5-5-claude-high-v2.part5.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "f8c5ce598bd59401b8b918851bc7de0035f75cda0b18c649d0ef0483fe92472a",
+   "truncated": false
+  },
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "agent": "claude_backend:ClaudeBackend (claude -p)",
+      "agent_config": {
+       "auth": "Claude subscription; dedicated configuration and login",
+       "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+       "claude_cli": "2.1.293",
+       "flags": [
+        "--safe-mode",
+        "--restricted",
+        "--setting-sources",
+        "",
+        "--settings",
+        "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--tools",
+        "",
+        "--disallowedTools",
+        "*",
+        "--disable-slash-commands",
+        "--no-chrome",
+        "--no-session-persistence",
+        "--permission-prompts",
+        "none",
+        "--effort",
+        "high",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--max-turns",
+        "1"
+       ],
+       "harness": "claude-print",
+       "max_tokens": 128000,
+       "model": "claude-haiku-5-5",
+       "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+       "reasoning_effort": "high",
+       "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+       "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+       "retries": {
+        "backoff_seconds": [
+         30,
+         60,
+         120,
+         300,
+         900
+        ],
+        "jitter": "x0.75-1.25"
+       },
+       "sampling": "provider defaults; temperature, top_p, top_k omitted",
+       "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+       "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+       "show_thinking_summaries": true,
+       "thinking": {
+        "display": "summarized",
+        "type": "adaptive"
+       },
+       "timeout": 3600,
+       "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+      },
+      "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+      "backend": "function",
+      "per_episode": false
+     },
+     "sha256": "6879f174fed112d51980d634b608e5e1726b9f03811adab3ab9ab18b67e4f2c6"
+    }
+   ],
+   "end": "stopped",
+   "finished": 56,
+   "path": "experiments/E04-claude-baselines/results/runs/claude-haiku-5-5-claude-high-v2.part6.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "32c4fbb3521db7158f353abf07be4b3d51810a2eb99bf5e4a0abfe2d6a4f5a4e",
+   "truncated": false
+  },
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "agent": "claude_backend:ClaudeBackend (claude -p)",
+      "agent_config": {
+       "auth": "Claude subscription; dedicated configuration and login",
+       "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+       "claude_cli": "2.1.293",
+       "flags": [
+        "--safe-mode",
+        "--restricted",
+        "--setting-sources",
+        "",
+        "--settings",
+        "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--tools",
+        "",
+        "--disallowedTools",
+        "*",
+        "--disable-slash-commands",
+        "--no-chrome",
+        "--no-session-persistence",
+        "--permission-prompts",
+        "none",
+        "--effort",
+        "high",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--max-turns",
+        "1"
+       ],
+       "harness": "claude-print",
+       "max_tokens": 128000,
+       "model": "claude-haiku-5-5",
+       "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+       "reasoning_effort": "high",
+       "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+       "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+       "retries": {
+        "backoff_seconds": [
+         30,
+         60,
+         120,
+         300,
+         900
+        ],
+        "jitter": "x0.75-1.25"
+       },
+       "sampling": "provider defaults; temperature, top_p, top_k omitted",
+       "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+       "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+       "show_thinking_summaries": true,
+       "thinking": {
+        "display": "summarized",
+        "type": "adaptive"
+       },
+       "timeout": 3600,
+       "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+      },
+      "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+      "backend": "function",
+      "per_episode": false
+     },
+     "sha256": "6879f174fed112d51980d634b608e5e1726b9f03811adab3ab9ab18b67e4f2c6"
+    }
+   ],
+   "end": "stopped",
+   "finished": 45,
+   "path": "experiments/E04-claude-baselines/results/runs/claude-haiku-5-5-claude-high-v2.part7.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "b995bcf5fa2818e577251907cb38096b7700f86077ee8615ab085ea487acc119",
+   "truncated": false
+  },
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "agent": "claude_backend:ClaudeBackend (claude -p)",
+      "agent_config": {
+       "auth": "Claude subscription; dedicated configuration and login",
+       "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+       "claude_cli": "2.1.293",
+       "flags": [
+        "--safe-mode",
+        "--restricted",
+        "--setting-sources",
+        "",
+        "--settings",
+        "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--tools",
+        "",
+        "--disallowedTools",
+        "*",
+        "--disable-slash-commands",
+        "--no-chrome",
+        "--no-session-persistence",
+        "--permission-prompts",
+        "none",
+        "--effort",
+        "high",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--max-turns",
+        "1"
+       ],
+       "harness": "claude-print",
+       "max_tokens": 128000,
+       "model": "claude-haiku-5-5",
+       "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+       "reasoning_effort": "high",
+       "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+       "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+       "retries": {
+        "backoff_seconds": [
+         30,
+         60,
+         120,
+         300,
+         900
+        ],
+        "jitter": "x0.75-1.25"
+       },
+       "sampling": "provider defaults; temperature, top_p, top_k omitted",
+       "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+       "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+       "show_thinking_summaries": true,
+       "thinking": {
+        "display": "summarized",
+        "type": "adaptive"
+       },
+       "timeout": 3600,
+       "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+      },
+      "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+      "backend": "function",
+      "per_episode": false
+     },
+     "sha256": "6879f174fed112d51980d634b608e5e1726b9f03811adab3ab9ab18b67e4f2c6"
+    }
+   ],
+   "end": "stopped",
+   "finished": 38,
+   "path": "experiments/E04-claude-baselines/results/runs/claude-haiku-5-5-claude-high-v2.part8.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "c1294b58044e4d6ffe73289c02d638fe7def8c4e0524876d6f277a8ef555299b",
+   "truncated": false
+  },
+  {
+   "composite": false,
+   "configurations": [
+    {
+     "settings": {
+      "agent": "claude_backend:ClaudeBackend (claude -p)",
+      "agent_config": {
+       "auth": "Claude subscription; dedicated configuration and login",
+       "claude_binary_sha256": "4e21122a227857da1178aca3299700c1fd7f2b77c93f12e73c2c76db796a105e",
+       "claude_cli": "2.1.293",
+       "flags": [
+        "--safe-mode",
+        "--restricted",
+        "--setting-sources",
+        "",
+        "--settings",
+        "{\"disableAllHooks\":true,\"showThinkingSummaries\":true,\"ultracode\":false,\"autoMemoryEnabled\":false,\"fastMode\":false}",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--tools",
+        "",
+        "--disallowedTools",
+        "*",
+        "--disable-slash-commands",
+        "--no-chrome",
+        "--no-session-persistence",
+        "--permission-prompts",
+        "none",
+        "--effort",
+        "high",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--include-partial-messages",
+        "--max-turns",
+        "1"
+       ],
+       "harness": "claude-print",
+       "max_tokens": 128000,
+       "model": "claude-haiku-5-5",
+       "prompt_substitution": "CLAUDE_CODE_EXTRA_BODY; unchanged benchmark messages plus fixed SDK identity",
+       "reasoning_effort": "high",
+       "request_guard": "loopback capture; validate before forwarding unchanged bytes to Anthropic",
+       "response_policy": "first complete API response, unchanged; block all CLI continuations/repairs",
+       "retries": {
+        "backoff_seconds": [
+         30,
+         60,
+         120,
+         300,
+         900
+        ],
+        "jitter": "x0.75-1.25"
+       },
+       "sampling": "provider defaults; temperature, top_p, top_k omitted",
+       "sandbox_profile_sha256": "366cc296c2ec0281f7fa3d605d2a253e1d4494b301310fc0a84cb4f252404028",
+       "sdk_identity": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+       "show_thinking_summaries": true,
+       "thinking": {
+        "display": "summarized",
+        "type": "adaptive"
+       },
+       "timeout": 3600,
+       "traces": "incremental requests, full provider and CLI streams, stderr, every try"
+      },
+      "agent_source_sha256": "27071effb8cca3480b9af17dc98991129341cb1b28665d66c69a0f725af6e3e5",
+      "backend": "function",
+      "per_episode": false
+     },
+     "sha256": "6879f174fed112d51980d634b608e5e1726b9f03811adab3ab9ab18b67e4f2c6"
+    }
+   ],
+   "end": "complete",
+   "finished": 66,
+   "path": "experiments/E04-claude-baselines/results/runs/claude-haiku-5-5-claude-high-v2.part9.jsonl",
+   "player": "model",
+   "reply_policy": "action-object-v1",
+   "sha256": "aec6ff87d8cd18e6f49bde695a58f9643212ec5c44f504178f6b5435d1dba700",
+   "truncated": false
+  }
+ ],
+ "headline": {
+  "ci": [
+   0.34697770714794185,
+   0.43953291526287824
+  ],
+  "ci_method": "korn-graubard-mover",
+  "classes": 215,
+  "complete": true,
+  "df": 82.85666212911356,
+  "estimate": 0.39066666666666666,
+  "finished": 430,
+  "items": 430,
+  "missing": [],
+  "n_eff": null,
+  "over_cap": {},
+  "se": 0.019775179393818912,
+  "unscored_cap": 0.05,
+  "withheld": null
+ },
+ "kind": "score",
+ "malformed": {
+  "T1": {
+   "by_kind": {
+    "schema_error": 185
+   },
+   "decisions": 701,
+   "games": 30,
+   "invalid_submission_rate": 0.05405405405405406,
+   "invalid_submissions": 2,
+   "invalid_turns": 185,
+   "malformed_rate": 0.26390870185449355
+  },
+  "T2": {
+   "by_kind": {
+    "invalid_action": 2,
+    "schema_error": 386
+   },
+   "decisions": 1503,
+   "games": 60,
+   "invalid_submission_rate": 0.06060606060606061,
+   "invalid_submissions": 4,
+   "invalid_turns": 388,
+   "malformed_rate": 0.25815036593479707
+  },
+  "T3": {
+   "by_kind": {
+    "invalid_action": 2,
+    "schema_error": 1027
+   },
+   "decisions": 3948,
+   "games": 150,
+   "invalid_submission_rate": 0.058823529411764705,
+   "invalid_submissions": 9,
+   "invalid_turns": 1029,
+   "malformed_rate": 0.26063829787234044
+  },
+  "T4": {
+   "by_kind": {
+    "invalid_action": 2,
+    "schema_error": 509
+   },
+   "decisions": 1658,
+   "games": 60,
+   "invalid_submission_rate": 0.12727272727272726,
+   "invalid_submissions": 7,
+   "invalid_turns": 511,
+   "malformed_rate": 0.30820265379975875
+  },
+  "T5": {
+   "by_kind": {
+    "invalid_action": 3,
+    "schema_error": 687
+   },
+   "decisions": 2710,
+   "games": 100,
+   "invalid_submission_rate": 0.08823529411764706,
+   "invalid_submissions": 9,
+   "invalid_turns": 690,
+   "malformed_rate": 0.25461254612546125
+  },
+  "T6": {
+   "by_kind": {
+    "invalid_action": 2,
+    "schema_error": 461
+   },
+   "decisions": 1669,
+   "games": 60,
+   "invalid_submission_rate": 0.11666666666666667,
+   "invalid_submissions": 7,
+   "invalid_turns": 463,
+   "malformed_rate": 0.2774116237267825
+  },
+  "all": {
+   "by_kind": {
+    "invalid_action": 11,
+    "schema_error": 3255
+   },
+   "decisions": 12189,
+   "games": 460,
+   "invalid_submission_rate": 0.080338266384778,
+   "invalid_submissions": 38,
+   "invalid_turns": 3266,
+   "malformed_rate": 0.2679465091475921
+  },
+  "headline": {
+   "by_kind": {
+    "invalid_action": 11,
+    "schema_error": 3070
+   },
+   "decisions": 11488,
+   "games": 430,
+   "invalid_submission_rate": 0.08256880733944955,
+   "invalid_submissions": 36,
+   "invalid_turns": 3081,
+   "malformed_rate": 0.2681928969359331
+  }
+ },
+ "manifest_sha256": "6b98d1a59d5f7d3b09b12f9840c83405e6ea2925d71911a10ab572e39facc278",
+ "player": "model",
+ "schema": "zendo-bench-v1-score",
+ "split": "dev",
+ "templates": {},
+ "tiers": {
+  "T1": {
+   "abandoned": 0,
+   "ci": [
+    0.638795085574525,
+    0.9757222309481266
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 15,
+   "df": 14.0,
+   "estimate": 0.8666666666666667,
+   "finished": 30,
+   "items": 30,
+   "n_eff": 19.67567567567567,
+   "scored": 30,
+   "se": 0.07663560447348135,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 26
+  },
+  "T2": {
+   "abandoned": 0,
+   "ci": [
+    0.5727643977228185,
+    0.8341799660161147
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 30,
+   "df": 21.969337432680607,
+   "estimate": 0.7166666666666667,
+   "finished": 60,
+   "items": 60,
+   "n_eff": 50.760928581942196,
+   "scored": 60,
+   "se": 0.06220166894101491,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 43
+  },
+  "T3": {
+   "abandoned": 0,
+   "ci": [
+    0.5433343493804748,
+    0.7048050909371875
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 75,
+   "df": 50.31653294097156,
+   "estimate": 0.6266666666666667,
+   "finished": 150,
+   "items": 150,
+   "n_eff": 147.61743155810078,
+   "scored": 150,
+   "se": 0.038151743807531995,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 94
+  },
+  "T4": {
+   "abandoned": 0,
+   "ci": [
+    0.007264851204261192,
+    0.15968455687216182
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 30,
+   "df": 7.0,
+   "estimate": 0.05,
+   "finished": 60,
+   "items": 60,
+   "n_eff": 44.88602308768769,
+   "scored": 60,
+   "se": 0.02439750182371333,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 3
+  },
+  "T5": {
+   "abandoned": 0,
+   "ci": [
+    0.26504417122336177,
+    0.4637462996211609
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 50,
+   "df": 31.21657546110985,
+   "estimate": 0.36000000000000004,
+   "finished": 100,
+   "items": 100,
+   "n_eff": 97.08572881163727,
+   "scored": 100,
+   "se": 0.042926831268017475,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 36
+  },
+  "T6": {
+   "abandoned": 0,
+   "ci": [
+    0.10396308458205733,
+    0.330340978682338
+   ],
+   "ci_method": "korn-graubard",
+   "classes": 30,
+   "df": 14.984409799554562,
+   "estimate": 0.19999999999999998,
+   "finished": 60,
+   "items": 60,
+   "n_eff": 54.55909984734176,
+   "scored": 60,
+   "se": 0.044876373392787536,
+   "timing_unverifiable": 0,
+   "unfinished": 0,
+   "unscored": 0,
+   "wins": 12
+  }
+ },
+ "verified": true,
+ "w0": {
+  "bands": [
+   "w0=0",
+   "0<w0<0.5",
+   "w0>=0.5"
+  ],
+  "pooled": {
+   "0<w0<0.5": {
+    "ci": null,
+    "ci_method": "korn-graubard",
+    "classes": 5,
+    "df": null,
+    "estimate": 0.0,
+    "n_eff": null,
+    "se": null
+   },
+   "w0=0": {
+    "ci": [
+     0.34477303253046093,
+     0.44153755497337216
+    ],
+    "ci_method": "korn-graubard-mover",
+    "classes": 201,
+    "df": 80.26858240235389,
+    "estimate": 0.39013180272108844,
+    "n_eff": null,
+    "se": 0.02036737734148486
+   },
+   "w0>=0.5": {
+    "ci": [
+     0.3115087516388795,
+     0.8415085342546629
+    ],
+    "ci_method": "korn-graubard-mover",
+    "classes": 21,
+    "df": 2.3864207397384596,
+    "estimate": 0.6215277777777778,
+    "n_eff": null,
+    "se": 0.11616386776611183
+   }
+  },
+  "tiers": {
+   "T1": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.638795085574525,
+      0.9757222309481266
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 15,
+     "df": 14.0,
+     "estimate": 0.8666666666666667,
+     "items": 30,
+     "n_eff": 19.67567567567567,
+     "scored": 30,
+     "se": 0.07663560447348135
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T2": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.5727643977228185,
+      0.8341799660161147
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 30,
+     "df": 21.969337432680607,
+     "estimate": 0.7166666666666667,
+     "items": 60,
+     "n_eff": 50.760928581942196,
+     "scored": 60,
+     "se": 0.06220166894101491
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T3": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 1,
+     "df": null,
+     "estimate": 0.0,
+     "items": 1,
+     "n_eff": null,
+     "scored": 1,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.545335225658969,
+      0.7284034292698902
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 64,
+     "df": 40.93963164559776,
+     "estimate": 0.640625,
+     "items": 122,
+     "n_eff": 113.84039644355927,
+     "scored": 122,
+     "se": 0.044464627481833406
+    },
+    "w0>=0.5": {
+     "ci": [
+      0.31640141370181607,
+      0.7379244232682389
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 16,
+     "df": 13.97912679209852,
+     "estimate": 0.53125,
+     "items": 27,
+     "n_eff": 23.453738765419875,
+     "scored": 27,
+     "se": 0.10166261091637051
+    }
+   },
+   "T4": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.007264851204261192,
+      0.15968455687216182
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 30,
+     "df": 7.0,
+     "estimate": 0.05,
+     "items": 60,
+     "n_eff": 44.88602308768769,
+     "scored": 60,
+     "se": 0.02439750182371333
+    },
+    "w0>=0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 0,
+     "df": null,
+     "estimate": null,
+     "items": 0,
+     "n_eff": null,
+     "scored": 0,
+     "se": null
+    }
+   },
+   "T5": {
+    "0<w0<0.5": {
+     "ci": null,
+     "ci_method": "korn-graubard",
+     "classes": 1,
+     "df": null,
+     "estimate": 0.0,
+     "items": 1,
+     "n_eff": null,
+     "scored": 1,
+     "se": null
+    },
+    "w0=0": {
+     "ci": [
+      0.25181967550399054,
+      0.45196497556850945
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 49,
+     "df": 31.25324455021901,
+     "estimate": 0.3469387755102041,
+     "items": 97,
+     "n_eff": 94.2724860904841,
+     "scored": 97,
+     "se": 0.045488939702501265
+    },
+    "w0>=0.5": {
+     "ci": [
+      0.158113883008419,
+      1.0
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 2,
+     "df": null,
+     "estimate": 1.0,
+     "items": 2,
+     "n_eff": 2,
+     "scored": 2,
+     "se": 0.0
+    }
+   },
+   "T6": {
+    "0<w0<0.5": {
+     "ci": [
+      0.0,
+      0.7075982261787133
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 3,
+     "df": null,
+     "estimate": 0.0,
+     "items": 3,
+     "n_eff": 3,
+     "scored": 3,
+     "se": 0.0
+    },
+    "w0=0": {
+     "ci": [
+      0.09263304840172928,
+      0.34301694488147383
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 28,
+     "df": 9.21630094043887,
+     "estimate": 0.19642857142857142,
+     "items": 54,
+     "n_eff": 44.4253830336649,
+     "scored": 54,
+     "se": 0.04312909745889714
+    },
+    "w0>=0.5": {
+     "ci": [
+      0.0015592835712882093,
+      0.9600784822958319
+     ],
+     "ci_method": "korn-graubard",
+     "classes": 3,
+     "df": 2.0,
+     "estimate": 0.3333333333333333,
+     "items": 3,
+     "n_eff": 2.0,
+     "scored": 3,
+     "se": 0.33333333333333337
+    }
+   }
+  }
+ }
+}

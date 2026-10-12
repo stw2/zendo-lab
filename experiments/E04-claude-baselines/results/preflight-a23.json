@@ -1,0 +1,83 @@
+{
+  "attempt": "A23",
+  "status": "failed",
+  "phase": "smoke",
+  "original_exit_code": 5,
+  "finished_games": 6,
+  "scored_smoke_games": 6,
+  "unfinished_smoke_games": 0,
+  "unscored_smoke_games": 0,
+  "verified": true,
+  "actual_tool_calls": 0,
+  "transcript_tries": 162,
+  "transcript_missing_joins": 0,
+  "transcript_incomplete_tries": 0,
+  "review": "All six smoke games completed. Original wrapper stopped on three denied native-installation directory probes. Pinned CLI cleanup code and recorded process IDs explain them; no successful access or model tool execution. Revised attribution/classification audit passes without changing sandbox permissions. Original artifacts preserved. Carry forward this smoke to the new full-run source; no full measurement occurred.",
+  "model": "claude-haiku-5-5",
+  "arm": "claude-haiku-5-5-claude-high",
+  "effort": "high",
+  "sampling": "provider defaults",
+  "max_tokens": 128000,
+  "manifest": "dev, first item per tier smoke only",
+  "backend": "function, Claude Code 2.1.293",
+  "seed": "manifest episode seeds; model unseeded",
+  "hardware": "Apple M4 Max 128 GB local orchestrator; provider inference hardware unknown",
+  "backend_sha256": "aa48358158cdd861f62d7e0c83f285e587606113194e9a60cf2ae79ea4746922",
+  "artifacts": [
+    {
+      "file": "smoke/a23-original-isolation-flag.json",
+      "sha256": "27cdea46fe52eeeae9f773f69dde27999e2317de5eb23ae2e911ce77874e6c62",
+      "bytes": 1320
+    },
+    {
+      "file": "smoke/claude-haiku-5-5-claude-high.cmd",
+      "sha256": "1df4396575ac6c6dc13a56ad72569df2738f4cf9a33c4ad7dfdd48f33e054a66",
+      "bytes": 264
+    },
+    {
+      "file": "smoke/claude-haiku-5-5-claude-high.denials.json",
+      "sha256": "044bdbe4e379dc7d2a3c7da6a79c9059fe45d8bc95ef4eff082646d165d290d8",
+      "bytes": 1572
+    },
+    {
+      "file": "smoke/claude-haiku-5-5-claude-high.exit",
+      "sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06",
+      "bytes": 2
+    },
+    {
+      "file": "smoke/claude-haiku-5-5-claude-high.jsonl",
+      "sha256": "08eb88d17442b87f1aceae68e6f7ca11056bcdb997324c58ed5cc79e7487cb61",
+      "bytes": 3897996
+    },
+    {
+      "file": "smoke/claude-haiku-5-5-claude-high.log",
+      "sha256": "d33e8be02567e9309b23a501058510489ad35da25acf9a6ffd985278794b3858",
+      "bytes": 333
+    },
+    {
+      "file": "smoke/haiku-smoke.reviewed-denials.json",
+      "sha256": "e62f2b0f7cc0ed078d2f9b31169a922dbce8dd9e6628c6eb21318747a186aed7",
+      "bytes": 1009
+    },
+    {
+      "file": "smoke/haiku-smoke.transcript-audit.json",
+      "sha256": "7a5f5b95beacd35fdf7e8d80019f3770be2d5ec02b263e4de494727412dc8822",
+      "bytes": 343
+    },
+    {
+      "file": "smoke/haiku-smoke.verified.score.json",
+      "sha256": "4852e30d99448d722b14e332efe3f8717c0041d5a395ff2d7faf63863dc57467",
+      "bytes": 23007
+    },
+    {
+      "file": "smoke/haiku-smoke.verified.score.md",
+      "sha256": "1578b933c511569744d0e320138e78cc655bc6bc0af32b37cfc9708fd89926d8",
+      "bytes": 3582
+    },
+    {
+      "file": "smoke/traces/claude-haiku-5-5-claude-high.traces.jsonl.gz",
+      "sha256": "14dc5244b8838df6583923cef9cb8782b3c067d5066d276e9adb4d78b7f9d163",
+      "bytes": 25154081
+    }
+  ]
+}

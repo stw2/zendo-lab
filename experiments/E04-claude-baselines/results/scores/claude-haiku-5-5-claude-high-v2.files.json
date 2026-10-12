@@ -1,0 +1,47 @@
+[
+ {
+  "file": "claude-haiku-5-5-claude-high-v2.jsonl",
+  "sha256": "fdf0b3322357d4ded65109a1463f76f5b3004f87787032dd46e77701109703e2",
+  "bytes": 19660076
+ },
+ {
+  "file": "claude-haiku-5-5-claude-high-v2.part2.jsonl",
+  "sha256": "f104331805458f0092b013ba3d8bfc556097ea790d427242f3ccd5d01d3d5fda",
+  "bytes": 113433136
+ },
+ {
+  "file": "claude-haiku-5-5-claude-high-v2.part3.jsonl",
+  "sha256": "2c43afea91976958eba32efd89746b957fda64c8ee6fc70d74e1e092e9a89821",
+  "bytes": 98684
+ },
+ {
+  "file": "claude-haiku-5-5-claude-high-v2.part4.jsonl",
+  "sha256": "d21c755858f2ccb6edc2b19dceafb5bc42207d662b92ec655ee36f419148c8b9",
+  "bytes": 100835
+ },
+ {
+  "file": "claude-haiku-5-5-claude-high-v2.part5.jsonl",
+  "sha256": "f8c5ce598bd59401b8b918851bc7de0035f75cda0b18c649d0ef0483fe92472a",
+  "bytes": 102981
+ },
+ {
+  "file": "claude-haiku-5-5-claude-high-v2.part6.jsonl",
+  "sha256": "32c4fbb3521db7158f353abf07be4b3d51810a2eb99bf5e4a0abfe2d6a4f5a4e",
+  "bytes": 34460929
+ },
+ {
+  "file": "claude-haiku-5-5-claude-high-v2.part7.jsonl",
+  "sha256": "b995bcf5fa2818e577251907cb38096b7700f86077ee8615ab085ea487acc119",
+  "bytes": 27361653
+ },
+ {
+  "file": "claude-haiku-5-5-claude-high-v2.part8.jsonl",
+  "sha256": "c1294b58044e4d6ffe73289c02d638fe7def8c4e0524876d6f277a8ef555299b",
+  "bytes": 21802156
+ },
+ {
+  "file": "claude-haiku-5-5-claude-high-v2.part9.jsonl",
+  "sha256": "aec6ff87d8cd18e6f49bde695a58f9643212ec5c44f504178f6b5435d1dba700",
+  "bytes": 37421261
+ }
+]

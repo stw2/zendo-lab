@@ -1,0 +1,55 @@
+{
+  "tries": 13361,
+  "answered_tries": 12901,
+  "cited_tries": 13108,
+  "uncited_tries": 253,
+  "missing_joins": 0,
+  "interrupted_traces": 0,
+  "trace_files": [
+    {
+      "file": "claude-haiku-5-5-claude-high-v2.traces.jsonl.gz",
+      "sha256": "a415fe076fc91a48ff1c54ddfb7022f586d3c5f517ceec4287575d0bf8dcc093",
+      "bytes": 124655550
+    },
+    {
+      "file": "claude-haiku-5-5-claude-high-v2.part2.traces.jsonl.gz",
+      "sha256": "8a595f7ea393b90157d36469a5cc26ff06061a4fbc0d8bf25e6480ca40436d64",
+      "bytes": 719501927
+    },
+    {
+      "file": "claude-haiku-5-5-claude-high-v2.part3.traces.jsonl.gz",
+      "sha256": "8ddad516e78ec107c175108d20d1056f04f2f4f326f27fb7a509b57ca62962e6",
+      "bytes": 148726
+    },
+    {
+      "file": "claude-haiku-5-5-claude-high-v2.part4.traces.jsonl.gz",
+      "sha256": "d6de8dfeb8a25022f58be655e15b716b44a2329b78c33891113fdfe9672879eb",
+      "bytes": 150267
+    },
+    {
+      "file": "claude-haiku-5-5-claude-high-v2.part5.traces.jsonl.gz",
+      "sha256": "1b5d09362122352442cabd7af006d70433181481e25fe388e51219cda1db1544",
+      "bytes": 157484
+    },
+    {
+      "file": "claude-haiku-5-5-claude-high-v2.part6.traces.jsonl.gz",
+      "sha256": "33c14a5a5e70dea365e9daa45933f3a751e62e25c13180306a03c12249bc1ffe",
+      "bytes": 271727116
+    },
+    {
+      "file": "claude-haiku-5-5-claude-high-v2.part7.traces.jsonl.gz",
+      "sha256": "8dd8c78380e1d392b6b92dcb9dfd25e7152a660427bf837bc9b77ae17f8e5dc4",
+      "bytes": 174899964
+    },
+    {
+      "file": "claude-haiku-5-5-claude-high-v2.part8.traces.jsonl.gz",
+      "sha256": "b637a623a77bfbefe4ab397184f59b766f1747c0cbb400ccd8d8108ddaa98048",
+      "bytes": 162080837
+    },
+    {
+      "file": "claude-haiku-5-5-claude-high-v2.part9.traces.jsonl.gz",
+      "sha256": "042dacfdd31003f8bf2e416288f7e5381ebac613b3b005ae151d2ef0e6743a32",
+      "bytes": 263671388
+    }
+  ]
+}

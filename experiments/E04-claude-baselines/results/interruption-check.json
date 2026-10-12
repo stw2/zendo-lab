@@ -1,0 +1,7 @@
+{
+  "offline_only": true,
+  "partial_stream_retained": true,
+  "handlers_joined_before_trace_end": true,
+  "client_stopped": true,
+  "backend_source_sha256": "aa48358158cdd861f62d7e0c83f285e587606113194e9a60cf2ae79ea4746922"
+}

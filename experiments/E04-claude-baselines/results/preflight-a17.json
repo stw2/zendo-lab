@@ -1,0 +1,14 @@
+{
+  "label": "A17",
+  "status": "preflight_failed",
+  "benchmark_games": 0,
+  "model_answers": 0,
+  "http_status": 429,
+  "reason": "Temporary provider rate limit; parser incorrectly classified the explicitly negated usage-limit notice. Fixed before retry; no model/game results.",
+  "runtime_python": "3.13.13",
+  "trace": {
+    "file": "live-haiku-auth.jsonl.gz",
+    "sha256": "7cafe388092cd98c2b73e68c23ea13671601cb293738be12ddaaaacc3ea87c3d",
+    "bytes": 3853
+  }
+}
